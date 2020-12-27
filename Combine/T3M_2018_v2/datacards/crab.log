@@ -1,0 +1,4 @@
+DEBUG 2020-11-16 02:16:32.397 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-16 02:16:32.398 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-862.14.4.el7.x86_64 #1 SMP Wed Sep 26 15:12:11 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-16 02:16:32.398 UTC: 	 Executing command: 'status'
+DEBUG 2020-11-16 02:16:32.399 UTC: 	 Found CRAB cache file /lustrehome/fsimone/.crab3
