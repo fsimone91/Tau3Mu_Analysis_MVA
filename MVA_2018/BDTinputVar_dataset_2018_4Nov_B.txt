@@ -1,0 +1,17 @@
+cLP	cLP>30?30:cLP
+tKink	tKink>80?80:tKink
+fv_nC	fv_nC>25?25:fv_nC
+fv_dphi3D	fv_dphi3D>0.15?0.15:fv_dphi3D
+fv_d3Dsig	fv_d3Dsig>100?100:fv_d3Dsig
+mindca_iso	mindca_iso>0.5?0.5:mindca_iso
+trkRel	trkRel>10?10:trkRel
+MuonIDeval_Mu1.MuonID	MuonIDeval_Mu1.MuonID
+MuonIDeval_Mu2.MuonID	MuonIDeval_Mu2.MuonID
+MuonIDeval_Mu3.MuonID	MuonIDeval_Mu3.MuonID
+TreeMu3.mu_segmentCompatibility	TreeMu3.mu_segmentCompatibility
+TreeMu2.mu_segmentCompatibility	TreeMu2.mu_segmentCompatibility
+TreeMu1.mu_segmentCompatibility	TreeMu1.mu_segmentCompatibility
+Pt_tripl	Pt_tripl
+abs(dxy1/dxyErr1)	abs(dxy1/dxyErr1)
+abs(dxy2/dxyErr2)	abs(dxy2/dxyErr2)
+abs(dxy3/dxyErr3)	abs(dxy3/dxyErr3)
