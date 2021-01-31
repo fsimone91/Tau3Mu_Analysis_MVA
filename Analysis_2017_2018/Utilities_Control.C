@@ -222,6 +222,7 @@ void ntupleClass_Control::Fill_ParticleIdSummary(Int_t mu[NTOT], Int_t Idsummary
 }
 
 void ntupleClass_Control::FillHistoAC(Int_t ind, Int_t mu[NTOT], TH1F *hMinSegmComp, TH1F *hChi2Track, TH1D *hNMatchedStat, TH1D *hFlightDist, TH1D *hFlightDist_Signif, TH2D *hFlightDistvsP, TH1D *hPtErrOverPt, TH1D *hmassdi, Double_t dimu[NTOT], TH1F *hmassQuad, TH1F *hmassQuad_Zero, TH1D *hChi2VertexNorm, TH1D *hSegmComp, TH1D *hDeltaR, TH1D *hTrIPSign){
+    double pileupFactor = 1;
     // Fills the histograms after cuts
     Double_t segmComp = 999;
     for(int k=0; k<NMU_C; k++){
@@ -245,6 +246,7 @@ void ntupleClass_Control::FillHistoAC(Int_t ind, Int_t mu[NTOT], TH1F *hMinSegmC
 }
 
 void ntupleClass_Control::FillHistoBC(TString type, Int_t ind, TH1D *hMass_tripl, TH1D *hChi2Vertex, TH2D *hMassvsChi2, TH1F *hMass_quad, TH1F *hMass_quad_Zero, TH1D *hMass_di, TH1D *hMass_di2, TH1D *hPtRes, TH1D *hPtRes_mu[NMU_C], TH1D *hPtResBarrel, TH1D *hPtResBarrel_mu[NMU_C], TH1D *hPtResEndcap, TH1D *hPtResEndcap_mu[NMU_C], Int_t IdsummaryDaughter_Gen[NPARTICLES], Int_t IdsummaryMother_Gen[NPARTICLES], Int_t Idsummary2D_Gen[NPARTICLES][NPARTICLES]){
+    double pileupFactor = 1;
     // Fills the histograms before cuts
     hMass_tripl->Fill(Triplet2_Mass->at(ind), pileupFactor);
     hChi2Vertex->Fill(TripletVtx2_Chi2->at(ind), pileupFactor);
@@ -262,6 +264,7 @@ void ntupleClass_Control::FillHistoBC(TString type, Int_t ind, TH1D *hMass_tripl
 }
 
 void ntupleClass_Control::FillHistoDiMuMass_AC(TH1D *hist, Double_t dimu[NTOT]){
+    double pileupFactor = 1;
     // This function fills the dimuon mass histogram
     for(int i=0; i<NMU; i++){
         if(dimu[i] != 0) hist->Fill(dimu[i], pileupFactor);
@@ -269,6 +272,7 @@ void ntupleClass_Control::FillHistoDiMuMass_AC(TH1D *hist, Double_t dimu[NTOT]){
 }
 
 void ntupleClass_Control::FillHistoDiMuMass_BC(TH1D *h_Zero, TH1D *h_Zero2){
+    double pileupFactor = 1;
     // It loops over the muons and fills the histo w/ the inv mass of o.s. GLB muons w/ |DeltaZ| < 0.5 and other conditions...
     for (int k=0; k<(MuonPt->size()-1); k++){
         for (int l=k+1; l<(MuonPt->size()); l++){
@@ -284,6 +288,7 @@ void ntupleClass_Control::FillHistoDiMuMass_BC(TH1D *h_Zero, TH1D *h_Zero2){
 }
 
 void ntupleClass_Control::FillHistoQuadMuMass_AC(TH1F *h, TH1F *h_Zero, Int_t mu[NTOT]){
+    double pileupFactor = 1;
     // Computes the invariant mass of 3 muons + 1 track (2mu and the track of the triplet + another tracker mu) w/ |DeltaZ| < 0.5 and fills the histo
     for(int k=0; k<MuonPt->size(); k++){
         if(k != mu[0] && k!= mu[1]){
@@ -300,6 +305,7 @@ void ntupleClass_Control::FillHistoQuadMuMass_AC(TH1F *h, TH1F *h_Zero, Int_t mu
 }
 
 void ntupleClass_Control::FillHistoQuadMuMass_BC(TH1F *h, TH1F *h_Zero){
+    double pileupFactor = 1;
     // Computes the invariant mass of 4 muons w/ |DeltaZ| < 0.5 and fills the histo
     for (int k=0; k<(MuonPt->size()-3); k++){
         for (int l=k+1; l <(MuonPt->size()-2); l++){
@@ -318,6 +324,7 @@ void ntupleClass_Control::FillHistoQuadMuMass_BC(TH1F *h, TH1F *h_Zero){
 }
 
 void ntupleClass_Control::FillHistoResoPt_AC(Int_t muGen[NTOT], TH1D *hPtRes, TH1D *hPtRes_mu[NMU_C], TH1D *hPtResBarrel, TH1D *hPtResBarrel_mu[NMU_C], TH1D *hPtResEndcap, TH1D *hPtResEndcap_mu[NMU_C]){
+    double pileupFactor = 1;
     // Pt Reso After cuts
     double ptResMu[NMU_C] = {0}, ptGEN[NMU_C] = {0}, etaGEN[NMU_C] = {0}, phiGEN[NMU_C] = {0}, ptSimGEN[NMU_C] = {0}, etaSimGEN[NMU_C] = {0}, phiSimGEN[NMU_C] = {0};
     Get_MuonVariablesGen(muGen, ptGEN, etaGEN, phiGEN);
@@ -338,6 +345,7 @@ void ntupleClass_Control::FillHistoResoPt_AC(Int_t muGen[NTOT], TH1D *hPtRes, TH
 }
 
 void ntupleClass_Control::FillHistoResoPt_BC(TH1D *hPtRes, TH1D *hPtRes_mu[NMU_C], TH1D *hPtResBarrel, TH1D *hPtResBarrel_mu[NMU_C], TH1D *hPtResEndcap, TH1D *hPtResEndcap_mu[NMU_C]){
+    double pileupFactor = 1;
     // Pt Reso Before cuts
     double ptResMu[NMU_C] = {0}, ptGEN[NMU_C] = {0}, etaGEN[NMU_C] = {0}, phiGEN[NMU_C] = {0}, ptSimGEN[NMU_C] = {0}, etaSimGEN[NMU_C] = {0}, phiSimGEN[NMU_C] = {0};
     int muGen[NMU_C] = {0};
@@ -364,6 +372,7 @@ void ntupleClass_Control::FillHistoResoPt_BC(TH1D *hPtRes, TH1D *hPtRes_mu[NMU_C
 }
 
 void ntupleClass_Control::FillHistoSingleMu(Int_t mu_Ind[NTOT], Int_t mu[NTOT], TH1D *hist_pt, TH1D *hist_pt_mu[NMU_C], TH1D *hist_eta, TH1D *hist_eta_mu[NMU_C], TH1D *hist_phi, TH1D *hVx, TH1D *hVy, TH1D *hVz, TH1D *hPt_Tr, TH1D *hEta_Tr){
+    double pileupFactor = 1;
     // Fills histograms w/ variables of single mu
     double pt[NTOT] = {0}, eta[NTOT] = {0}, phi[NTOT] = {0};
     Get_MuonAndTrackVariables(mu_Ind, pt, eta, phi);
@@ -394,6 +403,7 @@ void ntupleClass_Control::FillHistoStepByStep(bool isMC, Int_t ind, Int_t mu_Ind
 }
 
 void ntupleClass_Control::FillHistoTriplet(Int_t ind, TH1D *hist_pt, TH1D *hist_eta, TH1D *hist_phi, TH1D *hist_mass){
+    double pileupFactor = 1;
     // Fills histograms w/ variables of the triplet
     hist_pt->Fill(Triplet2_Pt->at(ind), pileupFactor);
     hist_eta->Fill(abs(Triplet2_Eta->at(ind)), pileupFactor);
@@ -1045,6 +1055,7 @@ Float_t ntupleClass_Control::QuadMuonMass(Float_t pt1, Float_t pt2, Float_t pt3,
 }
 
 void ntupleClass_Control::StudyOnTriplet(TString type, Int_t ind, Int_t mu[NTOT], TH1D *hDeltaX, TH1D *hDeltaY, TH1D *hDeltaZ, TH1D *hPt_tripl){
+    double pileupFactor = 1;
     // Deep study on triplets
     /*
      if(strcmp(type, "good") == 0)
@@ -1188,7 +1199,6 @@ void ntupleClass_Control::TreeFin_Fill(TTree *tree, Int_t ind, Int_t mu_Ind[NTOT
         if (Muon_segmentCompatibility->at(mu[k]) < segmComp) segmComp = Muon_segmentCompatibility->at(mu[k]);
         if (temp[k] < d0sig) d0sig = temp[k];
     }
-    puFactor = pileupFactor;
     tripletMass = Triplet2_Mass->at(ind);
     tripletMassReso = 999;
     //tripletMassReso = ResoTriplMass(mu_Ind, mu);
