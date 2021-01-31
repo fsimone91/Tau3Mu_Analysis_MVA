@@ -26,7 +26,7 @@
 // * cut[4] -> all triplets w/ at least 2 track associated with PV
 // * cut[5] -> Both mu have to be different from the track
 // * cut[6] -> 2 mu are global && ParticleFlow
-// * cut[7] -> Valid SV (chi2 > 0) 2 mu w/ opposite charge
+// * cut[7] -> 2 mu have pT >= 2 GeV
 // * cut[8] -> 2mu have opposite charge and invariant mass in (1-1.04) GeV
 // * cut[9] -> Longitudianl IP of the track w.r.t. the beam spot < 20 cm
 // *        -> Transverse IP of the track w.r.t. the beam spot < 0.3 cm
@@ -53,9 +53,14 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
     bool doPUrew = true;
     if(!isMC) doPUrew = false;
 
+    bool isUL = false;
+
+    std::vector<double> pileup_weight;
+    TString fPUweight;
     if( isMC && doPUrew ) {
         // Pile-up reweighting
-        TString fPUweight = "/lustrehome/fsimone/Analysis_2017_2018/Pile_up_reweighing_tools/PileUp_ReweightingStudy_"+datasetName+".root";
+        if(isUL) fPUweight = "/lustrehome/fsimone/Analysis_2017_2018/Pile_up_reweighing_tools/PileUp_ReweightingStudy_UL"+datasetName+".root";
+        else fPUweight = "/lustrehome/fsimone/Analysis_2017_2018/Pile_up_reweighing_tools/PileUp_ReweightingStudy_"+datasetName+".root";
         TFile *fPileUp = new TFile(fPUweight);
         TH1 *hPileUpRew = (TH1*)fPileUp->Get("PileUp_Reweighting");
         int Nbins = hPileUpRew->GetNbinsX();
@@ -75,6 +80,7 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
     if (fChain == 0) return;
     Long64_t nentries = fChain->GetEntries();
     // Variables definition
+    double pileupFactor = 0;
     int ntripl, trInd = 0, ind = 0, mu_Ind[NTOT] = {0}, mu[NTOT] = {0}, muGen[NTOT] = {0}, NgoodTripl = 0, NbadTripl = 0, cut[NCUTS] = {0}, cutevt[NCUTS] = {0}, Ncut = 0, IdsummaryDaughter[NCUTS][NPARTICLES] = {0}, IdsummaryMother[NCUTS][NPARTICLES] = {0}, IdsummaryDaughter_Gen[NPARTICLES] = {0}, IdsummaryMother_Gen[NPARTICLES] = {0};
     float ptminTrack = 0.5, DeltaRmax = 0.8, DeltaZmax = 0.5, DeltaZ1 = 0, DeltaZ2 = 0, DeltaZ3 = 0;
     double dimu[NTOT] = {0};
@@ -105,7 +111,7 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
     TH1D *hPileUp_BC, *hNPrVert_BC, *hMass_tripl_BC, *hChi2Vertex, *hMass_di_Zero_BC, *hMass_di_Zero2_BC, *hPtRes_BC, *hPtRes_BC_mu[NMU_C], *hPtResBarrel_BC, *hPtResBarrel_BC_mu[NMU_C], *hPtResEndcap_BC, *hPtResEndcap_BC_mu[NMU_C]; TH2D *hMassvsChi2;
     TH1F *hMass_quad_BC, *hMass_quad_Zero_BC;
     TH1I *hPdgId_Gen, *hMotherPdgId_Gen; TH2I *hPdgId2D_Gen;
-    hPileUp_BC = new TH1D("hNPileUp", "hNPileUp", 80, -0.5, 79.5);
+    hPileUp_BC = new TH1D("hNPileUp", "hNPileUp", 100, -0.5, 99.5);
     hPileUp_BC->Sumw2();
     hNPrVert_BC = new TH1D("hNPrimaryVertices", "hNPrimaryVertices", 100, -0.5, 99.5);
     hNPrVert_BC->Sumw2();
@@ -119,7 +125,7 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
     TH1D *hPileUp_AC, *hNPrVert_AC, *hTripTriggerMatched, *hMassTriRes, *hMassTriResBarrel, *hMassTriResEndcap, *hmassdi, *hPtRes_AC, *hPtRes_AC_mu[NMU_C], *hPtResBarrel_AC, *hPtResBarrel_AC_mu[NMU_C], *hPtResEndcap_AC, *hPtResEndcap_AC_mu[NMU_C], *hNMatchedStat, *hFlightDist, *hFlightDist_Signif, *hPtErrOverPt, *hPt_tripl_good, *hPt_tripl_fake, *hDeltaX, *hDeltaY, *hDeltaZ, *hDeltaX_fake, *hDeltaY_fake, *hDeltaZ_fake, *hChi2VertexNorm, *hSegmComp, *hDeltaR, *hTrIPSign;
     TH1F *hMinSegmComp;
     TH2D *hFlightDistvsP;
-    hPileUp_AC = new TH1D("hNPileUp", "hNPileUp", 80, -0.5, 79.5);
+    hPileUp_AC = new TH1D("hNPileUp", "hNPileUp", 100, -0.5, 99.5);
     hPileUp_AC->Sumw2();
     hNPrVert_AC = new TH1D("hNPrimaryVertices", "hNPrimaryVertices", 100, -0.5, 99.5);
     hNPrVert_AC->Sumw2();
@@ -177,6 +183,36 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
         if(NGoodTriplets->at(0) == 0) continue;
         if(isVerbose) cout<<"=================================\nevt "<<evt<<" run "<<run<<" lumi "<<lumi<<endl;
   
+        std::vector< std::array<double, 3> > Muon_HLT;
+        //for 2018: check size of MuonPt_HLT->size()
+        if( datasetName.Contains("2018") && (MuonPt_HLT->size()>0) ) {
+            //Define vector of arrays (Pt, Eta, Phi) for trigger objects in the event 
+            for(std::size_t k=0; k<MuonPt_HLT->size(); k++){
+                std::array<double, 3> temp;
+                temp[0] = MuonPt_HLT->at(k); temp[1] = MuonEta_HLT->at(k); temp[2] = MuonPhi_HLT->at(k);
+                Muon_HLT.push_back(temp);
+            }
+            if(isVerbose){
+                cout<<"\n"<<MuonPt_HLT->size()<<" 2018 TriggerObjects in the event:\n | Pt | Eta | Phi "<<endl;
+                for( auto const& mu: Muon_HLT ){
+                    for( auto const& var: mu ){
+                         cout<<" | "<<var;
+                    } cout<<"\n";
+                } cout<<"\n";
+            }
+            //Sort the vector and removes the duplicates
+            std::sort(Muon_HLT.begin(), Muon_HLT.end());
+            Muon_HLT.erase(std::unique(Muon_HLT.begin(), Muon_HLT.end()), Muon_HLT.end());
+            if(isVerbose){
+                cout<<"After sorting and removing duplicates "<<endl;
+                for( auto const& mu: Muon_HLT ){
+                    for( auto const& var: mu ){
+                         cout<<" | "<<var;
+                    } cout<<"\n";
+                } cout<<"\n";
+            }
+        }
+
         //Different branches for 2017 triggerObject
         std::vector< std::array<double, 3> > Muon_HLT2017;
         if( datasetName.Contains("2017") && (MuonPt_HLT2017->size()>0) ) {
@@ -314,9 +350,8 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
             if (isVerbose) cout<<j<<"       passed cut "<<Ncut<<endl;
             FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hPt_Tr, hEta_Tr, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            // CUT 7: valid SV chi2 (previously we asked for Chi2 < 15)
-            if( TripletVtx2_Chi2->at(j) < 0 ) continue;
-            //if( TripletVtx2_Chi2->at(j) >= 15 ) continue;
+            // CUT 7: mu1 and mu2 pT >= 2GeV
+            if( Mu01_Pt->at(mu_Ind[0]) < ptmin || Mu02_Pt->at(mu_Ind[1]) < ptmin ) continue;
             Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
             if (isVerbose) cout<<j<<"         passed cut "<<Ncut<<endl;
             FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hPt_Tr, hEta_Tr, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
@@ -335,7 +370,7 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
             FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hPt_Tr, hEta_Tr, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
             // CUT 10: Significance of BS-SV distance in the transverse plane > 2
-         //   if( FlightDistBS_SV_Significance->at(j) < 2 ) continue;
+            if( FlightDistBS_SV_Significance->at(j) < 2 ) continue;
             Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
             if (isVerbose) cout<<j<<"             passed cut "<<Ncut<<endl;
             FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hPt_Tr, hEta_Tr, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
@@ -343,6 +378,7 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
             //trigIndex contains the 3 indeces for the trigger objects with minimum deltaR
             std::vector< std::size_t > trigIndex_deltaR;
             if(datasetName.Contains("2017") && MuonPt_HLT2017->size()>0) trigIndex_deltaR = trigMatchDeltaR(j, Muon_HLT2017, isVerbose);
+            if(datasetName.Contains("2018") && MuonPt_HLT->size()>0)     trigIndex_deltaR = trigMatchDeltaR(j, Muon_HLT, false);
 
             Float_t dR1 = 999;
             Float_t dR2 = 999;
@@ -353,6 +389,11 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
                 dR2 = dR( Mu02_Eta->at(j), Muon_HLT2017[trigIndex_deltaR[1]][1], Mu02_Phi->at(j), Muon_HLT2017[trigIndex_deltaR[1]][2]);
                 dR3 = dR( Tr_Eta->at(j), Muon_HLT2017[trigIndex_deltaR[2]][1], Tr_Phi->at(j), Muon_HLT2017[trigIndex_deltaR[2]][2]);
             }
+            if(datasetName.Contains("2018") && MuonPt_HLT->size()>0) {
+                dR1 = dR( Mu01_Eta->at(j), Muon_HLT[trigIndex_deltaR[0]][1], Mu01_Phi->at(j), Muon_HLT[trigIndex_deltaR[0]][2]);
+                dR2 = dR( Mu02_Eta->at(j), Muon_HLT[trigIndex_deltaR[1]][1], Mu02_Phi->at(j), Muon_HLT[trigIndex_deltaR[1]][2]);
+                dR3 = dR( Tr_Eta->at(j), Muon_HLT[trigIndex_deltaR[2]][1], Tr_Phi->at(j), Muon_HLT[trigIndex_deltaR[2]][2]);
+            }
 
             Float_t dP1 = 999;
             Float_t dP2 = 999;
@@ -362,6 +403,11 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
                 dP1 = std::abs(Muon_HLT2017[trigIndex_deltaR[0]][0] - MuonPt->at(mu[0]))/MuonPt->at(mu[0]);
                 dP2 = std::abs(Muon_HLT2017[trigIndex_deltaR[1]][0] - MuonPt->at(mu[1]))/MuonPt->at(mu[1]);
                 dP3 = std::abs(Muon_HLT2017[trigIndex_deltaR[2]][0] - Track_pt->at(mu[2]))/Track_pt->at(mu[2]);
+            }
+            if(datasetName.Contains("2018") && MuonPt_HLT->size()>0) {
+                dP1 = std::abs(Muon_HLT[trigIndex_deltaR[0]][0] - MuonPt->at(mu[0]))/MuonPt->at(mu[0]);
+                dP2 = std::abs(Muon_HLT[trigIndex_deltaR[1]][0] - MuonPt->at(mu[1]))/MuonPt->at(mu[1]);
+                dP3 = std::abs(Muon_HLT[trigIndex_deltaR[2]][0] - Track_pt->at(mu[2]))/Track_pt->at(mu[2]);
             }
 
             if (isVerbose) {
