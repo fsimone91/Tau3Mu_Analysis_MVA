@@ -28,6 +28,8 @@ void PT_reweighting(TString categ){
     std::cout<<"Opened input file: "<<inputpath_MuonID_Ds<<std::endl;
     tsgn->Add(inputpath_MuonID_B0);
     std::cout<<"Opened input file: "<<inputpath_MuonID_B0<<std::endl;
+    tsgn->Add(inputpath_MuonID_Bp);
+    std::cout<<"Opened input file: "<<inputpath_MuonID_Bp<<std::endl;
 
     //Make sure TChain points to firts event
     tbkg->LoadTree(0);
