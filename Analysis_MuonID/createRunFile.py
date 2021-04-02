@@ -75,57 +75,78 @@ if args.anatype == 'muonid':
       #path = '/lustre/cms/store/user/rosma/DoubleMuonLowMass/SkimTau3Mu_DoubleMuonLowMass_Run2018D_AOD_v4/200217_112055'
 
 if args.dataset == 'MC' and args.MCprocess == '2018BdToKK':
-      path = '/lustre/cms/store/user/rosma/BdToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKK_SoftQCDnonD_2018_CMSSW_10_2_1_v2/200414_092653/'
+      path = '/lustre/cms/store/user/fsimone/BdToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKK_SoftQCDnonD_2018_v0/210212_180433/'
+      #path = '/lustre/cms/store/user/rosma/BdToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKK_SoftQCDnonD_2018_CMSSW_10_2_1_v2/200414_092653/'
 if args.dataset == 'MC' and args.MCprocess == '2018BdToPiPi':
-      path = '/lustre/cms/store/user/rosma/BdToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToPiPi_2018_CMSSW_10_2_1_v2/200414_092641/'
+      path = '/lustre/cms/store/user/fsimone/BdToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToPiPi_SoftQCDnonD_2018_v0/210212_180354/'
+      #path = '/lustre/cms/store/user/rosma/BdToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToPiPi_2018_CMSSW_10_2_1_v2/200414_092641/'
 if args.dataset == 'MC' and args.MCprocess == '2018BdToKPi':
-      path = '/lustre/cms/store/user/rosma/BdToKPi_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_SoftQCDnonD_2018_CMSSW_10_2_1_v2/200414_092615/'
+      path = '/lustre/cms/store/user/fsimone/BdToKPi_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_2_SoftQCDnonD_2018_v0/210212_180420/'
+      #path = '/lustre/cms/store/user/rosma/BdToKPi_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_SoftQCDnonD_2018_CMSSW_10_2_1_v2/200414_092615/'
 if args.dataset == 'MC' and args.MCprocess == '2018BdToKPi_2':
-      path = '/lustre/cms/store/user/rosma/BdToKPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_2018_CMSSW_10_2_1_v2/200414_092628/'
+      path = '/lustre/cms/store/user/fsimone/BdToKPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_SoftQCDnonD_2018_v0/210212_180407/'
+      #path = '/lustre/cms/store/user/rosma/BdToKPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_2018_CMSSW_10_2_1_v2/200414_092628/'
 if args.dataset == 'MC' and args.MCprocess == '2018BsToKK':
-      path = '/lustre/cms/store/user/rosma/BsToKK_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_2018_CMSSW_10_2_1_v2/200414_092715/'
+      path = '/lustre/cms/store/user/fsimone/BsToKK_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_2_SoftQCDnonD_2018_v0/210212_180342/'
+      #path = '/lustre/cms/store/user/rosma/BsToKK_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_2018_CMSSW_10_2_1_v2/200414_092715/'
 if args.dataset == 'MC' and args.MCprocess == '2018BsToKK_2':
-      path = '/lustre/cms/store/user/rosma/BsToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_2_2018_CMSSW_10_2_1_v2/200414_092725/'
+      path = '/lustre/cms/store/user/fsimone/BsToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_SoftQCDnonD_2018_v0/210212_180329/'
+      #path = '/lustre/cms/store/user/rosma/BsToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_2_2018_CMSSW_10_2_1_v2/200414_092725/'
 if args.dataset == 'MC' and args.MCprocess == '2018BsToPiPi':
-      path = '/lustre/cms/store/user/rosma/BsToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToPiPi_2018_CMSSW_10_2_1_v2/200414_092705/'
+      path = '/lustre/cms/store/user/fsimone/BsToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToPiPi_SoftQCDnonD_2018_v0/210212_180316/'
+      #path = '/lustre/cms/store/user/rosma/BsToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToPiPi_2018_CMSSW_10_2_1_v2/200414_092705/'
 if args.dataset == 'MC' and args.MCprocess == '2018BsToKPi':
       path = ''
 
+
 if args.dataset == 'MC' and args.MCprocess == '2017BdToKK':
-      path = '/lustre/cms/store/user/fsimone/BdToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKK_SoftQCDnonD_2017_CMSSW_10_2_18/200922_172051/'
+      path = '/lustre/cms/store/user/fsimone/BdToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKK_SoftQCDnonD_2017_v1/210213_080022'
+      #path = '/lustre/cms/store/user/fsimone/BdToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKK_SoftQCDnonD_2017_CMSSW_10_2_18/200922_172051/'
 if args.dataset == 'MC' and args.MCprocess == '2017BdToPiPi':
-      path = '/lustre/cms/store/user/fsimone/BdToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToPiPi_SoftQCDnonD_2017_CMSSW_10_2_18/200922_172021/'
+      path = '/lustre/cms/store/user/fsimone/BdToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToPiPi_SoftQCDnonD_2017_v1/210213_075942'
+      #path = '/lustre/cms/store/user/fsimone/BdToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToPiPi_SoftQCDnonD_2017_CMSSW_10_2_18/200922_172021/'
 if args.dataset == 'MC' and args.MCprocess == '2017BdToKPi':
+      #path = ''
       path = '/lustre/cms/store/user/fsimone/BdToKPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_SoftQCDnonD_2017_CMSSW_10_2_18/200922_172031/'
 if args.dataset == 'MC' and args.MCprocess == '2017BdToKPi_2':
-      path = '/lustre/cms/store/user/fsimone/BdToKPi_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_2_SoftQCDnonD_2017_CMSSW_10_2_18/200922_172040/'
+      path = '/lustre/cms/store/user/fsimone/BdToKPi_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_2_SoftQCDnonD_2017_v1/210213_080009'
+      #path = '/lustre/cms/store/user/fsimone/BdToKPi_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BdToKPi_2_SoftQCDnonD_2017_CMSSW_10_2_18/200922_172040/'
 if args.dataset == 'MC' and args.MCprocess == '2017BsToKK':
-      path = ''
+      path = '/lustre/cms/store/user/fsimone/BsToKK_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_SoftQCDnonD_2017_v1/210213_075917'
 if args.dataset == 'MC' and args.MCprocess == '2017BsToKK_2':
-      path = '/lustre/cms/store/user/fsimone/BsToKK_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_2_SoftQCDnonD_2017_CMSSW_10_2_18/200922_172012/'
+      path = '/lustre/cms/store/user/fsimone/BsToKK_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_2_SoftQCDnonD_2017_v1/210213_075929'
+      #path = '/lustre/cms/store/user/fsimone/BsToKK_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToKK_2_SoftQCDnonD_2017_CMSSW_10_2_18/200922_172012/'
 if args.dataset == 'MC' and args.MCprocess == '2017BsToPiPi':
-      path = '/lustre/cms/store/user/fsimone/BsToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToPiPi_SoftQCDnonD_2017_CMSSW_10_2_18/200922_171950/'
+      path = '/lustre/cms/store/user/fsimone/BsToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToPiPi_SoftQCDnonD_2017_v1/210213_075904'
+      #path = '/lustre/cms/store/user/fsimone/BsToPiPi_BMuonFilter_SoftQCDnonD_TuneCP5_13TeV-pythia8-evtgen/SkimMuID_BsToPiPi_SoftQCDnonD_2017_CMSSW_10_2_18/200922_171950/'
 if args.dataset == 'MC' and args.MCprocess == '2017BsToKPi':
       path = ''
 
+
 if args.dataset == 'MC' and args.MCprocess == '2018Ds':
-      path = '/lustre/cms/store/user/rosma/DsToTau_TauTo3Mu_March2020/SkimTau3Mu_DsToTauTo3Mu_2018_CMSSW_10_2_1_March2020_v9/'
+      path = '/lustre/cms/store/user/fsimone/DsToTau_To3Mu_MuFilter_TuneCP5_13TeV-pythia8-evtgen/SkimTau3Mu_Summer20UL18_DsTau3Mu_Mini_v2/210131_223011/' #lowered skim mu pT
+      #path = '/lustre/cms/store/user/rosma/DsToTau_TauTo3Mu_March2020/SkimTau3Mu_DsToTauTo3Mu_2018_CMSSW_10_2_1_March2020_v9/'
 
 if args.dataset == 'MC' and args.MCprocess == '2018B0':
-      path = '/lustre/cms/store/user/rosma/B0ToTau_TauTo3Mu/SkimTau3Mu_B0ToTauTo3Mu_2018_CMSSW_10_2_1_v9/'
+      path = '/lustre/cms/store/user/fsimone/BdToTau_To3Mu_MuFilter_TuneCP5_13TeV-pythia8-evtgen/SkimTau3Mu_Summer20UL18_BdTau3Mu_Mini_v2/210131_222948/' #lowered skim mu pT
+      #path = '/lustre/cms/store/user/rosma/B0ToTau_TauTo3Mu/SkimTau3Mu_B0ToTauTo3Mu_2018_CMSSW_10_2_1_v9/'
 
 if args.dataset == 'MC' and args.MCprocess == '2018Bp':
-      path = '/lustre/cms/store/user/rosma/BuTau3Mu/SkimTau3Mu_BuToTauTo3Mu_2018_CMSSW_10_2_1_v8/200217_122234'
+      path = '/lustre/cms/store/user/fsimone/BuToTau_To3Mu_MuFilter_TuneCP5_13TeV-pythia8-evtgen/SkimTau3Mu_Summer20UL18_BuTau3Mu_Mini_v3/210303_144003/' #genP_GrandMotherPdgId
+      #path = '/lustre/cms/store/user/rosma/BuTau3Mu/SkimTau3Mu_BuToTauTo3Mu_2018_CMSSW_10_2_1_v8/200217_122234'
 
 
 if args.dataset == 'MC' and args.MCprocess == '2017Ds':
-      path = '/lustre/cms/store/user/fsimone/DsToTau_To3Mu_MuFilter_TuneCUEP8M1_13TeV-pythia8/SkimTau3Mu_MC2017_DsTau3Mu_Mini_v3/200704_142853/' #PV fixed
+      path = '/lustre/cms/store/user/fsimone/DsToTau_To3Mu_MuFilter_TuneCP5_13TeV-pythia8-evtgen/SkimTau3Mu_Summer20UL17_DsTau3Mu_ModFilter_Mini_v0/210127_112243/'
+      #path = '/lustre/cms/store/user/fsimone/DsToTau_To3Mu_MuFilter_TuneCUEP8M1_13TeV-pythia8/SkimTau3Mu_MC2017_DsTau3Mu_Mini_v3/200704_142853/' #PV fixed
 
 if args.dataset == 'MC' and args.MCprocess == '2017B0':
-      path = '/lustre/cms/store/user/fsimone/BdToTau_To3Mu_MuFilter_TuneCUEP8M1_13TeV-pythia8/SkimTau3Mu_MC2017_BdTau3Mu_Mini_v3/200704_142949/' #PV fixed
+      path = '/lustre/cms/store/user/fsimone/BdToTau_To3Mu_MuFilter_TuneCP5_13TeV-pythia8-evtgen/SkimTau3Mu_Summer20UL17_BdTau3Mu_ModFilter_Mini_v0/210127_112223/'
+      #path = '/lustre/cms/store/user/fsimone/BdToTau_To3Mu_MuFilter_TuneCUEP8M1_13TeV-pythia8/SkimTau3Mu_MC2017_BdTau3Mu_Mini_v3/200704_142949/' #PV fixed
 
 if args.dataset == 'MC' and args.MCprocess == '2017Bp':
-      path = '/lustre/cms/store/user/fsimone/BuToTau_To3Mu_MuFilter_TuneCUEP8M1_13TeV-pythia8/SkimTau3Mu_MC2017_BuTau3Mu_Mini_v3/200704_142921/' #PV fixed
+      path = '/lustre/cms/store/user/fsimone/BuToTau_To3Mu_MuFilter_TuneCP5_13TeV-pythia8-evtgen/SkimTau3Mu_Summer20UL17_BuTau3Mu_ModFilter_Mini_v0/210127_112234/'
+      #path = '/lustre/cms/store/user/fsimone/BuToTau_To3Mu_MuFilter_TuneCUEP8M1_13TeV-pythia8/SkimTau3Mu_MC2017_BuTau3Mu_Mini_v3/200704_142921/' #PV fixed
 
 process_label = args.MCprocess
 if args.MCprocess == '2018BdToPiPi' or args.MCprocess == '2018BdToKK' or args.MCprocess == '2018BdToKPi' or args.MCprocess == '2018BdToKPi_2':

@@ -87,7 +87,7 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, TString category, Int_t isMC,
     TTreeReaderValue<double> reader_bs_sv_d2Dsig(treeReader, "bs_sv_d2Dsig");
 
     //Branches for output tree
-    int nvar = 22;
+    int nvar = 30;
     std::vector<TTreeReaderValue<double>> reader_out;
     for(auto v = 0; v<nvar-5; v++){
         reader_out.emplace_back(treeReader, outvar_name[v]);
@@ -335,6 +335,14 @@ void evaluate_fillbdt_v2()
                                 "Ptmu3",
                                 "Etamu3",
                                 "bs_sv_d2Dsig",
+                                "massKK_1",
+                                "massKK_2",
+                                "massKK_3",
+                                "dimu_OS1",
+                                "dimu_OS2",
+                                "MuonIDeval_Mu1.MuonID",
+                                "MuonIDeval_Mu2.MuonID",
+                                "MuonIDeval_Mu3.MuonID",
 
                                 "isMC",
                                 "isSB",
@@ -343,8 +351,8 @@ void evaluate_fillbdt_v2()
                                 "bdt"
                                 };
 
-    int nvar = 22;
-    Double_t outvar_value[22] = {0.};
+    int nvar = 30;
+    Double_t outvar_value[30] = {0.};
 
     //Set branches output tree
     for(auto v = 0; v<nvar; v++){
@@ -403,5 +411,7 @@ void evaluate_fillbdt_v2()
     fout_tree->Write();
     fout_tree->Close();
     cout<<"+++++++++++++++++++++++++++\nWritten output file: "<<fout_tree_path<<"\n\n"<<endl;
+    cout<<"Exiting ROOT"<<endl;
+    gApplication->Terminate();
     return 0;
 }

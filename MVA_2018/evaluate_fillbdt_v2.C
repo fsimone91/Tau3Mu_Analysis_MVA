@@ -76,6 +76,10 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, TString category, Int_t isMC,
     TTreeReaderValue<double> reader_triplMass(treeReader, "tripletMass");
 
     //Branches for preselections
+    TTreeReaderValue<bool> reader_doubleMu4(treeReader, "l1double_DoubleMu4_fired");
+    TTreeReaderValue<bool> reader_doubleMu0(treeReader, "l1double_DoubleMu0_fired");
+    TTreeReaderValue<bool> reader_tripleMu(treeReader, "l1triple_fired");
+
     TTreeReaderValue<double> reader_mu1_tLWM(treeReader, "TreeMu1.mu_trackerLayersWithMeasurement");
     TTreeReaderValue<double> reader_mu2_tLWM(treeReader, "TreeMu2.mu_trackerLayersWithMeasurement");
     TTreeReaderValue<double> reader_mu3_tLWM(treeReader, "TreeMu3.mu_trackerLayersWithMeasurement");
@@ -108,9 +112,10 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, TString category, Int_t isMC,
     TTreeReaderValue<double> reader_dimu13(treeReader, "dimu13");
     TTreeReaderValue<double> reader_dimu23(treeReader, "dimu23");
 
-    TTreeReaderValue<double> reader_bs_sv_d2Dsig(treeReader, "bs_sv_d2Dsig");
+    TTreeReaderValue<double> reader_fv_d3Dsig(treeReader, "fv_d3Dsig");
     //Branches for output tree
-    int nvar = 31;
+    int nvar = 35;
+    cout<<"Variables for output tree:"<<endl;
     std::vector<TTreeReaderValue<double>> reader_out;
     for(auto v = 0; v<nvar-5; v++){
         reader_out.emplace_back(treeReader, outvar_name[v]);
@@ -118,11 +123,13 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, TString category, Int_t isMC,
     }
 
     //Branches for MVA
+    cout<<"Variables for MVA = "<<n_spec<<" spectators:"<<endl;
     std::vector<TTreeReaderValue<double>> reader_spec;
     for(int k = 0; k<n_spec; k++){
         cout<<"   reading from TChain branch "<<var_spec_name.at(k)<<endl;
         reader_spec.emplace_back(treeReader, var_spec_name.at(k));
     }
+    cout<<"Variables for MVA = "<<n_train<<" training:"<<endl;
     std::vector<TTreeReaderValue<double>> reader_train;
     for(int k = 0; k<n_train; k++){
         if(var_train_name.at(k)=="abs(dxy1/dxyErr1)" || var_train_def.at(k)=="abs(dxy1/dxyErr1)") continue;
@@ -146,7 +153,7 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, TString category, Int_t isMC,
               (*reader_dimu23<phi_high && *reader_dimu23>phi_low) ) 
                                       ) continue;
 
-        if (*reader_bs_sv_d2Dsig < 2.0) continue;
+        if (TMath::IsNaN(*reader_fv_d3Dsig) ) continue;
         if (( *reader_fv_nC>0 && *reader_fv_nC<100) &&
             ( *reader_mu1_tLWM>8 ) &&
             ( *reader_mu2_tLWM>8 ) &&
@@ -188,8 +195,12 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, TString category, Int_t isMC,
         auto BDTscore = MVAreader->EvaluateMVA(method);
         auto reso = *reader_triplMassReso;
         auto mass = *reader_triplMass;
+        bool dM4_excl = !(*reader_tripleMu) && !(*reader_doubleMu0) && (*reader_doubleMu4);
         Int_t isSB = 0;
         if( ( mass >= 1.62 && mass <= 1.75 ) || ( mass >= 1.80 && mass <= 2.0 ) ) isSB = 1; 
+
+        Double_t Ds_SF = Ds_correction; //0.9 by default
+        if (dM4_excl) Ds_SF = Ds_correction_dM4; //0.7 for events excl. triggered by dM4
 
         if(((category == "A" && reso < 0.007 ) ||
             (category == "B" && reso>= 0.007 && reso <= 0.0105 ) ||
@@ -212,9 +223,9 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, TString category, Int_t isMC,
                 if(outvar_name[v] == "isMC") outvar_value[v] = isMC;
                 if(outvar_name[v] == "isSB") outvar_value[v] = isSB;
                 if(outvar_name[v] == "weight" && isMC == 0) outvar_value[v] = 1.; //data
-                if(outvar_name[v] == "weight" && isMC == 1) outvar_value[v] = wNormDs * Ds_correction * Dplus_correction; //Ds
-                if(outvar_name[v] == "weight" && isMC == 2) outvar_value[v] = wNormB0 * Ds_correction * Bs_correction * f_correction; //B0
-                if(outvar_name[v] == "weight" && isMC == 3) outvar_value[v] = wNormBp * Ds_correction * Bs_correction * f_correction; //Bp
+                if(outvar_name[v] == "weight" && isMC == 1) outvar_value[v] = wNormDs * Ds_SF * Dplus_correction; //Ds
+                if(outvar_name[v] == "weight" && isMC == 2) outvar_value[v] = wNormB0 * Ds_SF * Bs_correction * f_correction; //B0
+                if(outvar_name[v] == "weight" && isMC == 3) outvar_value[v] = wNormBp * Ds_SF * Bs_correction * f_correction; //Bp
                 if(outvar_name[v] == "category" && category == "A") outvar_value[v] = 0;
                 if(outvar_name[v] == "category" && category == "B") outvar_value[v] = 1;
                 if(outvar_name[v] == "category" && category == "C") outvar_value[v] = 2;
@@ -376,25 +387,29 @@ void evaluate_fillbdt_v2()
                                 "tripletMass",
                                 "tripletMassRef",
                                 "tripletMassReso",
-                                "dimu12",
-                                "dimu13",
-                                "dimu23",
-                                "divtx12_13",
-                                "divtx12_23",
-                                "divtx13_23",
-                                "divtxchi2_12",
-                                "divtxchi2_23",
-                                "divtxchi2_13",
-                                "dR_12",
-                                "dR_13",
-                                "dR_23",
+                                "cLP",
+                                "tKink",
+                                "segmComp",
+                                "fv_nC",
+                                "fv_dphi3D",
+                                "fv_d3Dsig",
+                                "mindca_iso",
+                                "trkRel",
+                                "Pt_tripl",
+                                "d0sig",
+                                "TreeMu3.mu_nTracks03",
                                 "Ptmu1",
                                 "Etamu1",
                                 "Ptmu2",
                                 "Etamu2",
                                 "Ptmu3",
                                 "Etamu3",
-                                "bs_sv_d2Dsig",
+                                "MuonIDeval_Mu1.MuonID",
+                                "MuonIDeval_Mu2.MuonID",
+                                "MuonIDeval_Mu3.MuonID",
+                                "dimu12",
+                                "dimu13",
+                                "dimu23",
 
                                 "isMC",
                                 "isSB",
@@ -403,8 +418,8 @@ void evaluate_fillbdt_v2()
                                 "bdt"
                                 };
 
-    int nvar = 31;
-    Double_t outvar_value[31] = {0.};
+    int nvar = 35;
+    Double_t outvar_value[35] = {0.};
 
     //Set branches output tree
     for(auto v = 0; v<nvar; v++){
