@@ -43,10 +43,10 @@ void filltree_MuonID(TTree *tin, TTree *tout, Double_t &value_MuonID){
     TString weight_path_barrel = "/lustrehome/fsimone/MuonID_study/MuonMVA_2017/"+TMVA_MuonID_inputpath+category+TMVA_MuonID_weightfilename;
     Bool_t weightfileExists = (gSystem->AccessPathName(weight_path_barrel) == kFALSE);
     if (weightfileExists) {
-       MVAreader_barrel->TMVA::Reader::BookMVA(method, weight_path_barrel);
+       MVAreader_barrel->TMVA::Reader::BookMVA(method_MuonID, weight_path_barrel);
        cout<<"Using weights in "<<weight_path_barrel<<endl;
     } else {
-       std::cout << "Weightfile " <<weight_path_barrel<<" for method " << method << " not found."
+       std::cout << "Weightfile " <<weight_path_barrel<<" for method " << method_MuonID << " not found."
                     " Did you run TMVACrossValidation with a specified splitExpr?" << std::endl;
        exit(0);
     }
@@ -55,10 +55,10 @@ void filltree_MuonID(TTree *tin, TTree *tout, Double_t &value_MuonID){
     TString weight_path_endcap = "/lustrehome/fsimone/MuonID_study/MuonMVA_2017/"+TMVA_MuonID_inputpath+category+TMVA_MuonID_weightfilename;
     weightfileExists = (gSystem->AccessPathName(weight_path_endcap) == kFALSE);
     if (weightfileExists) {
-       MVAreader_endcap->TMVA::Reader::BookMVA(method, weight_path_endcap);
+       MVAreader_endcap->TMVA::Reader::BookMVA(method_MuonID, weight_path_endcap);
        cout<<"Using weights in "<<weight_path_endcap<<endl;
     } else {
-       std::cout << "Weightfile " <<weight_path_endcap<<" for method " << method << " not found."
+       std::cout << "Weightfile " <<weight_path_endcap<<" for method " << method_MuonID << " not found."
                     " Did you run TMVACrossValidation with a specified splitExpr?" << std::endl;
        exit(0);
     }
@@ -86,8 +86,8 @@ void filltree_MuonID(TTree *tin, TTree *tout, Double_t &value_MuonID){
         }
         
         //Evaluate method(s) and fill histogram or MiniTree
-        if(abs(*reader_mueta) < 1.2) score = MVAreader_barrel->EvaluateMVA(method);
-        else score  = MVAreader_endcap->EvaluateMVA(method);
+        if(abs(*reader_mueta) < 1.2) score = MVAreader_barrel->EvaluateMVA(method_MuonID);
+        else score  = MVAreader_endcap->EvaluateMVA(method_MuonID);
         value_MuonID = score;
         tout->Fill();
     }
@@ -142,7 +142,7 @@ void run_fillMuonID_tree(){
     evaluate_fillMuonID_tree(inputpath_Ds);
     evaluate_fillMuonID_tree(inputpath_B0);
     evaluate_fillMuonID_tree(inputpath_Bp);
-
+    
     cout<<"Exiting ROOT"<<endl;
     gApplication->Terminate();
 }
