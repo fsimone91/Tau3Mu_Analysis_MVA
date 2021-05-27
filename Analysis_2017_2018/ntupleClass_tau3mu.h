@@ -54,6 +54,7 @@ public :
    vector<double>  *GenParticle_Eta;
    vector<double>  *GenParticle_Phi;
    vector<int>     *GenParticle_MotherPdgId;
+   vector<int>     *GenParticle_GrandMotherPdgId;
    Int_t           MuonCollectionSize;
    vector<float>   *MuonPt;
    vector<double>  *MuonEnergy;
@@ -261,16 +262,19 @@ public :
    vector<double>  *FlightDistBS_SV_Significance;
    vector<double>  *DistXY_significance_PVSV;
    vector<double>  *DistXY_PVSV;
+   vector<double>  *Vtx12_Mass;
    vector<double>  *Vtx12_Chi2;
    vector<double>  *Vtx12_nDOF;
    vector<double>  *Vtx12_x;
    vector<double>  *Vtx12_y;
    vector<double>  *Vtx12_z;
+   vector<double>  *Vtx23_Mass;
    vector<double>  *Vtx23_Chi2;
    vector<double>  *Vtx23_nDOF;
    vector<double>  *Vtx23_x;
    vector<double>  *Vtx23_y;
    vector<double>  *Vtx23_z;
+   vector<double>  *Vtx13_Mass;
    vector<double>  *Vtx13_Chi2;
    vector<double>  *Vtx13_nDOF;
    vector<double>  *Vtx13_x;
@@ -293,6 +297,7 @@ public :
    TBranch        *b_GenParticle_Eta;   //!
    TBranch        *b_GenParticle_Phi;   //!
    TBranch        *b_GenParticle_MotherPdgId;   //!
+   TBranch        *b_GenParticle_GrandMotherPdgId;   //!
    TBranch        *b_MuonCollectionSize;   //!
    TBranch        *b_MuonPt;   //!
    TBranch        *b_MuonEnergy;   //!
@@ -500,16 +505,19 @@ public :
    TBranch        *b_FlightDistBS_SV_Significance;   //!
    TBranch        *b_DistXY_significance_PVSV;   //!
    TBranch        *b_DistXY_PVSV;   //!
+   TBranch        *b_Vtx12_Mass;
    TBranch        *b_Vtx12_Chi2;
    TBranch        *b_Vtx12_nDOF;
    TBranch        *b_Vtx12_x;
    TBranch        *b_Vtx12_y;
    TBranch        *b_Vtx12_z;
+   TBranch        *b_Vtx23_Mass;
    TBranch        *b_Vtx23_Chi2;
    TBranch        *b_Vtx23_nDOF;
    TBranch        *b_Vtx23_x;
    TBranch        *b_Vtx23_y;
    TBranch        *b_Vtx23_z;
+   TBranch        *b_Vtx13_Mass;
    TBranch        *b_Vtx13_Chi2;
    TBranch        *b_Vtx13_nDOF;
    TBranch        *b_Vtx13_x;
@@ -549,6 +557,7 @@ public :
         // Functions for filling vectors & histograms
     virtual void     Fill_CutName(TString listCut[NCUTS]);
     virtual std::vector< Double_t > Compute_DimuonMass(Int_t mu_Ind[NMU], Int_t mu[NMU]);
+    virtual std::vector< Double_t > Compute_DimuonMass_Refitted(Int_t ind);
     virtual void     Get_MuonVariables(Int_t mu_Ind[NMU], Double_t pt[NMU], Double_t eta[NMU], Double_t phi[NMU]);
     virtual void     Get_MuonVariablesGen(Int_t muGen[NMU], Double_t ptGEN[NMU], Double_t etaGEN[NMU], Double_t phiGEN[NMU]);
     virtual void     Get_MuonVariablesGen_Sim(Int_t muGen[NMU], Double_t ptSimGEN[NMU], Double_t etaSimGEN[NMU], Double_t phiSimGEN[NMU]);
@@ -584,6 +593,7 @@ public :
     virtual std::vector< std::size_t > trigMatchDeltaP(Int_t tripIndex, std::vector< std::array<double, 3> > Muon_HLT, bool isVerbose);
     virtual Double_t MuonFinder(Double_t pt, Double_t eta, Double_t phi);
     virtual Double_t MuonFinderGen(Int_t muind, Double_t pt, Double_t eta, Double_t phi);
+    virtual Int_t    MCeventClassifier(Int_t mu_Ind[NMU], Int_t tripIndex);
     virtual Double_t MuonP(Double_t pt, Double_t eta, Double_t phi);
     virtual Float_t  QuadMuonMass(Float_t pt1, Float_t pt2, Float_t pt3, Float_t pt4, Float_t eta1, Float_t eta2, Float_t eta3, Float_t eta4, Float_t phi1, Float_t phi2, Float_t phi3, Float_t phi4);
     virtual Double_t ResoTriplMass(Int_t mu_Ind[NMU], Int_t mu[NMU]);
@@ -592,8 +602,8 @@ public :
 
         // Functions for the final tree
     virtual Double_t TreeFin_Angle(Int_t ind);
-    virtual void TreeFin_Init(TTree *&tree, Double_t &run, Double_t &lumi, Double_t &evt, Double_t &puFactor, Double_t &Mu1_IDSF, Double_t &Mu1_IDSF_err, Double_t &Mu3_IDSF, Double_t &Mu3_IDSF_err, bool &l1triple_fired, bool &l1double_fired, bool &l1double_DoubleMu0_fired, bool &l1double_DoubleMu4_fired, Double_t &Pmu3, Double_t &cLP, Double_t &tKink, Double_t &segmComp, Double_t &tripletMass, Double_t &tripletMass2, Double_t &tripletMassRef, Double_t &tripletMassReso, Double_t &fv_nC, Double_t &fv_dphi3D, Double_t &fv_d3D,  Double_t &fv_d3Dsig, Double_t &bs_sv_d2D, Double_t &bs_sv_d2Dsig, Double_t& pv_sv_dxy, Double_t& pv_sv_dxy_sig, Double_t& pv_sv_dxy_err, Double_t &d0, Double_t &d0sig, Double_t &mindca_iso, Double_t &trkRel, Double_t &Pmu1, Double_t &Ptmu1, Double_t &etamu1, Double_t &Pmu2, Double_t &Ptmu2, Double_t &etamu2, Double_t &Ptmu3, Double_t &etamu3, Double_t &dimu12, Double_t &dimu23, Double_t &dimu13, Double_t &divtx12_13, Double_t &divtx12_23, Double_t &divtx13_23, Double_t &divtxchi2_12, Double_t &divtxchi2_23, Double_t &divtxchi2_13, Double_t &dR_12, Double_t &dR_13, Double_t &dR_23, Double_t &dimu_OS1, Double_t &dimu_OS2, Double_t &P_trip, Double_t &Pt_trip, Double_t &eta_trip, Double_t &nStationsMu1, Double_t &nStationsMu2, Double_t &nStationsMu3, Double_t &Iso03Mu1, Double_t &Iso03Mu2, Double_t &Iso03Mu3, Double_t &Iso05Mu1, Double_t &Iso05Mu2, Double_t &Iso05Mu3, Double_t &nMatchesMu1, Double_t &nMatchesMu2, Double_t &nMatchesMu3, Double_t &timeAtIpInOutMu1, Double_t &timeAtIpInOutMu2, Double_t &timeAtIpInOutMu3, Double_t &cQ_uS, Double_t &cQ_tK, Double_t &cQ_gK, Double_t &cQ_tRChi2, Double_t &cQ_sRChi2, Double_t &cQ_Chi2LM, Double_t &cQ_Chi2lD, Double_t &cQ_gDEP, Double_t &cQ_tM, Double_t &cQ_gTP, Double_t &calEn_emMu1, Double_t &calEn_emMu2, Double_t &calEn_emMu3, Double_t &calEn_hadMu1, Double_t &calEn_hadMu2, Double_t &calEn_hadMu3, Double_t &caloComp, Double_t &isGlb1, Double_t &isTracker1, Double_t &isLoose1, Double_t &isSoft1, Double_t &isPF1, Double_t &isRPC1, Double_t &isSA1, Double_t &isCalo1, Double_t &isMedium1, Double_t &muID1, Double_t &isGlb2, Double_t &isTracker2, Double_t &isLoose2, Double_t &isSoft2, Double_t &isPF2, Double_t &isRPC2, Double_t &isSA2, Double_t &isCalo2, Double_t &isMedium2, Double_t &muID2, Double_t &isGlb3, Double_t &isTracker3, Double_t &isLoose3, Double_t &isSoft3, Double_t &isPF3, Double_t &isRPC3, Double_t &isSA3, Double_t &isCalo3, Double_t &isMedium3, Double_t &muID3, Double_t &Vx1, Double_t &Vx2, Double_t &Vx3, Double_t &Vy1, Double_t &Vy2, Double_t &Vy3, Double_t &Vz1, Double_t &Vz2, Double_t &Vz3, Double_t &dxy1, Double_t &dxy2, Double_t &dxy3, Double_t &dxyErr1, Double_t &dxyErr2, Double_t &dxyErr3, Double_t &RefVx1, Double_t &RefVy1, Double_t &RefVz1, Double_t &SVx, Double_t &SVy, Double_t &SVz, Double_t &massKK_1, Double_t &massKpi_1, Double_t &massKK_2, Double_t &massKpi_2, Double_t &massKK_3, Double_t &massKpi_3);
-    virtual void TreeFin_Fill(TTree *tree, Int_t ind, Int_t mu_Ind[NMU], Int_t mu[NMU], Double_t &run, Double_t &lumi, Double_t &evt, Double_t &puFactor, Double_t &Mu1_IDSF, Double_t &Mu1_IDSF_err, Double_t &Mu3_IDSF, Double_t &Mu3_IDSF_err, bool &l1triple_fired, bool &l1double_fired, bool &l1double_DoubleMu0_fired, bool &l1double_DoubleMu4_fired, Double_t &Pmu3, Double_t &cLP, Double_t &tKink, Double_t &segmComp, Double_t &tripletMass, Double_t &tripletMass2, Double_t &tripletMassRef, Double_t &tripletMassReso, Double_t &fv_nC, Double_t &fv_dphi3D, Double_t &fv_d3D, Double_t &fv_d3Dsig, Double_t &bs_sv_d2D, Double_t &bs_sv_d2Dsig, Double_t& pv_sv_dxy, Double_t& pv_sv_dxy_sig, Double_t& pv_sv_dxy_err, Double_t &d0, Double_t &d0sig, Double_t &mindca_iso, Double_t &trkRel, Double_t &Pmu1, Double_t &Ptmu1, Double_t &etamu1, Double_t &Pmu2, Double_t &Ptmu2, Double_t &etamu2, Double_t &Ptmu3, Double_t &etamu3, Double_t &dimu12, Double_t &dimu23, Double_t &dimu13, Double_t &divtx12_13, Double_t &divtx12_23, Double_t &divtx13_23, Double_t &divtxchi2_12, Double_t &divtxchi2_23, Double_t &divtxchi2_13, Double_t &dR_12, Double_t &dR_13, Double_t &dR_23, Double_t &dimu_OS1, Double_t &dimu_OS2, Double_t &P_trip, Double_t &Pt_trip, Double_t &eta_trip, Double_t &nStationsMu1, Double_t &nStationsMu2, Double_t &nStationsMu3, Double_t &Iso03Mu1, Double_t &Iso03Mu2, Double_t &Iso03Mu3, Double_t &Iso05Mu1, Double_t &Iso05Mu2, Double_t &Iso05Mu3, Double_t &nMatchesMu1, Double_t &nMatchesMu2, Double_t &nMatchesMu3, Double_t &timeAtIpInOutMu1, Double_t &timeAtIpInOutMu2, Double_t &timeAtIpInOutMu3, Double_t &cQ_uS, Double_t &cQ_tK, Double_t &cQ_gK, Double_t &cQ_tRChi2, Double_t &cQ_sRChi2, Double_t &cQ_Chi2LM, Double_t &cQ_Chi2lD, Double_t &cQ_gDEP, Double_t &cQ_tM, Double_t &cQ_gTP, Double_t &calEn_emMu1, Double_t &calEn_emMu2, Double_t &calEn_emMu3, Double_t &calEn_hadMu1, Double_t &calEn_hadMu2, Double_t &calEn_hadMu3, Double_t &caloComp, Double_t &isGlb1, Double_t &isTracker1, Double_t &isLoose1, Double_t &isSoft1, Double_t &isPF1, Double_t &isRPC1, Double_t &isSA1, Double_t &isCalo1, Double_t &isMedium1, Double_t &muID1, Double_t &isGlb2, Double_t &isTracker2, Double_t &isLoose2, Double_t &isSoft2, Double_t &isPF2, Double_t &isRPC2, Double_t &isSA2, Double_t &isCalo2, Double_t &isMedium2, Double_t &muID2, Double_t &isGlb3, Double_t &isTracker3, Double_t &isLoose3, Double_t &isSoft3, Double_t &isPF3, Double_t &isRPC3, Double_t &isSA3, Double_t &isCalo3, Double_t &isMedium3, Double_t &muID3, Double_t &Vx1, Double_t &Vx2, Double_t &Vx3, Double_t &Vy1, Double_t &Vy2, Double_t &Vy3, Double_t &Vz1, Double_t &Vz2, Double_t &Vz3, Double_t &dxy1, Double_t &dxy2, Double_t &dxy3, Double_t &dxyErr1, Double_t &dxyErr2, Double_t &dxyErr3, Double_t &RefVx1, Double_t &RefVy1, Double_t &RefVz1, Double_t &SVx, Double_t &SVy, Double_t &SVz, Double_t &massKK_1, Double_t &massKpi_1, Double_t &massKK_2, Double_t &massKpi_2, Double_t &massKK_3, Double_t &massKpi_3);
+    virtual void TreeFin_Init(TTree *&tree, Double_t &run, Double_t &lumi, Double_t &evt, Double_t &puFactor, Double_t &Mu1_IDSF, Double_t &Mu1_IDSF_err, Double_t &Mu3_IDSF, Double_t &Mu3_IDSF_err, bool &l1triple_fired, bool &l1double_fired, bool &l1double_DoubleMu0_fired, bool &l1double_DoubleMu4_fired, Double_t &Pmu3, Double_t &cLP, Double_t &tKink, Double_t &segmComp, Double_t &tripletMass, Double_t &tripletMass2, Double_t &tripletMassRef, Double_t &tripletMassReso, Double_t &fv_nC, Double_t &fv_dphi3D, Double_t &fv_d3D,  Double_t &fv_d3Dsig, Double_t &bs_sv_d2D, Double_t &bs_sv_d2Dsig, Double_t& pv_sv_dxy, Double_t& pv_sv_dxy_sig, Double_t& pv_sv_dxy_err, Double_t &d0, Double_t &d0sig, Double_t &mindca_iso, Double_t &trkRel, Double_t &Pmu1, Double_t &Ptmu1, Double_t &etamu1, Double_t &Pmu2, Double_t &Ptmu2, Double_t &etamu2, Double_t &Ptmu3, Double_t &etamu3, Double_t &dimu12, Double_t &dimu23, Double_t &dimu13, Double_t &dimu12_ref, Double_t &dimu23_ref, Double_t &dimu13_ref, Double_t &dimu12_ref2, Double_t &dimu23_ref2, Double_t &dimu13_ref2, Double_t &divtx12_13, Double_t &divtx12_23, Double_t &divtx13_23, Double_t &divtxchi2_12, Double_t &divtxchi2_23, Double_t &divtxchi2_13, Double_t &dR_12, Double_t &dR_13, Double_t &dR_23, Double_t &dimu_OS1, Double_t &dimu_OS2, Double_t &P_trip, Double_t &Pt_trip, Double_t &eta_trip, Double_t &nStationsMu1, Double_t &nStationsMu2, Double_t &nStationsMu3, Double_t &Iso03Mu1, Double_t &Iso03Mu2, Double_t &Iso03Mu3, Double_t &Iso05Mu1, Double_t &Iso05Mu2, Double_t &Iso05Mu3, Double_t &nMatchesMu1, Double_t &nMatchesMu2, Double_t &nMatchesMu3, Double_t &timeAtIpInOutMu1, Double_t &timeAtIpInOutMu2, Double_t &timeAtIpInOutMu3, Double_t &cQ_uS, Double_t &cQ_tK, Double_t &cQ_gK, Double_t &cQ_tRChi2, Double_t &cQ_sRChi2, Double_t &cQ_Chi2LM, Double_t &cQ_Chi2lD, Double_t &cQ_gDEP, Double_t &cQ_tM, Double_t &cQ_gTP, Double_t &calEn_emMu1, Double_t &calEn_emMu2, Double_t &calEn_emMu3, Double_t &calEn_hadMu1, Double_t &calEn_hadMu2, Double_t &calEn_hadMu3, Double_t &caloComp, Double_t &isGlb1, Double_t &isTracker1, Double_t &isLoose1, Double_t &isSoft1, Double_t &isPF1, Double_t &isRPC1, Double_t &isSA1, Double_t &isCalo1, Double_t &isMedium1, Double_t &muID1, Double_t &isGlb2, Double_t &isTracker2, Double_t &isLoose2, Double_t &isSoft2, Double_t &isPF2, Double_t &isRPC2, Double_t &isSA2, Double_t &isCalo2, Double_t &isMedium2, Double_t &muID2, Double_t &isGlb3, Double_t &isTracker3, Double_t &isLoose3, Double_t &isSoft3, Double_t &isPF3, Double_t &isRPC3, Double_t &isSA3, Double_t &isCalo3, Double_t &isMedium3, Double_t &muID3, Double_t &Vx1, Double_t &Vx2, Double_t &Vx3, Double_t &Vy1, Double_t &Vy2, Double_t &Vy3, Double_t &Vz1, Double_t &Vz2, Double_t &Vz3, Double_t &dxy1, Double_t &dxy2, Double_t &dxy3, Double_t &dxyErr1, Double_t &dxyErr2, Double_t &dxyErr3, Double_t &RefVx1, Double_t &RefVy1, Double_t &RefVz1, Double_t &SVx, Double_t &SVy, Double_t &SVz, Double_t &massKK_1, Double_t &massKpi_1, Double_t &massKK_2, Double_t &massKpi_2, Double_t &massKK_3, Double_t &massKpi_3);
+    virtual void TreeFin_Fill(TTree *tree, Int_t ind, Int_t mu_Ind[NMU], Int_t mu[NMU], Double_t &run, Double_t &lumi, Double_t &evt, Double_t &puFactor, Double_t &Mu1_IDSF, Double_t &Mu1_IDSF_err, Double_t &Mu3_IDSF, Double_t &Mu3_IDSF_err, bool &l1triple_fired, bool &l1double_fired, bool &l1double_DoubleMu0_fired, bool &l1double_DoubleMu4_fired, Double_t &Pmu3, Double_t &cLP, Double_t &tKink, Double_t &segmComp, Double_t &tripletMass, Double_t &tripletMass2, Double_t &tripletMassRef, Double_t &tripletMassReso, Double_t &fv_nC, Double_t &fv_dphi3D, Double_t &fv_d3D, Double_t &fv_d3Dsig, Double_t &bs_sv_d2D, Double_t &bs_sv_d2Dsig, Double_t& pv_sv_dxy, Double_t& pv_sv_dxy_sig, Double_t& pv_sv_dxy_err, Double_t &d0, Double_t &d0sig, Double_t &mindca_iso, Double_t &trkRel, Double_t &Pmu1, Double_t &Ptmu1, Double_t &etamu1, Double_t &Pmu2, Double_t &Ptmu2, Double_t &etamu2, Double_t &Ptmu3, Double_t &etamu3, Double_t &dimu12, Double_t &dimu23, Double_t &dimu13, Double_t &dimu12_ref, Double_t &dimu23_ref, Double_t &dimu13_ref, Double_t &dimu12_ref2, Double_t &dimu23_ref2, Double_t &dimu13_ref2, Double_t &divtx12_13, Double_t &divtx12_23, Double_t &divtx13_23, Double_t &divtxchi2_12, Double_t &divtxchi2_23, Double_t &divtxchi2_13, Double_t &dR_12, Double_t &dR_13, Double_t &dR_23, Double_t &dimu_OS1, Double_t &dimu_OS2, Double_t &P_trip, Double_t &Pt_trip, Double_t &eta_trip, Double_t &nStationsMu1, Double_t &nStationsMu2, Double_t &nStationsMu3, Double_t &Iso03Mu1, Double_t &Iso03Mu2, Double_t &Iso03Mu3, Double_t &Iso05Mu1, Double_t &Iso05Mu2, Double_t &Iso05Mu3, Double_t &nMatchesMu1, Double_t &nMatchesMu2, Double_t &nMatchesMu3, Double_t &timeAtIpInOutMu1, Double_t &timeAtIpInOutMu2, Double_t &timeAtIpInOutMu3, Double_t &cQ_uS, Double_t &cQ_tK, Double_t &cQ_gK, Double_t &cQ_tRChi2, Double_t &cQ_sRChi2, Double_t &cQ_Chi2LM, Double_t &cQ_Chi2lD, Double_t &cQ_gDEP, Double_t &cQ_tM, Double_t &cQ_gTP, Double_t &calEn_emMu1, Double_t &calEn_emMu2, Double_t &calEn_emMu3, Double_t &calEn_hadMu1, Double_t &calEn_hadMu2, Double_t &calEn_hadMu3, Double_t &caloComp, Double_t &isGlb1, Double_t &isTracker1, Double_t &isLoose1, Double_t &isSoft1, Double_t &isPF1, Double_t &isRPC1, Double_t &isSA1, Double_t &isCalo1, Double_t &isMedium1, Double_t &muID1, Double_t &isGlb2, Double_t &isTracker2, Double_t &isLoose2, Double_t &isSoft2, Double_t &isPF2, Double_t &isRPC2, Double_t &isSA2, Double_t &isCalo2, Double_t &isMedium2, Double_t &muID2, Double_t &isGlb3, Double_t &isTracker3, Double_t &isLoose3, Double_t &isSoft3, Double_t &isPF3, Double_t &isRPC3, Double_t &isSA3, Double_t &isCalo3, Double_t &isMedium3, Double_t &muID3, Double_t &Vx1, Double_t &Vx2, Double_t &Vx3, Double_t &Vy1, Double_t &Vy2, Double_t &Vy3, Double_t &Vz1, Double_t &Vz2, Double_t &Vz3, Double_t &dxy1, Double_t &dxy2, Double_t &dxy3, Double_t &dxyErr1, Double_t &dxyErr2, Double_t &dxyErr3, Double_t &RefVx1, Double_t &RefVy1, Double_t &RefVz1, Double_t &SVx, Double_t &SVy, Double_t &SVz, Double_t &massKK_1, Double_t &massKpi_1, Double_t &massKK_2, Double_t &massKpi_2, Double_t &massKK_3, Double_t &massKpi_3);
 
 //MiniTree for muonID evaluation
     virtual void TreeMuon_Init(TTree *&tree_, Double_t &run, Double_t &lumi, Double_t &evt, Double_t &mu_pt, Double_t &mu_eta, Double_t &mu_phi, Double_t &mu_energy, Double_t &mu_charge, Double_t &mu_isGlobal, Double_t &mu_isSoft, Double_t &mu_isLoose, Double_t &mu_isTight, Double_t &mu_isPF, Double_t &mu_isRPC, Double_t &mu_isStandAlone, Double_t &mu_isTracker, Double_t &mu_isCalo, Double_t &mu_isQualityValid, Double_t &mu_SoftMVA, Double_t &mu_isTimeValid, Double_t &mu_isIsolationValid, Double_t &mu_numberOfMatchedStations, Double_t &mu_numberOfMatches, Double_t &mu_timeAtIpInOut, Double_t &mu_timeAtIpInOutErr, Double_t &mu_GLnormChi2, Double_t &mu_GLhitPattern_numberOfValidMuonHits, Double_t &mu_trackerLayersWithMeasurement, Double_t &mu_Numberofvalidpixelhits, Double_t &mu_Numberofvalidtrackerhits, Double_t &mu_outerTrack_p, Double_t &mu_outerTrack_eta, Double_t &mu_outerTrack_phi, Double_t &mu_outerTrack_normalizedChi2, Double_t &mu_outerTrack_muonStationsWithValidHits, Double_t &mu_innerTrack_p, Double_t &mu_innerTrack_eta, Double_t &mu_innerTrack_phi, Double_t &mu_innerTrack_validFraction, Double_t &mu_innerTrack_highPurity, Double_t &mu_innerTrack_normalizedChi2, Double_t &mu_QInnerOuter, Double_t &mu_combinedQuality_updatedSta, Double_t &mu_combinedQuality_trkKink, Double_t &mu_combinedQuality_glbKink, Double_t &mu_combinedQuality_trkRelChi2, Double_t &mu_combinedQuality_staRelChi2, Double_t &mu_combinedQuality_chi2LocalPosition, Double_t &mu_combinedQuality_chi2LocalMomentum, Double_t &mu_combinedQuality_localDistance, Double_t &mu_combinedQuality_globalDeltaEtaPhi, Double_t &mu_combinedQuality_tightMatch, Double_t &mu_combinedQuality_glbTrackProbability, Double_t &mu_IP3D_BS, Double_t &mu_IP2D_BS, Double_t &mu_IP3D_PV, Double_t &mu_IP2D_PV, Double_t &mu_validMuonHitComb,  Double_t &mu_calEnergy_em, Double_t &mu_calEnergy_emS9, Double_t &mu_calEnergy_emS25, Double_t &mu_calEnergy_had, Double_t &mu_calEnergy_hadS9, Double_t &mu_segmentCompatibility, Double_t &mu_caloCompatibility, Double_t &mu_ptErrOverPt, Double_t &mu_BestTrackPt, Double_t &mu_BestTrackPtErr, Double_t &mu_BestTrackEta, Double_t &mu_BestTrackEtaErr, Double_t &mu_BestTrackPhi, Double_t &mu_BestTrackPhiErr, Double_t &mu_emEt03, Double_t &mu_hadEt03, Double_t &mu_nJets03, Double_t &mu_nTracks03, Double_t &mu_sumPt03, Double_t &mu_hadVetoEt03, Double_t &mu_emVetoEt03, Double_t &mu_trackerVetoPt03, Double_t &mu_emEt05, Double_t &mu_hadEt05, Double_t &mu_nJets05, Double_t &mu_nTracks05, Double_t &mu_sumPt05, Double_t &mu_hadVetoEt05, Double_t &mu_emVetoEt05, Double_t &mu_trackerVetoPt05);
@@ -670,6 +680,7 @@ void ntupleClass_tau3mu::Init(TTree *tree)
    GenParticle_Eta = 0;
    GenParticle_Phi = 0;
    GenParticle_MotherPdgId = 0;
+   GenParticle_GrandMotherPdgId = 0;
    MuonPt = 0;
    MuonEnergy = 0;
    MuonCharge = 0;
@@ -870,16 +881,19 @@ void ntupleClass_tau3mu::Init(TTree *tree)
    FlightDistBS_SV_Significance = 0;
    DistXY_significance_PVSV = 0;
    DistXY_PVSV = 0;
+   Vtx12_Mass = 0;
    Vtx12_Chi2 = 0;
    Vtx12_nDOF = 0;
    Vtx12_x = 0;
    Vtx12_y = 0;
    Vtx12_z = 0;
+   Vtx23_Mass = 0;
    Vtx23_Chi2 = 0;
    Vtx23_nDOF = 0;
    Vtx23_x = 0;
    Vtx23_y = 0;
    Vtx23_z = 0;
+   Vtx13_Mass = 0;
    Vtx13_Chi2 = 0;
    Vtx13_nDOF = 0;
    Vtx13_x = 0;
@@ -907,6 +921,7 @@ void ntupleClass_tau3mu::Init(TTree *tree)
    fChain->SetBranchAddress("GenParticle_Eta", &GenParticle_Eta, &b_GenParticle_Eta);
    fChain->SetBranchAddress("GenParticle_Phi", &GenParticle_Phi, &b_GenParticle_Phi);
    fChain->SetBranchAddress("GenParticle_MotherPdgId", &GenParticle_MotherPdgId, &b_GenParticle_MotherPdgId);
+   //fChain->SetBranchAddress("GenParticle_GrandMotherPdgId", &GenParticle_GrandMotherPdgId, &b_GenParticle_GrandMotherPdgId);
    fChain->SetBranchAddress("MuonCollectionSize", &MuonCollectionSize, &b_MuonCollectionSize);
    fChain->SetBranchAddress("MuonPt", &MuonPt, &b_MuonPt);
    fChain->SetBranchAddress("MuonEnergy", &MuonEnergy, &b_MuonEnergy);
@@ -1114,16 +1129,19 @@ void ntupleClass_tau3mu::Init(TTree *tree)
    fChain->SetBranchAddress("FlightDistBS_SV_Significance", &FlightDistBS_SV_Significance, &b_FlightDistBS_SV_Significance);
    fChain->SetBranchAddress("DistXY_significance_PVSV", &DistXY_significance_PVSV, &b_DistXY_significance_PVSV);
    fChain->SetBranchAddress("DistXY_PVSV", &DistXY_PVSV, &b_DistXY_PVSV);
+   fChain->SetBranchAddress("Vtx12_Mass", &Vtx12_Mass, &b_Vtx12_Mass); 
    fChain->SetBranchAddress("Vtx12_Chi2", &Vtx12_Chi2, &b_Vtx12_Chi2); 
    fChain->SetBranchAddress("Vtx12_nDOF", &Vtx12_nDOF, &b_Vtx12_nDOF); 
    fChain->SetBranchAddress("Vtx12_x",    &Vtx12_x,    &b_Vtx12_x); 
    fChain->SetBranchAddress("Vtx12_y",    &Vtx12_y,    &b_Vtx12_y);
    fChain->SetBranchAddress("Vtx12_z",    &Vtx12_z,    &b_Vtx12_z);
+   fChain->SetBranchAddress("Vtx23_Mass", &Vtx23_Mass, &b_Vtx23_Mass);
    fChain->SetBranchAddress("Vtx23_Chi2", &Vtx23_Chi2, &b_Vtx23_Chi2);
    fChain->SetBranchAddress("Vtx23_nDOF", &Vtx23_nDOF, &b_Vtx23_nDOF);
    fChain->SetBranchAddress("Vtx23_x",    &Vtx23_x,    &b_Vtx23_x);
    fChain->SetBranchAddress("Vtx23_y",    &Vtx23_y,    &b_Vtx23_y);
    fChain->SetBranchAddress("Vtx23_z",    &Vtx23_z,    &b_Vtx23_z);
+   fChain->SetBranchAddress("Vtx13_Mass", &Vtx13_Mass, &b_Vtx13_Mass);
    fChain->SetBranchAddress("Vtx13_Chi2", &Vtx13_Chi2, &b_Vtx13_Chi2);
    fChain->SetBranchAddress("Vtx13_nDOF", &Vtx13_nDOF, &b_Vtx13_nDOF);
    fChain->SetBranchAddress("Vtx13_x",    &Vtx13_x,    &b_Vtx13_x); 

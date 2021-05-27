@@ -1,5 +1,5 @@
 #define ntupleClass_tau3mu_cxx
-#define NCUTS 19
+#define NCUTS 24
 #define NPARTICLES 560
 #define NMU 3
 #define mumass 0.1056583715
@@ -30,20 +30,25 @@ int Idsummary2D_Gen[NPARTICLES][NPARTICLES] = {0};
 // * cut[3] -> not negative Chi2
 // * cut[4] -> SV-BS displacement >= 2*std dev
 // * cut[5] -> All mu are PF
-// * cut[6] -> There are 3 mu glb w/ pt>ptmin (=2) & |eta|<2.4
-// * cut[7] -> Triplet mass (in 1.62 - 2 GeV)
-// * cut[8] -> The 3 possible pairs of mu of the triplet have proper DeltaR (<0.8)
-// * cut[9] -> The 3 possible pairs of mu of the triplet have proper |DeltaZ| (<0.5)
-// * cut[10] -> Phi(1020) veto on os 2mu mass 
-// * cut[11] -> Omega(782) veto on os 2mu mass 
-// * cut[12] -> Mu1 Trigger Matching dR<0.03, abs(dpt)/pt<0.1
-// * cut[13] -> Mu2 Trigger Matching dR<0.03, abs(dpt)/pt<0.1
-// * cut[14] -> Mu3 Trigger Matching dR<0.03, abs(dpt)/pt<0.1
-// * cut[15] -> Muon_trackerLayersWithMeasurement >= 7
+// * cut[6] -> mu1 glb 
+// * cut[7] -> mu2 glb 
+// * cut[8] -> mu3 glb 
+// * cut[9] -> mu1 pt>ptmin (=2) & |eta|<2.4
+// * cut[10] -> mu2 pt>ptmin (=2) & |eta|<2.4
+// * cut[11] -> mu3 pt>ptmin (=2) & |eta|<2.4
+// * cut[12] -> Triplet mass (in 1.62 - 2 GeV)
+// * cut[13] -> The 3 possible pairs of mu of the triplet have proper DeltaR (<0.8)
+// * cut[14] -> The 3 possible pairs of mu of the triplet have proper |DeltaZ| (<0.5)
+// * cut[15] -> Phi(1020) veto on os 2mu mass 
+// * cut[16] -> Omega(782) veto on os 2mu mass 
+// * cut[17] -> Mu1 Trigger Matching dR<0.03, abs(dpt)/pt<0.1
+// * cut[18] -> Mu2 Trigger Matching dR<0.03, abs(dpt)/pt<0.1
+// * cut[19] -> Mu3 Trigger Matching dR<0.03, abs(dpt)/pt<0.1
+// * cut[20] -> Muon_trackerLayersWithMeasurement >= 7
 // Cuts: (over events containing at least 1 triplet)
-// * cut[16] -> Final plots sideband
-// * cut[17] -> Final plots tau region
-// * cut[18] -> Final plots full mass range
+// * cut[21] -> Final plots sideband
+// * cut[22] -> Final plots tau region
+// * cut[23] -> Final plots full mass range
 //
 // N.B.: cut[NCUTS] total number of triplets passing each selection
 //       cutevt[NCUTS] total number of events passing each selection
@@ -65,8 +70,15 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
     bool doLog = false;
     bool enable_doLog_maxcut = false;
     bool doLog_maxcut = false;
+    bool doHLTlog = false;
 
     bool isUL = true;
+
+    //uncomment the following line to analyse 2017 F using 2018 HLT and trigger matching
+    //if(datasetName.Contains("2017F")) datasetName = "2018F";
+
+    //for 2017F analysis, run range must be limited to 305044 .. 306029 (excluded), to avoid double counting
+    int maxrun_2017F = 306029;
 
     // Pile-up reweighting
     std::vector<double> pileup_weight;
@@ -87,8 +99,8 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
     
     // opening file containing ScaleFactors
     TString SF_filename = "";
-    if (datasetName.Contains("2017")) SF_filename = "/lustrehome/fsimone/Analysis_2017_2018/SF/EfficienciesAndSF_MTau3MuCutid_NUM_MTau3MuID_DEN_genTracks_PAR_pt_eta_2017.root";
-    if (datasetName.Contains("2018")) SF_filename = "/lustrehome/fsimone/Analysis_2017_2018/SF/EfficienciesAndSF_MTau3MuCutid_NUM_MTau3MuID_DEN_genTracks_PAR_pt_eta_2018.root";
+    if (datasetName.Contains("2017")) SF_filename = "/lustrehome/fsimone/Analysis_2017_2018/SF/EfficienciesAndSF2017_MTau3MuCutid_NUM_MTau3MuID_DEN_genTracks_PAR_pt_eta.root";
+    if (datasetName.Contains("2018")) SF_filename = "/lustrehome/fsimone/Analysis_2017_2018/SF/EfficienciesAndSF2018_MTau3MuCutid_NUM_MTau3MuID_DEN_genTracks_PAR_pt_eta.root";
     TFile *_f = new TFile(SF_filename);
     TH2F* SF_h = dynamic_cast<TH2F*> (_f->Get("MTau3MuID/pt_abseta_ratio"));
 
@@ -108,6 +120,8 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
     double massKK_2 = 0, massKpi_2 = 0;
     double massKK_3 = 0, massKpi_3 = 0;
     double dimu12 = 0, dimu23 = 0, dimu13 = 0, divtx12_13 = 0, divtx12_23 = 0, divtx13_23 = 0, divtxchi2_12 = 0, divtxchi2_23 = 0, divtxchi2_13 = 0, dR_12 = 0, dR_13 = 0, dR_23 = 0;
+    double dimu12_ref = 0, dimu23_ref = 0, dimu13_ref = 0;
+    double dimu12_ref2 = 0, dimu23_ref2 = 0, dimu13_ref2 = 0;
     double dimu_OS1 = 0, dimu_OS2 = 0;
     double isGlb1 = 0, isTracker1 = 0, isLoose1 = 0, isSoft1 = 0, isPF1 = 0, isRPC1 = 0, isSA1 = 0, isCalo1 = 0, isMedium1 = 0, muID1 = 0;
     double isGlb2 = 0, isTracker2 = 0, isLoose2 = 0, isSoft2 = 0, isPF2 = 0, isRPC2 = 0, isSA2 = 0, isCalo2 = 0, isMedium2 = 0, muID2 = 0;
@@ -141,6 +155,19 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
         log.open(log_fileName.ReplaceAll(".root","_eventlist_logfile.txt"));
         log << "run\tlumisection\tevt\tm3m\tchi2\n";
     }
+    //Creation of HLT log file
+    std::ofstream log_hlt_2017, log_hlt_2018, log_hlt_W;
+    TString log_HLT2017_fileName = fileName;
+    TString log_HLT2018_fileName = fileName;
+    TString log_HLTW_fileName = fileName;
+    if(doHLTlog) {
+        log_hlt_2017.open(log_HLT2017_fileName.ReplaceAll(".root","_hlt2017_logfile.txt"));
+        log_hlt_2017 << "run\tlumisection\tevt\n";
+        log_hlt_2018.open(log_HLT2018_fileName.ReplaceAll(".root","_hlt2018_logfile.txt"));
+        log_hlt_2018 << "run\tlumisection\tevt\n";
+        log_hlt_W.open(log_HLTW_fileName.ReplaceAll(".root","_hltW_logfile.txt"));
+        log_hlt_W << "run\tlumisection\tevt\n";
+    }
 
     //Read list of events for synch
     //TString compare_filename = "/lustrehome/fsimone/UF_INFN_sync/data_diff_UF_notINFN.txt";
@@ -162,7 +189,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
     TFile *fout = new TFile(root_fileName, "RECREATE");
     fout->cd();
     TTree *tree_final = new TTree("FinalTree","FinalTree");
-    TreeFin_Init(tree_final, run_n, lumi_n, evt_n, pileupFactor, Mu1_IDSF, Mu1_IDSF_err, Mu3_IDSF, Mu3_IDSF_err, l1triple_fired, l1double_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, Pmu3, cLP, tKink, segmComp, tripletMass, tripletMass2, tripletMassRef, tripletMassReso,  fv_nC, fv_dphi3D, fv_d3D, fv_d3Dsig, bs_sv_d2D, bs_sv_d2Dsig, pv_sv_dxy, pv_sv_dxy_sig, pv_sv_dxy_err, d0, d0sig, mindca_iso, trkRel, Pmu1, Ptmu1, etamu1, Pmu2, Ptmu2, etamu2, Ptmu3, etamu3, dimu12, dimu23, dimu13, divtx12_13, divtx12_23, divtx13_23, divtxchi2_12, divtxchi2_23, divtxchi2_13, dR_12, dR_13, dR_23, dimu_OS1, dimu_OS2, P_trip, Pt_trip, eta_trip, nStationsMu1, nStationsMu2, nStationsMu3, Iso03Mu1, Iso03Mu2, Iso03Mu3, Iso05Mu1, Iso05Mu2, Iso05Mu3, nMatchesMu1, nMatchesMu2, nMatchesMu3, timeAtIpInOutMu1, timeAtIpInOutMu2, timeAtIpInOutMu3, cQ_uS, cQ_tK, cQ_gK, cQ_tRChi2, cQ_sRChi2, cQ_Chi2LM, cQ_Chi2lD, cQ_gDEP, cQ_tM, cQ_gTP, calEn_emMu1, calEn_emMu2, calEn_emMu3, calEn_hadMu1, calEn_hadMu2, calEn_hadMu3, caloComp, isGlb3, isTracker3, isLoose3, isSoft1, isPF1, isRPC1, isSA1, isCalo1, isMedium1, muID1, isGlb2, isTracker2, isLoose2, isSoft2, isPF2, isRPC2, isSA2, isCalo2, isMedium2, muID2, isGlb3, isTracker3, isLoose3,  isSoft3, isPF3, isRPC3, isSA3, isCalo3, isMedium3, muID3, Vx1, Vx2, Vx3, Vy1, Vy2, Vy3, Vz1, Vz2, Vz3, dxy1, dxy2, dxy3, dxyErr1, dxyErr2, dxyErr3, Refvx1, Refvy1, Refvz1, SVx, SVy, SVz, massKK_1, massKpi_1, massKK_2, massKpi_2, massKK_3, massKpi_3);
+    TreeFin_Init(tree_final, run_n, lumi_n, evt_n, pileupFactor, Mu1_IDSF, Mu1_IDSF_err, Mu3_IDSF, Mu3_IDSF_err, l1triple_fired, l1double_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, Pmu3, cLP, tKink, segmComp, tripletMass, tripletMass2, tripletMassRef, tripletMassReso,  fv_nC, fv_dphi3D, fv_d3D, fv_d3Dsig, bs_sv_d2D, bs_sv_d2Dsig, pv_sv_dxy, pv_sv_dxy_sig, pv_sv_dxy_err, d0, d0sig, mindca_iso, trkRel, Pmu1, Ptmu1, etamu1, Pmu2, Ptmu2, etamu2, Ptmu3, etamu3, dimu12, dimu23, dimu13, dimu12_ref, dimu23_ref, dimu13_ref,  dimu12_ref2, dimu23_ref2, dimu13_ref2, divtx12_13, divtx12_23, divtx13_23, divtxchi2_12, divtxchi2_23, divtxchi2_13, dR_12, dR_13, dR_23, dimu_OS1, dimu_OS2, P_trip, Pt_trip, eta_trip, nStationsMu1, nStationsMu2, nStationsMu3, Iso03Mu1, Iso03Mu2, Iso03Mu3, Iso05Mu1, Iso05Mu2, Iso05Mu3, nMatchesMu1, nMatchesMu2, nMatchesMu3, timeAtIpInOutMu1, timeAtIpInOutMu2, timeAtIpInOutMu3, cQ_uS, cQ_tK, cQ_gK, cQ_tRChi2, cQ_sRChi2, cQ_Chi2LM, cQ_Chi2lD, cQ_gDEP, cQ_tM, cQ_gTP, calEn_emMu1, calEn_emMu2, calEn_emMu3, calEn_hadMu1, calEn_hadMu2, calEn_hadMu3, caloComp, isGlb3, isTracker3, isLoose3, isSoft1, isPF1, isRPC1, isSA1, isCalo1, isMedium1, muID1, isGlb2, isTracker2, isLoose2, isSoft2, isPF2, isRPC2, isSA2, isCalo2, isMedium2, muID2, isGlb3, isTracker3, isLoose3,  isSoft3, isPF3, isRPC3, isSA3, isCalo3, isMedium3, muID3, Vx1, Vx2, Vx3, Vy1, Vy2, Vy3, Vz1, Vz2, Vz3, dxy1, dxy2, dxy3, dxyErr1, dxyErr2, dxyErr3, Refvx1, Refvy1, Refvz1, SVx, SVy, SVz, massKK_1, massKpi_1, massKK_2, massKpi_2, massKK_3, massKpi_3);
     // mini tree for MVA muon ID
     TTree *tree_mu1 = new TTree("TreeMu1","TreeMu1");
     TTree *tree_mu2 = new TTree("TreeMu2","TreeMu2");
@@ -288,6 +315,8 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
         if(NGoodTriplets->at(0) == 0) continue;
         if(isVerbose) cout<<"=================================\nevt "<<evt<<" run "<<run<<" lumi "<<lumi<<endl;
 
+        if(datasetName.Contains("2017F") and run >= maxrun_2017F) continue; 
+
         //Register info on common events wrt list
         std::vector<Int_t> max_cut;
         //currentEvent[0] = run; currentEvent[1] = lumi; currentEvent[2] = evt;
@@ -364,6 +393,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
 
         //Check HLT and L1 decision
         bool hlt_fired = 0;
+        bool hlt_W_fired = 0;
         l1double_fired = 0;
         l1double_DoubleMu0_fired = 0;
         l1double_DoubleMu4_fired = 0;
@@ -380,6 +410,12 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
                 && Trigger_hltdecision->at(h) == 1) {
                 hlt_fired = 1;
                 n_hltfired++;
+            }
+            //HLT W channel
+            if( (
+                (datasetName.Contains("W") && strncmp(hltName, "HLT_Tau3Mu_Mu7_Mu1_TkMu1_IsoTau15_Charge1", 41) == 0 ) ) //W MC
+                && Trigger_hltdecision->at(h) == 1) {
+                hlt_W_fired = 1;
             }
         }
         for(int k=0; k<Trigger_l1name->size(); k++) {
@@ -449,6 +485,16 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
                 if (l1double_fired == 1 || l1triple_fired == 1) hL1[2]->Fill(3); 
                 if (l1double_DoubleMu0_fired == 1) hL1[2]->Fill(4);
                 if (l1double_DoubleMu4_fired == 1) hL1[2]->Fill(5);
+            }
+        }
+        //recording event list fired by different HLTs
+        if(doHLTlog){
+            for(int h=0; h<Trigger_hltname->size(); h++) {
+                TString hltName = Trigger_hltname->at(h);
+                //HLT
+                if( strncmp(hltName, "HLT_DoubleMu3_Trk_Tau3mu_v", 26) == 0    ) log_hlt_2017 << run << "\t" << lumi << "\t" << evt << "\n";
+                if( strncmp(hltName, "HLT_DoubleMu3_TkMu_DsTau3Mu_v", 29) == 0 ) log_hlt_2018 << run << "\t" << lumi << "\t" << evt << "\n";
+                if( strncmp(hltName, "HLT_Tau3Mu_Mu7_Mu1_TkMu1_IsoTau15_Charge1", 41) == 0 ) log_hlt_W << run << "\t" << lumi << "\t" << evt << "\n";
             }
         }
 
@@ -552,6 +598,9 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
               if (isVerbose) cout<<j<<" passed HLT cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
+            //Int_t MCeventClass = MCeventClassifier(mu, j);
+            //cout<<"MCeventClass = "<<MCeventClass<<endl;
+
             // CUT 3: Chi2 > 0
             if( TripletVtx_Chi2->at(j) < 0 ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
@@ -573,25 +622,62 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
 
             //CUT 5 : all mu are PF
             if( (Muon_isPF->at(mu[0]) == 0) || (Muon_isPF->at(mu[1]) == 0) || (Muon_isPF->at(mu[2]) == 0) ) continue;
+            if( (Muon_isPF->at(mu[0]) == 0) || (Muon_isPF->at(mu[1]) == 0) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
               if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
               if (isVerbose) cout<<j<<"   passed cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            // CUT 6 // Check that mu1 is glb & pt>2 & |eta|<Etamax
-            if( !((Muon_isGlobal->at(mu[0]) == 1) && (MuonPt->at(mu[0]) > ptmin) && (abs(MuonEta->at(mu[0])) < EtaMax) )) continue;
-                     // Check that mu2 is glb & pt>2 & |eta|<Etamax
-            if( !((Muon_isGlobal->at(mu[1]) == 1) && (MuonPt->at(mu[1]) > 1.80) && (abs(MuonEta->at(mu[1])) < EtaMax) )) continue;
-                     // Check that mu3 is glb & pt>2 & |eta|<Etamax
-            if( !((Muon_isGlobal->at(mu[2]) == 1) && (MuonPt->at(mu[2]) > 1.80) && (abs(MuonEta->at(mu[2])) < EtaMax) )) continue;
+            // CUT 6 // Check that mu1 is glb
+            if( !(Muon_isGlobal->at(mu[0]) == 1) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
               if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
               if (isVerbose) cout<<j<<"    passed cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            //CUT 7: check condition on trimuon mass
+            // CUT 7 // Check that mu2 is glb
+            if( !(Muon_isGlobal->at(mu[1]) == 1) ) continue;
+              Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
+              max_cut.push_back(Ncut);
+              if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
+              if (isVerbose) cout<<j<<"    passed cut "<<Ncut<<endl;
+              FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
+
+            // CUT 8 // Check that mu3 is glb
+            if( !(Muon_isGlobal->at(mu[2]) == 1) ) continue;
+              Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
+              max_cut.push_back(Ncut);
+              if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
+              if (isVerbose) cout<<j<<"    passed cut "<<Ncut<<endl;
+              FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
+
+            // CUT 9 // Check mu1 pt>2 & |eta|<Etamax
+            if( !( (MuonPt->at(mu[0]) > ptmin) && (abs(MuonEta->at(mu[0])) < EtaMax) )) continue;
+              Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
+              max_cut.push_back(Ncut);
+              if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
+              if (isVerbose) cout<<j<<"    passed cut "<<Ncut<<endl;
+              FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
+
+            // CUT 10 // Check mu2 pt>2 & |eta|<Etamax
+            if( !( (MuonPt->at(mu[1]) > ptmin) && (abs(MuonEta->at(mu[1])) < EtaMax) )) continue;
+              Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
+              max_cut.push_back(Ncut);
+              if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
+              if (isVerbose) cout<<j<<"    passed cut "<<Ncut<<endl;
+              FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
+
+            // CUT 11 // Check mu3 pt>2 & |eta|<Etamax
+            if( !( (MuonPt->at(mu[2]) > ptmin) && (abs(MuonEta->at(mu[2])) < EtaMax) )) continue;
+              Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
+              max_cut.push_back(Ncut);
+              if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
+              if (isVerbose) cout<<j<<"    passed cut "<<Ncut<<endl;
+              FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
+
+            //CUT 12: check condition on trimuon mass
             if( !(Triplet_Mass->at(j) > 1.62 && Triplet_Mass->at(j) < 2) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
@@ -599,7 +685,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
               if (isVerbose) cout<<j<<"     passed cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            //CUT 8: Loop on PAIRS of muons of the triplet & check DeltaR
+            //CUT 13: Loop on PAIRS of muons of the triplet & check DeltaR
             if( !(isPairDeltaRGood(j, DeltaRmax)) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
@@ -607,7 +693,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
               if (isVerbose) cout<<j<<"      passed cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            //CUT 9: Check |Delta Z|
+            //CUT 14: Check |Delta Z|
             Float_t vz1 = Muon_vz->at(mu[0]);
             Float_t vz2 = Muon_vz->at(mu[1]);
             Float_t vz3 = Muon_vz->at(mu[2]);
@@ -618,7 +704,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
               if (isVerbose) cout<<j<<"       passed cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            //CUT 10: VETO on Phi(1020) mass
+            //CUT 15: VETO on Phi(1020) mass
             dimu = Compute_DimuonMass(mu_Ind, mu);
             //if(isPhi(dimu)) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
@@ -627,7 +713,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
               if (isVerbose) cout<<j<<"        passed cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            //CUT 11: VETO on Omega(782) mass
+            //CUT 16: VETO on Omega(782) mass
             //if(isOmega(dimu)) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
@@ -687,7 +773,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
               if (isVerbose) cout<<j<<"          passed cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            // CUT 13: Mu2 dR and dP Trigger Matching
+            // CUT 18: Mu2 dR and dP Trigger Matching
             if( !(dR2<0.03 && dP2<0.1) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
@@ -695,7 +781,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
               if (isVerbose) cout<<j<<"           passed cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            // CUT 14: Mu3 dR and dP Trigger Matching
+            // CUT 19: Mu3 dR and dP Trigger Matching
             if( !(dR3<0.03 && dP3<0.1) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
@@ -713,6 +799,9 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
 //            if(Muon_trackerLayersWithMeasurement->at(mu[1]) < 7) continue;
 //            if(Muon_trackerLayersWithMeasurement->at(mu[2]) < 7) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
+
+//              Int_t MCeventClass = MCeventClassifier(mu, j);
+//              cout<<"MCeventClass = "<<MCeventClass<<endl;
               if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
               if (isVerbose) cout<<j<<"             passed cut "<<Ncut<<endl;
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
@@ -810,7 +899,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
                 hEtaC->Fill(std::max(std::max(abs(MuonEta->at(mu[0])),abs(MuonEta->at(mu[1]))) , abs(MuonEta->at(mu[2])) ), pileupFactor);
             }
             //event MiniTree
-            TreeFin_Fill(tree_final, ind, mu_Ind, mu, run_n, lumi_n, evt_n, pileupFactor, Mu1_IDSF, Mu1_IDSF_err, Mu3_IDSF, Mu3_IDSF_err, l1triple_fired, l1double_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, Pmu3, cLP, tKink, segmComp, tripletMass, tripletMass2, tripletMassRef, tripletMassReso, fv_nC, fv_dphi3D, fv_d3D, fv_d3Dsig, bs_sv_d2D, bs_sv_d2Dsig, pv_sv_dxy, pv_sv_dxy_sig, pv_sv_dxy_err, d0, d0sig, mindca_iso, trkRel, Pmu1, Ptmu1, etamu1, Pmu2, Ptmu2, etamu2, Ptmu3, etamu3, dimu12, dimu23, dimu13, divtx12_13, divtx12_23, divtx13_23, divtxchi2_12, divtxchi2_23, divtxchi2_13, dR_12, dR_13, dR_23, dimu_OS1, dimu_OS2, P_trip, Pt_trip, eta_trip, nStationsMu1, nStationsMu2, nStationsMu3, Iso03Mu1, Iso03Mu2, Iso03Mu3, Iso05Mu1, Iso05Mu2, Iso05Mu3, nMatchesMu1, nMatchesMu2, nMatchesMu3, timeAtIpInOutMu1, timeAtIpInOutMu2, timeAtIpInOutMu3, cQ_uS, cQ_tK, cQ_gK, cQ_tRChi2, cQ_sRChi2, cQ_Chi2LM, cQ_Chi2lD, cQ_gDEP, cQ_tM, cQ_gTP, calEn_emMu1, calEn_emMu2, calEn_emMu3, calEn_hadMu1, calEn_hadMu2, calEn_hadMu3, caloComp, isGlb3, isTracker3, isLoose3, isSoft1, isPF1, isRPC1, isSA1, isCalo1, isMedium1, muID1, isGlb2, isTracker2, isLoose2, isSoft2, isPF2, isRPC2, isSA2, isCalo2, isMedium2, muID2, isGlb3, isTracker3, isLoose3,  isSoft3, isPF3, isRPC3, isSA3, isCalo3, isMedium3, muID3, Vx1, Vx2, Vx3, Vy1, Vy2, Vy3, Vz1, Vz2, Vz3, dxy1, dxy2, dxy3, dxyErr1, dxyErr2, dxyErr3, Refvx1, Refvy1, Refvz1, SVx, SVy, SVz, massKK_1, massKpi_1, massKK_2, massKpi_2, massKK_3, massKpi_3);
+            TreeFin_Fill(tree_final, ind, mu_Ind, mu, run_n, lumi_n, evt_n, pileupFactor, Mu1_IDSF, Mu1_IDSF_err, Mu3_IDSF, Mu3_IDSF_err, l1triple_fired, l1double_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, Pmu3, cLP, tKink, segmComp, tripletMass, tripletMass2, tripletMassRef, tripletMassReso, fv_nC, fv_dphi3D, fv_d3D, fv_d3Dsig, bs_sv_d2D, bs_sv_d2Dsig, pv_sv_dxy, pv_sv_dxy_sig, pv_sv_dxy_err, d0, d0sig, mindca_iso, trkRel, Pmu1, Ptmu1, etamu1, Pmu2, Ptmu2, etamu2, Ptmu3, etamu3, dimu12, dimu23, dimu13, dimu12_ref, dimu23_ref, dimu13_ref,  dimu12_ref2, dimu23_ref2, dimu13_ref2, divtx12_13, divtx12_23, divtx13_23, divtxchi2_12, divtxchi2_23, divtxchi2_13, dR_12, dR_13, dR_23, dimu_OS1, dimu_OS2, P_trip, Pt_trip, eta_trip, nStationsMu1, nStationsMu2, nStationsMu3, Iso03Mu1, Iso03Mu2, Iso03Mu3, Iso05Mu1, Iso05Mu2, Iso05Mu3, nMatchesMu1, nMatchesMu2, nMatchesMu3, timeAtIpInOutMu1, timeAtIpInOutMu2, timeAtIpInOutMu3, cQ_uS, cQ_tK, cQ_gK, cQ_tRChi2, cQ_sRChi2, cQ_Chi2LM, cQ_Chi2lD, cQ_gDEP, cQ_tM, cQ_gTP, calEn_emMu1, calEn_emMu2, calEn_emMu3, calEn_hadMu1, calEn_hadMu2, calEn_hadMu3, caloComp, isGlb3, isTracker3, isLoose3, isSoft1, isPF1, isRPC1, isSA1, isCalo1, isMedium1, muID1, isGlb2, isTracker2, isLoose2, isSoft2, isPF2, isRPC2, isSA2, isCalo2, isMedium2, muID2, isGlb3, isTracker3, isLoose3,  isSoft3, isPF3, isRPC3, isSA3, isCalo3, isMedium3, muID3, Vx1, Vx2, Vx3, Vy1, Vy2, Vy3, Vz1, Vz2, Vz3, dxy1, dxy2, dxy3, dxyErr1, dxyErr2, dxyErr3, Refvx1, Refvy1, Refvz1, SVx, SVy, SVz, massKK_1, massKpi_1, massKK_2, massKpi_2, massKK_3, massKpi_3);
             //Muon MiniTree
             TreeMuon_Fill(tree_mu1, mu[0], run_n, lumi_n, evt_n, mu_pt, mu_eta, mu_phi, mu_energy, mu_charge, mu_isGlobal, mu_isSoft, mu_isLoose, mu_isTight, mu_isPF, mu_isRPC, mu_isStandAlone, mu_isTracker, mu_isCalo, mu_isQualityValid, mu_SoftMVA, mu_isTimeValid, mu_isIsolationValid, mu_numberOfMatchedStations, mu_numberOfMatches, mu_timeAtIpInOut, mu_timeAtIpInOutErr, mu_GLnormChi2, mu_GLhitPattern_numberOfValidMuonHits, mu_trackerLayersWithMeasurement, mu_Numberofvalidpixelhits, mu_Numberofvalidtrackerhits, mu_outerTrack_p, mu_outerTrack_eta, mu_outerTrack_phi, mu_outerTrack_normalizedChi2, mu_outerTrack_muonStationsWithValidHits, mu_innerTrack_p, mu_innerTrack_eta, mu_innerTrack_phi, mu_innerTrack_validFraction, mu_innerTrack_highPurity, mu_innerTrack_normalizedChi2, mu_QInnerOuter, mu_combinedQuality_updatedSta, mu_combinedQuality_trkKink, mu_combinedQuality_glbKink, mu_combinedQuality_trkRelChi2, mu_combinedQuality_staRelChi2, mu_combinedQuality_chi2LocalPosition, mu_combinedQuality_chi2LocalMomentum, mu_combinedQuality_localDistance, mu_combinedQuality_globalDeltaEtaPhi, mu_combinedQuality_tightMatch, mu_combinedQuality_glbTrackProbability, mu_IP3D_BS, mu_IP2D_BS, mu_IP3D_PV, mu_IP2D_PV, mu_validMuonHitComb,  mu_calEnergy_em, mu_calEnergy_emS9, mu_calEnergy_emS25, mu_calEnergy_had, mu_calEnergy_hadS9, mu_segmentCompatibility, mu_caloCompatibility, mu_ptErrOverPt, mu_BestTrackPt, mu_BestTrackPtErr, mu_BestTrackEta, mu_BestTrackEtaErr, mu_BestTrackPhi, mu_BestTrackPhiErr, mu_emEt03, mu_hadEt03, mu_nJets03, mu_nTracks03, mu_sumPt03, mu_hadVetoEt03, mu_emVetoEt03, mu_trackerVetoPt03, mu_emEt05, mu_hadEt05, mu_nJets05, mu_nTracks05, mu_sumPt05, mu_hadVetoEt05, mu_emVetoEt05, mu_trackerVetoPt05);
             TreeMuon_Fill(tree_mu2, mu[1], run_n, lumi_n, evt_n, mu_pt, mu_eta, mu_phi, mu_energy, mu_charge, mu_isGlobal, mu_isSoft, mu_isLoose, mu_isTight, mu_isPF, mu_isRPC, mu_isStandAlone, mu_isTracker, mu_isCalo, mu_isQualityValid, mu_SoftMVA, mu_isTimeValid, mu_isIsolationValid, mu_numberOfMatchedStations, mu_numberOfMatches, mu_timeAtIpInOut, mu_timeAtIpInOutErr, mu_GLnormChi2, mu_GLhitPattern_numberOfValidMuonHits, mu_trackerLayersWithMeasurement, mu_Numberofvalidpixelhits, mu_Numberofvalidtrackerhits, mu_outerTrack_p, mu_outerTrack_eta, mu_outerTrack_phi, mu_outerTrack_normalizedChi2, mu_outerTrack_muonStationsWithValidHits, mu_innerTrack_p, mu_innerTrack_eta, mu_innerTrack_phi, mu_innerTrack_validFraction, mu_innerTrack_highPurity, mu_innerTrack_normalizedChi2, mu_QInnerOuter, mu_combinedQuality_updatedSta, mu_combinedQuality_trkKink, mu_combinedQuality_glbKink, mu_combinedQuality_trkRelChi2, mu_combinedQuality_staRelChi2, mu_combinedQuality_chi2LocalPosition, mu_combinedQuality_chi2LocalMomentum, mu_combinedQuality_localDistance, mu_combinedQuality_globalDeltaEtaPhi, mu_combinedQuality_tightMatch, mu_combinedQuality_glbTrackProbability, mu_IP3D_BS, mu_IP2D_BS, mu_IP3D_PV, mu_IP2D_PV, mu_validMuonHitComb,  mu_calEnergy_em, mu_calEnergy_emS9, mu_calEnergy_emS25, mu_calEnergy_had, mu_calEnergy_hadS9, mu_segmentCompatibility, mu_caloCompatibility, mu_ptErrOverPt, mu_BestTrackPt, mu_BestTrackPtErr, mu_BestTrackEta, mu_BestTrackEtaErr, mu_BestTrackPhi, mu_BestTrackPhiErr, mu_emEt03, mu_hadEt03, mu_nJets03, mu_nTracks03, mu_sumPt03, mu_hadVetoEt03, mu_emVetoEt03, mu_trackerVetoPt03, mu_emEt05, mu_hadEt05, mu_nJets05, mu_nTracks05, mu_sumPt05, mu_hadVetoEt05, mu_emVetoEt05, mu_trackerVetoPt05);
@@ -863,6 +952,9 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
     fout->Write();
     fout->Close();
     log.close();
+    log_hlt_2017.close();
+    log_hlt_2018.close();
+    log_hlt_W.close();
 
 }
 
