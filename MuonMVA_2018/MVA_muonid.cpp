@@ -102,7 +102,7 @@ void MVA_muonid(TString categ){
     TCut cutB_mu_from_pi = "( abs(mu_simPdgId) == 13 && abs(mu_simMotherPdgId) == 211 )"; //true mu from pion decay
     TCut cutB_mu_from_k = "( abs(mu_simPdgId) == 13 && abs(mu_simMotherPdgId) == 321 )"; //true mu from kaon decay
     //running on global muons with associated simInfo
-    TCut preselCut = "mu_simType != 0 && mu_isGlobal == 1 && mu_pt > 2 && abs(mu_eta)<2.4";
+    TCut preselCut = "mu_simType != 0 && mu_isGlobal == 1 && ( (mu_pt > 2 && abs(mu_eta)<=2.4 && abs(mu_eta)>= 1.2) || (mu_pt > 3.5 && abs(mu_eta)<1.2) )";
     //loose preselection cuts on input variables
     TCut cleanInputVar = "mu_combinedQuality_chi2LocalMomentum < 5000 &&"
                          "mu_combinedQuality_chi2LocalPosition < 1000 &&"
@@ -110,7 +110,7 @@ void MVA_muonid(TString categ){
                          "mu_combinedQuality_trkKink < 900 &&"
                          "mu_Numberofvalidtrackerhits > 0 &&"
                          "mu_Numberofvalidpixelhits > 0 &&"
-                         "mu_timeAtIpInOutErr < 10 &&"
+                         //"mu_timeAtIpInOutErr < 10 &&"
                          "mu_GLnormChi2 < 6000 &&"
                          "mu_innerTrack_normalizedChi2 < 40 &&"
                          "mu_innerTrack_validFraction > 0.5";
@@ -129,20 +129,27 @@ void MVA_muonid(TString categ){
              prepareTrainTestOptions = ":SplitMode=Random"
                                        ":NormMode=NumEvents"
                                        ":nTrain_Signal=0"
-                                       ":nTest_Signal=25000" //barrel
+                                       ":nTest_Signal=41000" //barrel
                                        ":nTrain_Background=0"
-                                       ":nTest_Background=20000" //barrel
+                                       ":nTest_Background=22700" //barrel
                                        ":!V";
                         }
     else if(categ=="endcap"){
              prepareTrainTestOptions = ":SplitMode=Random"
                                        ":NormMode=NumEvents"
                                        ":nTrain_Signal=0"
-                                       ":nTest_Signal=52000" //endcap
+                                       ":nTest_Signal=79500" //endcap
                                        ":nTrain_Background=0"
-                                       ":nTest_Background=34500" //endcap
+                                       ":nTest_Background=37000" //endcap
                                        ":!V";
                         }
+/* //barrel
+ *                          : Signal     -- training and testing events: 136801
+ *                          : Background -- training and testing events: 75794
+ * //endcap
+ *                          : Signal     -- training and testing events: 265019
+ *                          : Background -- training and testing events: 123834
+ */
 /* //barrel
                          : Signal     -- training and testing events: 84652 --> only test 25000
                          : Background -- training and testing events: 67453 --> only test 20000

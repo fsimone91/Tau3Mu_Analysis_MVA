@@ -102,7 +102,7 @@ void MVA_muonid(TString categ){
     TCut cutB_mu_from_pi = "( abs(mu_simPdgId) == 13 && abs(mu_simMotherPdgId) == 211 )"; //true mu from pion decay
     TCut cutB_mu_from_k = "( abs(mu_simPdgId) == 13 && abs(mu_simMotherPdgId) == 321 )"; //true mu from kaon decay
     //running on global muons with associated simInfo
-    TCut preselCut = "mu_simType != 0 && mu_isGlobal == 1 && mu_pt > 2 && abs(mu_eta)<2.4";
+    TCut preselCut = "mu_simType != 0 && mu_isGlobal == 1 && ( (mu_pt > 2 && abs(mu_eta)<=2.4 && abs(mu_eta)>= 1.2) || (mu_pt > 3.5 && abs(mu_eta)<1.2) )";
     //loose preselection cuts on input variables
     TCut cleanInputVar = "mu_combinedQuality_chi2LocalMomentum < 5000 &&"
                          "mu_combinedQuality_chi2LocalPosition < 1000 &&"
@@ -110,7 +110,9 @@ void MVA_muonid(TString categ){
                          "mu_combinedQuality_trkKink < 900 &&"
                          "mu_Numberofvalidtrackerhits > 0 &&"
                          "mu_Numberofvalidpixelhits > 0 &&"
-                         "mu_timeAtIpInOutErr < 10 &&"
+                         //"mu_numberOfMatchedStations > 0 &&"
+                         //"mu_segmentCompatibility > 0 &&"
+                         //"mu_timeAtIpInOutErr < 10 &&"
                          "mu_GLnormChi2 < 6000 &&"
                          "mu_innerTrack_normalizedChi2 < 40 &&"
                          "mu_innerTrack_validFraction > 0.5";
@@ -122,32 +124,36 @@ void MVA_muonid(TString categ){
     if(categ.Contains("endcap")) etarange = etarange || endcap;
     if(categ.Contains("barrel")) etarange = etarange || barrel;
 
-    dataloader->SetBackgroundWeightExpression("ptetaWeight");
+    dataloader->SetBackgroundWeightExpression("myweight_pteta"); //"ptetaWeight"
 
     TString prepareTrainTestOptions;
     if(categ=="barrel") { 
              prepareTrainTestOptions = ":SplitMode=Random"
                                        ":NormMode=NumEvents"
                                        ":nTrain_Signal=0"
-                                       ":nTest_Signal=22000" //barrel
+                                       ":nTest_Signal=28000" //barrel 30%
                                        ":nTrain_Background=0"
-                                       ":nTest_Background=13000" //barrel
+                                       ":nTest_Background=22500" //barrel 30%
                                        ":!V";
                         }
     else if(categ=="endcap"){
              prepareTrainTestOptions = ":SplitMode=Random"
                                        ":NormMode=NumEvents"
                                        ":nTrain_Signal=0"
-                                       ":nTest_Signal=35000" //endcap
+                                       ":nTest_Signal=38400" //endcap 30%
                                        ":nTrain_Background=0"
-                                       ":nTest_Background=21500" //endcap
+                                       ":nTest_Background=36300" //endcap 30%
                                        ":!V";
                         }
 /* 
    //barrel
-   Signal     -- training and testing events: 73150  -> test 22000
+                         : Signal     -- training and testing events: 93543
+                         : Background -- training and testing events: 74731
+    Signal     -- training and testing events: 73150  -> test 22000
     Background -- training and testing events: 42391 -> test 13000
    //endcap
+                         : Signal     -- training and testing events: 128214
+                         : Background -- training and testing events: 121250
    Signal     -- training and testing events: 116405 -> test 35000
    Background -- training and testing events: 71530  -> test 21500
 */
