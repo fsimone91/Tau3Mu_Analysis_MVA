@@ -153,10 +153,14 @@ void MVA_code_2018(TString categ){
         dataloader->AddVariable(var_train_def.at(k), var_train_name.at(k), "", 'D');
     }
 
-    //dataloader->SetSignalWeightExpression( "puFactor" );
+    dataloader->SetSignalWeightExpression( "puFactor" );
 
     TCut cutS = "tripletMass<2.0 && tripletMass>1.62"; //Signal -> MC full range 
-    TCut cutB = "(tripletMass<1.75 && tripletMass>1.62) || (tripletMass<2.0 && tripletMass>1.80)"; //Background -> data sidebands
+    //TCut cutB = "(tripletMass<1.75 && tripletMass>1.62) || (tripletMass<2.0 && tripletMass>1.80)"; //Background -> data sidebands
+    TCut cutB = "";
+    if(categ.Contains("A")) cutB = "(tripletMass<=1.753 && tripletMass>=1.62) || (tripletMass<=2.0 && tripletMass>=1.801)";
+    if(categ.Contains("B")) cutB = "(tripletMass<=1.739 && tripletMass>=1.62) || (tripletMass<=2.0 && tripletMass>=1.815)";
+    if(categ.Contains("C")) cutB = "(tripletMass<=1.727 && tripletMass>=1.62) || (tripletMass<=2.0 && tripletMass>=1.827)";
     TCut preselCut = "";
 
     TCut reso_A = "tripletMassReso < 0.007";
@@ -172,105 +176,40 @@ void MVA_code_2018(TString categ){
     if(categ.Contains("B")) reso_cat = reso_cat || reso_B;
     if(categ.Contains("C")) reso_cat = reso_cat || reso_C;
 
-   // TString prepareTrainTestOptions = ":SplitMode=Random"
-   //                                   ":NormMode=NumEvents"
-   //                                   ":nTrain_Signal=0"
-   //                                   ":nTrain_Background=0";
-   // if(categ=="A") { 
-   //          prepareTrainTestOptions = prepareTrainTestOptions+
-   //                                    ":nTest_Signal=9400" //20% total (47216) A
-   //                                    ":nTest_Background=5800" //20% total (28987) A
-   //                                    ":!V";
-   //                     }
-   // if(categ=="Alowpt") { 
-   //          prepareTrainTestOptions = prepareTrainTestOptions+
-   //                                    ":nTest_Signal=1940" //20% total (9700) Alowpt
-   //                                    ":nTest_Background=1170" //20% total (5842) Alowpt
-   //                                    ":!V";
-   //                     }
-   // if(categ=="Ahighpt") { 
-   //          prepareTrainTestOptions = prepareTrainTestOptions+
-   //                                    ":nTest_Signal=7500" //20% total (37516) Ahighpt
-   //                                    ":nTest_Background=4630" //20% total (23144) Ahighpt
-   //                                    ":!V";
-   //                     }
-   // else if(categ=="B"){
-   //          prepareTrainTestOptions = prepareTrainTestOptions+
-   //                                    ":nTest_Signal=20000" //20% total (98794) B
-   //                                    ":nTest_Background=14400" //20% total (72003) B
-   //                                    ":!V";
-   //                     }
-   // if(categ=="Blowpt") { 
-   //          prepareTrainTestOptions = prepareTrainTestOptions+
-   //                                    ":nTest_Signal=8860" //20% total (44306) Blowpt
-   //                                    ":nTest_Background=6405" //20% total (32024) Blowpt
-   //                                    ":!V";
-   //                     }
-   // if(categ=="Bhighpt") { 
-   //          prepareTrainTestOptions = prepareTrainTestOptions+
-   //                                    ":nTest_Signal=10900" //20% total (54444) Bhighpt
-   //                                    ":nTest_Background=8000" //20% total (40000) Bhighpt
-   //                                    ":!V";
-   //                     }
-   // else if(categ=="C"){
-   //          prepareTrainTestOptions = prepareTrainTestOptions+
-   //                                    ":nTest_Signal=8000" //20% total (40008) C
-   //                                    ":nTest_Background=6600" //20% total (32911) C
-   //                                    ":!V";
-   //                     }
-    //////// DIRECT COMPARISON WITH 2017 ////
-    //TString prepareTrainTestOptions = ":SplitMode=Random"
-    //                                  ":NormMode=NumEvents";
-    //if(categ=="A") { 
-    //         prepareTrainTestOptions = prepareTrainTestOptions+
-    //                                   ":nTest_Signal=9000"
-    //                                   ":nTrain_Signal=23000"
-    //                                   ":nTest_Background=4500"
-    //                                   ":nTrain_Background=15000";
-    //                                   ":!V";
-    //                    }
-    //else if(categ=="B"){
-    //         prepareTrainTestOptions = prepareTrainTestOptions+
-    //                                   ":nTest_Signal=15000"
-    //                                   ":nTrain_Signal=50000"
-    //                                   ":nTest_Background=10000"
-    //                                   ":nTrain_Background=30000";
-    //                                   ":!V";
-    //                    }
-    //else if(categ=="C"){
-    //         prepareTrainTestOptions = prepareTrainTestOptions+
-    //                                   ":nTest_Signal=5000"
-    //                                   ":nTrain_Signal=20000"
-    //                                   ":nTest_Background=4000"
-    //                                   ":nTrain_Background=12000";
-    //                                   ":!V";
-    //                    }
-
-    ////// no vetoes on omega and phi before BDT //// bs_sv_d2Dsig>2 // additional Ds and Bp signal samples
     TString prepareTrainTestOptions = ":SplitMode=Random"
                                       ":NormMode=NumEvents";
     if(categ=="A") { 
              prepareTrainTestOptions = prepareTrainTestOptions+
-                                       ":nTest_Signal=15900" //tot 79.3k
-                                       ":nTest_Background=6500" //tot 32.3k
+                                       //":nTrain_Signal=0"
+                                       ":nTest_Signal=17300" //tot 86.6k
+                                       //":nTest_Signal=14000" //tot 70.3k
+                                       ":nTest_Background=6400" //tot 32.3k
                                        ":!V";
                         }
     else if(categ=="B"){
              prepareTrainTestOptions = prepareTrainTestOptions+
-                                       ":nTest_Signal=32000" //tot 160.6k
-                                       ":nTest_Background=15100" //tot 75.7k
+                                       //":nTrain_Signal=0"
+                                       ":nTest_Signal=34000" //tot 171k
+                                       //":nTest_Signal=28400" //tot 142k
+                                       ":nTest_Background=15000" //tot 75.7k
                                        ":!V";
                         }
     else if(categ=="C"){
              prepareTrainTestOptions = prepareTrainTestOptions+
-                                       ":nTest_Signal=12500" //tot 62.5k
-                                       ":nTest_Background=6700" //tot 34.3k
+                                       //":nTrain_Signal=0"
+                                       ":nTest_Signal=12800" //tot 64k
+                                       //":nTest_Signal=11000" //tot 55.3k
+                                       ":nTest_Background=6800" //tot 34.3k
                                        ":!V";
                         }
-    TString veto_phi = "";
-    if (categ=="A") veto_phi = "!(dimu12>0.994 && dimu12<1.044) && !(dimu13>0.994 && dimu13<1.044) &&!(dimu23>0.994 && dimu23<1.044)";
-    if (categ=="B") veto_phi = "!(dimu12>0.985 && dimu12<1.053) && !(dimu13>0.985 && dimu13<1.053) &&!(dimu23>0.985 && dimu23<1.053)";
-    if (categ=="C") veto_phi = "!(dimu12>0.974 && dimu12<1.064) && !(dimu13>0.974 && dimu13<1.064) &&!(dimu23>0.974 && dimu23<1.064)";
+    TString veto_phi = "",  phi_low = "", phi_high = "";
+        if(categ=="A") { phi_low = "0.998"; phi_high = "1.040"; }
+        if(categ=="B") { phi_low = "0.991"; phi_high = "1.047"; }
+        if(categ=="C") { phi_low = "0.984"; phi_high = "1.054"; }
+    veto_phi = "!(dimu12_ref>"+phi_low+" && dimu12_ref<"+phi_high+") && "
+               "!(dimu13_ref>"+phi_low+" && dimu13_ref<"+phi_high+") && "
+               "!(dimu23_ref>"+phi_low+" && dimu23_ref<"+phi_high+")";
+
     dataloader->PrepareTrainingAndTestTree(reso_cat&&preselCut&&phasespace&&cutS&&common_cut&&veto_phi, reso_cat&&preselCut&&phasespace&&cutB&&common_cut&&veto_phi, prepareTrainTestOptions);
 
      // Booking of MVA methods : BDT
