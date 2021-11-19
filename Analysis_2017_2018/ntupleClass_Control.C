@@ -97,8 +97,8 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
     double tKink = 0;
     double run_n = 0, lumi_n = 0, evt_n = 0;
     double mu_pt = 0, mu_eta = 0, mu_phi = 0, mu_energy = 0, mu_charge = 0, mu_isGlobal = 0, mu_isSoft = 0, mu_isLoose = 0, mu_isTight = 0, mu_isPF = 0, mu_isRPC = 0, mu_isStandAlone = 0, mu_isTracker = 0, mu_isCalo = 0, mu_isQualityValid = 0, mu_SoftMVA = 0, mu_isTimeValid = 0, mu_isIsolationValid = 0, mu_numberOfMatchedStations = 0, mu_numberOfMatches = 0, mu_timeAtIpInOut = 0, mu_timeAtIpInOutErr = 0, mu_GLnormChi2 = 0, mu_GLhitPattern_numberOfValidMuonHits = 0, mu_trackerLayersWithMeasurement = 0, mu_Numberofvalidpixelhits = 0, mu_Numberofvalidtrackerhits = 0, mu_outerTrack_p = 0, mu_outerTrack_eta = 0, mu_outerTrack_phi = 0, mu_outerTrack_normalizedChi2 = 0, mu_outerTrack_muonStationsWithValidHits = 0, mu_innerTrack_p = 0, mu_innerTrack_eta = 0, mu_innerTrack_phi = 0, mu_innerTrack_validFraction = 0, mu_innerTrack_highPurity = 0, mu_innerTrack_normalizedChi2 = 0, mu_QInnerOuter = 0, mu_combinedQuality_updatedSta = 0, mu_combinedQuality_trkKink = 0, mu_combinedQuality_glbKink = 0, mu_combinedQuality_trkRelChi2 = 0, mu_combinedQuality_staRelChi2 = 0, mu_combinedQuality_chi2LocalPosition = 0, mu_combinedQuality_chi2LocalMomentum = 0, mu_combinedQuality_localDistance = 0, mu_combinedQuality_globalDeltaEtaPhi = 0, mu_combinedQuality_tightMatch = 0, mu_combinedQuality_glbTrackProbability = 0, mu_IP3D_BS = 0, mu_IP2D_BS = 0, mu_IP3D_PV = 0, mu_IP2D_PV = 0, mu_validMuonHitComb,  mu_calEnergy_em = 0, mu_calEnergy_emS9 = 0, mu_calEnergy_emS25 = 0, mu_calEnergy_had = 0, mu_calEnergy_hadS9 = 0, mu_segmentCompatibility = 0, mu_caloCompatibility = 0, mu_ptErrOverPt = 0, mu_BestTrackPt = 0, mu_BestTrackPtErr = 0, mu_BestTrackEta = 0, mu_BestTrackEtaErr = 0, mu_BestTrackPhi = 0, mu_BestTrackPhiErr = 0, mu_emEt03 = 0, mu_hadEt03 = 0, mu_nJets03 = 0, mu_nTracks03 = 0, mu_sumPt03 = 0, mu_hadVetoEt03 = 0, mu_emVetoEt03 = 0, mu_trackerVetoPt03 = 0, mu_emEt05 = 0, mu_hadEt05 = 0, mu_nJets05 = 0, mu_nTracks05 = 0, mu_sumPt05 = 0, mu_hadVetoEt05 = 0, mu_emVetoEt05 = 0, mu_trackerVetoPt05 = 0;
-   double sfMu1_val = 0, sfMu1_err = 0;
-   double sfMu2_val = 0, sfMu2_err = 0;
+   double sfMu1_val = 1, sfMu1_err = 0;
+   double sfMu2_val = 1, sfMu2_err = 0;
 
 
     //Variables inizialization
@@ -194,6 +194,8 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
         //Skip event if no good triplets
         if(NGoodTriplets->at(0) == 0) continue;
         if(isVerbose) cout<<"=================================\nevt "<<evt<<" run "<<run<<" lumi "<<lumi<<endl;
+        //cut on run number for 2017F
+        if(datasetName.Contains("2017F") and run >= maxrun_2017F) continue; 
   
         //DsPhiPi channel --> 2017 HLT path
         std::vector< std::array<double, 3> > Muon_HLT2017;
@@ -337,7 +339,7 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
             FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hPt_Tr, hEta_Tr, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
             //CUT 3: check condition on trimuon mass
-            if( !(Triplet2_Mass->at(j) >= 1.62 && Triplet2_Mass->at(j) <= 2.02) ) continue;
+            if( !(Triplet2_Mass->at(j) >= 1.62 && Triplet2_Mass->at(j) <= 2.1) ) continue; //extended mass range in 2018D
             Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
             if (isVerbose) cout<<j<<" passed cut "<<Ncut<<endl;
             FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hPt_Tr, hEta_Tr, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
@@ -361,8 +363,10 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
             if (isVerbose) cout<<j<<"       passed cut "<<Ncut<<endl;
             FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hPt_Tr, hEta_Tr, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
-            // CUT 7: mu1 and mu2 pT >= 2 GeV
-            if( Mu01_Pt->at(mu_Ind[0]) < ptmin || Mu02_Pt->at(mu_Ind[1]) < ptmin ) continue;
+            // CUT 7: mu1 and mu2 pT >= 2 GeV and eta in (1.2, 2.4) || pT>3.5 GeV
+            if( (Mu01_Pt->at(mu_Ind[0]) < ptmin && Mu01_Eta->at(mu_Ind[0])>= 1.2) || (Mu01_Pt->at(mu_Ind[0]) < 3.5 && Mu01_Eta->at(mu_Ind[0])< 1.2) ) continue;
+            if( (Mu02_Pt->at(mu_Ind[1]) < ptmin && Mu02_Eta->at(mu_Ind[1])>= 1.2) || (Mu02_Pt->at(mu_Ind[1]) < 3.5 && Mu02_Eta->at(mu_Ind[1])< 1.2) ) continue;
+            if( Mu01_Eta->at(mu_Ind[0]) > 2.4 || Mu02_Eta->at(mu_Ind[1]) > 2.4 ) continue;
             Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
             if (isVerbose) cout<<j<<"         passed cut "<<Ncut<<endl;
             FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hPt_Tr, hEta_Tr, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
@@ -375,7 +379,7 @@ void ntupleClass_Control::LoopControl(TString type, TString datasetName){
 
             // CUT 9: muons have opposite charge and mass within 1..1.04 GeV
             double dimass = DimuonMass(MuonCharge->at(mu[0]), MuonCharge->at(mu[1]), Mu01_Pt->at(mu_Ind[0]), Mu02_Pt->at(mu_Ind[1]), Mu01_Eta->at(mu_Ind[0]), Mu02_Eta->at(mu_Ind[1]), Mu01_Phi->at(mu_Ind[0]), Mu02_Phi->at(mu_Ind[1]));
-            if(dimass < 1 || dimass > 1.04) continue;
+            if(dimass < 0.97 || dimass > 1.07) continue;
             Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
             if (isVerbose) cout<<j<<"           passed cut "<<Ncut<<endl;
             FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hPt_Tr, hEta_Tr, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);

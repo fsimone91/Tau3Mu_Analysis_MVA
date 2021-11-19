@@ -655,6 +655,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
 
             // CUT 9 // Check mu1 pt>2 & |eta|<Etamax
             if( !( (MuonPt->at(mu[0]) > ptmin) && (abs(MuonEta->at(mu[0])) < EtaMax) )) continue;
+            if( (MuonPt->at(mu[0]) < 3.5)  && (abs(MuonEta->at(mu[0])) < 1.2) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
               if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
@@ -663,6 +664,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
 
             // CUT 10 // Check mu2 pt>2 & |eta|<Etamax
             if( !( (MuonPt->at(mu[1]) > ptmin) && (abs(MuonEta->at(mu[1])) < EtaMax) )) continue;
+            if( (MuonPt->at(mu[1]) < 3.5)  && (abs(MuonEta->at(mu[1])) < 1.2) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
               if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
@@ -671,6 +673,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
 
             // CUT 11 // Check mu3 pt>2 & |eta|<Etamax
             if( !( (MuonPt->at(mu[2]) > ptmin) && (abs(MuonEta->at(mu[2])) < EtaMax) )) continue;
+            if( (MuonPt->at(mu[2]) < 3.5)  && (abs(MuonEta->at(mu[2])) < 1.2) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
               if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
@@ -678,7 +681,7 @@ void ntupleClass_tau3mu::Loop(TString type, TString datasetName){
               FillHistoStepByStep(isMC, j, mu_Ind, mu, Ncut, l1double_fired, l1triple_fired, l1double_DoubleMu0_fired, l1double_DoubleMu4_fired, hL1, hPt, hPt_mu, hEta, hEta_mu, hPhi, hVx, hVy, hVz, hMass_pair, hDeltaR_pair, hDeltaZ_pair, hPt_tripl, hEta_tripl, hPhi_tripl, hMass_tripl, hChi2_tripl, hMassChi2_tripl, IdsummaryDaughter, IdsummaryMother, Idsummary2D);
 
             //CUT 12: check condition on trimuon mass
-            if( !(Triplet_Mass->at(j) > 1.62 && Triplet_Mass->at(j) < 2) ) continue;
+            if( !(Triplet_Mass->at(j) > 1.62 && Triplet_Mass->at(j) < 2.02) ) continue;
               Ncut++; cut[Ncut]++; cuttripl[Ncut]++;
               max_cut.push_back(Ncut);
               if(isSignal) {cutSignal[Ncut]++; cuttriplSignal[Ncut]++;}
