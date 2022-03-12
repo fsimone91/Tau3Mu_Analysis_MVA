@@ -1,0 +1,1298 @@
+
+Processing MVA_code_run2.cpp("A")...
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1602/AnalysedTree_MC_2017Ds_tau3mu_30july.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1603/AnalysedTree_MC_2017B0_tau3mu_30july.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1604/AnalysedTree_MC_2017Bp_tau3mu_30july.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1602/AnalysedTree_MC_2017Ds_tau3mu_30july.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1603/AnalysedTree_MC_2017B0_tau3mu_30july.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1604/AnalysedTree_MC_2017Bp_tau3mu_30july.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1602/AnalysedTree_MC_2017Ds_tau3mu_30july.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1603/AnalysedTree_MC_2017B0_tau3mu_30july.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1604/AnalysedTree_MC_2017Bp_tau3mu_30july.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1549/AnalysedTree_data_2017B_tau3mu_28july.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1550/AnalysedTree_data_2017C_tau3mu_28july.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1551/AnalysedTree_data_2017D_tau3mu_28july.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1552/AnalysedTree_data_2017E_tau3mu_28july.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1553/AnalysedTree_data_2017F_tau3mu_28july.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1549/AnalysedTree_data_2017B_tau3mu_28july.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1550/AnalysedTree_data_2017C_tau3mu_28july.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1551/AnalysedTree_data_2017D_tau3mu_28july.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1552/AnalysedTree_data_2017E_tau3mu_28july.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1553/AnalysedTree_data_2017F_tau3mu_28july.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1549/AnalysedTree_data_2017B_tau3mu_28july.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1550/AnalysedTree_data_2017C_tau3mu_28july.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1551/AnalysedTree_data_2017D_tau3mu_28july.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1552/AnalysedTree_data_2017E_tau3mu_28july.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1553/AnalysedTree_data_2017F_tau3mu_28july.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1602/AnalysedTree_MC_2017Ds_tau3mu_30july_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1603/AnalysedTree_MC_2017B0_tau3mu_30july_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1604/AnalysedTree_MC_2017Bp_tau3mu_30july_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1602/AnalysedTree_MC_2017Ds_tau3mu_30july_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1603/AnalysedTree_MC_2017B0_tau3mu_30july_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1604/AnalysedTree_MC_2017Bp_tau3mu_30july_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1602/AnalysedTree_MC_2017Ds_tau3mu_30july_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1603/AnalysedTree_MC_2017B0_tau3mu_30july_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210730_1604/AnalysedTree_MC_2017Bp_tau3mu_30july_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1549/AnalysedTree_data_2017B_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1549/AnalysedTree_data_2017B_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1549/AnalysedTree_data_2017B_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1550/AnalysedTree_data_2017C_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1550/AnalysedTree_data_2017C_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1550/AnalysedTree_data_2017C_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1551/AnalysedTree_data_2017D_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1551/AnalysedTree_data_2017D_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1551/AnalysedTree_data_2017D_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1552/AnalysedTree_data_2017E_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1552/AnalysedTree_data_2017E_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1552/AnalysedTree_data_2017E_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1553/AnalysedTree_data_2017F_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1553/AnalysedTree_data_2017F_tau3mu_28july_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20210728_1553/AnalysedTree_data_2017F_tau3mu_28july_MuonID.root
+Ds sigWeight1: 1 - B0 sigWeight2: 0.933945 - Bp sigWeight3: 0.953593
+                         : Parsing option string: 
+                         : ... "V:!Silent:Color:DrawProgressBar"
+                         : The following options are set:
+                         : - By User:
+                         :     V: "True" [Verbose flag]
+                         :     Color: "True" [Flag for coloured screen output (default: True, if in batch mode: False)]
+                         :     Silent: "False" [Batch mode: boolean silent flag inhibiting any output from TMVA after the creation of the factory class object (default: False)]
+                         :     DrawProgressBar: "True" [Draw progress bar to display training, testing and evaluation schedule (default: True)]
+                         : - Default:
+                         :     VerboseLevel: "Info" [VerboseLevel (Debug/Verbose/Info)]
+                         :     Transformations: "I" [List of transformations to test; formatting example: "Transformations=I;D;P;U;G,D", for identity, decorrelation, PCA, Uniform and Gaussianisation followed by decorrelation transformations]
+                         :     Correlations: "False" [boolean to show correlation in output]
+                         :     ROC: "True" [boolean to show ROC in output]
+                         :     ModelPersistence: "True" [Option to save the trained model in xml file or using serialization]
+                         :     AnalysisType: "Auto" [Set the analysis type (Classification, Regression, Multiclass, Auto) (default: Auto)]
+DataSetInfo              : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Added class "Signal"
+                         : Add Tree FinalTree of type Signal with 111553 events
+                         : Add Tree FinalTree of type Signal with 28477 events
+                         : Add Tree FinalTree of type Signal with 28321 events
+DataSetInfo              : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Added class "Background"
+                         : Add Tree FinalTree of type Background with 7722 events
+                         : Add Tree FinalTree of type Background with 37942 events
+                         : Add Tree FinalTree of type Background with 17615 events
+                         : Add Tree FinalTree of type Background with 33760 events
+                         : Add Tree FinalTree of type Background with 21472 events
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1539/AnalysedTree_MC_2018Ds_tau3mu_14dec.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1540/AnalysedTree_MC_2018B0_tau3mu_14dec.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1541/AnalysedTree_MC_2018Bp_tau3mu_14dec.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1539/AnalysedTree_MC_2018Ds_tau3mu_14dec.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1540/AnalysedTree_MC_2018B0_tau3mu_14dec.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1541/AnalysedTree_MC_2018Bp_tau3mu_14dec.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1539/AnalysedTree_MC_2018Ds_tau3mu_14dec.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1540/AnalysedTree_MC_2018B0_tau3mu_14dec.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1541/AnalysedTree_MC_2018Bp_tau3mu_14dec.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1615/AnalysedTree_data_2017F_tau3mu_14dec.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1544/AnalysedTree_data_2018A_tau3mu_14dec.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1545/AnalysedTree_data_2018B_tau3mu_14dec.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1546/AnalysedTree_data_2018C_tau3mu_14dec.root
+Adding FriendTree TreeMu1=TreeMu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1547/AnalysedTree_data_2018D_tau3mu_14dec.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1615/AnalysedTree_data_2017F_tau3mu_14dec.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1544/AnalysedTree_data_2018A_tau3mu_14dec.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1545/AnalysedTree_data_2018B_tau3mu_14dec.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1546/AnalysedTree_data_2018C_tau3mu_14dec.root
+Adding FriendTree TreeMu2=TreeMu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1547/AnalysedTree_data_2018D_tau3mu_14dec.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1615/AnalysedTree_data_2017F_tau3mu_14dec.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1544/AnalysedTree_data_2018A_tau3mu_14dec.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1545/AnalysedTree_data_2018B_tau3mu_14dec.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1546/AnalysedTree_data_2018C_tau3mu_14dec.root
+Adding FriendTree TreeMu3=TreeMu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1547/AnalysedTree_data_2018D_tau3mu_14dec.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1539/AnalysedTree_MC_2018Ds_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1540/AnalysedTree_MC_2018B0_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1541/AnalysedTree_MC_2018Bp_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1539/AnalysedTree_MC_2018Ds_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1540/AnalysedTree_MC_2018B0_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1541/AnalysedTree_MC_2018Bp_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1539/AnalysedTree_MC_2018Ds_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1540/AnalysedTree_MC_2018B0_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1541/AnalysedTree_MC_2018Bp_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1615/AnalysedTree_data_2017F_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1615/AnalysedTree_data_2017F_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1615/AnalysedTree_data_2017F_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1544/AnalysedTree_data_2018A_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1544/AnalysedTree_data_2018A_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1544/AnalysedTree_data_2018A_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1545/AnalysedTree_data_2018B_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1545/AnalysedTree_data_2018B_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1545/AnalysedTree_data_2018B_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1546/AnalysedTree_data_2018C_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1546/AnalysedTree_data_2018C_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1546/AnalysedTree_data_2018C_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu1=MuonIDeval_Mu1 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1547/AnalysedTree_data_2018D_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu2=MuonIDeval_Mu2 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1547/AnalysedTree_data_2018D_tau3mu_14dec_MuonID.root
+Adding FriendTree MuonIDeval_Mu3=MuonIDeval_Mu3 from file /lustre/cms/store/user/fsimone/Tau3Mu/Analysis/20211214_1547/AnalysedTree_data_2018D_tau3mu_14dec_MuonID.root
+Ds sigWeight1: 1 - B0 sigWeight2: 0.950877 - Bp sigWeight3: 0.978947
+                         : Add Tree FinalTree of type Signal with 245906 events
+                         : Add Tree FinalTree of type Signal with 61918 events
+                         : Add Tree FinalTree of type Signal with 58778 events
+                         : Add Tree FinalTree of type Background with 9266 events
+                         : Add Tree FinalTree of type Background with 45724 events
+                         : Add Tree FinalTree of type Background with 23472 events
+                         : Add Tree FinalTree of type Background with 23943 events
+                         : Add Tree FinalTree of type Background with 122984 events
+Declaration of spectator variables - category A from file:BDTspecVar_2017.txt
+0 - tripletMass - tripletMass
+1 - tripletMassReso - tripletMassReso
+2 - puFactor - puFactor
+Declaration of variables for training - category A from file:BDTinputVar_dataset_Run2.txt
+0 - Pt_tripl - Pt_tripl
+1 - cLP - cLP>30?30:cLP
+2 - tKink - tKink>80?80:tKink
+3 - segmComp - segmComp<0.2?0.2:segmComp
+4 - fv_nC - fv_nC>25?25:fv_nC
+5 - fv_dphi3D - fv_dphi3D>0.15?0.15:fv_dphi3D
+6 - fv_d3Dsig - fv_d3Dsig>100?100:fv_d3Dsig
+7 - mindca_iso - mindca_iso>0.5?0.5:mindca_iso
+8 - trkRel - trkRel>10?10:trkRel
+9 - MuonIDeval_Mu1.MuonID - MuonIDeval_Mu1.MuonID
+10 - MuonIDeval_Mu2.MuonID - MuonIDeval_Mu2.MuonID
+11 - MuonIDeval_Mu3.MuonID - MuonIDeval_Mu3.MuonID
+12 - MuonIDeval_Mu3.year - MuonIDeval_Mu3.year
+13 - d0sig_min - std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)
+14 - d0sig_max - std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)
+<HEADER> Factory                  : You are running ROOT Version: 6.24/06, Sep 1, 2021
+                         : 
+                         : _/_/_/_/_/ _|      _|  _|      _|    _|_|   
+                         :    _/      _|_|  _|_|  _|      _|  _|    _| 
+                         :   _/       _|  _|  _|  _|      _|  _|_|_|_| 
+                         :  _/        _|      _|    _|  _|    _|    _| 
+                         : _/         _|      _|      _|      _|    _| 
+                         : 
+                         : ___________TMVA Version 4.2.1, Feb 5, 2015
+                         : 
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "nTest_Signal=1:nTest_Background=1:NormMode=NumEvents:SplitMode=Random:V"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     SplitMode: "Random" [Method of picking training and testing events (default: random)]
+<VERBOSE>                          :     NormMode: "NumEvents" [Overall renormalisation of  event-by-event weights used in the training (NumEvents: average weight of 1 per event, independently for signal and background; EqualNumEvents: average weight of 1 per event for signal, and sum of weights for background equal to sum of weights for signal)]
+<VERBOSE>                          :     nTest_Signal: "1" [Number of test events of class Signal (default: 0 = all)]
+<VERBOSE>                          :     nTest_Background: "1" [Number of test events of class Background (default: 0 = all)]
+<VERBOSE>                          :     V: "True" [Verbosity (default: true)]
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     MixMode: "SameAsSplitMode" [Method of mixing events of different classes into one dataset (default: SameAsSplitMode)]
+<VERBOSE>                          :     SplitSeed: "100" [Seed for random event shuffling]
+<VERBOSE>                          :     ScaleWithPreselEff: "False" [Scale the number of requested events by the eff. of the preselection cuts (or not)]
+<VERBOSE>                          :     nTrain_Signal: "0" [Number of training events of class Signal (default: 0 = all)]
+<VERBOSE>                          :     TrainTestSplit_Signal: "0.000000e+00" [Number of test events of class Signal (default: 0 = all)]
+<VERBOSE>                          :     nTrain_Background: "0" [Number of training events of class Background (default: 0 = all)]
+<VERBOSE>                          :     TrainTestSplit_Background: "0.000000e+00" [Number of test events of class Background (default: 0 = all)]
+<VERBOSE>                          :     VerboseLevel: "Info" [VerboseLevel (Debug/Verbose/Info)]
+<VERBOSE>                          :     Correlations: "True" [Boolean to show correlation output (Default: true)]
+<VERBOSE>                          :     CalcCorrelations: "True" [Compute correlations and also some variable statistics, e.g. min/max (Default: true )]
+                         : Building event vectors for type 2 Signal
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Signal
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Signal
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Signal
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Signal
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Signal
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+                         : Building event vectors for type 2 Background
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  create input formulas for tree FinalTree
+<WARNING> <WARNING>                : Found events with NaN and/or +-inf values
+<WARNING> <WARNING>                : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Input expression resolves to indeterminate value (NaN): fv_d3Dsig>100?100:fv_d3Dsig (2 times)
+<WARNING> <WARNING>                : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Input expression resolves to indeterminate value (NaN): std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3) (2 times)
+<WARNING> <WARNING>                : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Input expression resolves to indeterminate value (NaN): std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3) (2 times)
+<WARNING> <WARNING>                : These NaN and/or +-infs were all removed by the specified cut, continuing.
+                         : 
+<HEADER> DataSetFactory           : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Number of events in input trees
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :     Signal     requirement: "((((tripletMassReso < 0)||(tripletMassReso < 0.007))&&(tripletMass<2.0 && tripletMass>1.62))&&((fv_nC>0 && !(TMath::IsNaN(fv_d3Dsig)) && (MuonIDeval_Mu3.year==2017?(bs_sv_d2Dsig>=3.75):(bs_sv_d2Dsig>=2.0) ))))&&(!(dimu12_ref>0.99 && dimu12_ref<1.050) && !(dimu13_ref>0.99 && dimu13_ref<1.050) && !(dimu23_ref>0.99 && dimu23_ref<1.050))"
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :     Signal          -- number of events passed: 125421  / sum of weights: 123025
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :     Signal          -- efficiency             : 0.234326
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :     Background requirement: "((((tripletMassReso < 0)||(tripletMassReso < 0.007))&&((tripletMass<=1.753 && tripletMass>=1.62) || (tripletMass<=2.0 && tripletMass>=1.801)))&&((fv_nC>0 && !(TMath::IsNaN(fv_d3Dsig)) && (MuonIDeval_Mu3.year==2017?(bs_sv_d2Dsig>=3.75):(bs_sv_d2Dsig>=2.0) ))))&&(!(dimu12_ref>0.99 && dimu12_ref<1.050) && !(dimu13_ref>0.99 && dimu13_ref<1.050) && !(dimu23_ref>0.99 && dimu23_ref<1.050))"
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :     Background      -- number of events passed: 50122  / sum of weights: 50122
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :     Background      -- efficiency             : 0.145746
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  you have opted for interpreting the requested number of training/testing events
+                         :  to be the number of events AFTER your preselection cuts
+                         : 
+                         : Number of training and testing events
+                         : ---------------------------------------------------------------------------
+                         : Signal     -- training events            : 125420
+                         : Signal     -- testing events             : 1
+                         : Signal     -- training and testing events: 125421
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Signal     -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.234452
+                         : Background -- training events            : 50121
+                         : Background -- testing events             : 1
+                         : Background -- training and testing events: 50122
+                         : Dataset[training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Background -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.145746
+                         : 
+<HEADER> DataSetInfo              : Correlation matrix (Signal):
+                         : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                                                                                  Pt_tripl cLP_30_30:cLP tKink_80_80:tKink segmComp_0.2_0.2:segmComp fv_nC_25_25:fv_nC fv_dphi3D_0.15_0.15:fv_dphi3D fv_d3Dsig_100_100:fv_d3Dsig mindca_iso_0.5_0.5:mindca_iso trkRel_10_10:trkRel MuonIDeval_Mu1.MuonID MuonIDeval_Mu2.MuonID MuonIDeval_Mu3.MuonID MuonIDeval_Mu3.year std_fmin_std_fmin_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_ std_fmax_std_fmax_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_
+                         :                                                                        Pt_tripl:   +1.000        +0.179            -0.011                    +0.157            +0.049                        -0.303                      +0.147                        +0.045              +0.145                +0.042                +0.051                +0.032              +0.025                                                                          +0.084                                                                          +0.132
+                         :                                                                   cLP_30_30:cLP:   +0.179        +1.000            -0.006                    -0.058            +0.004                        -0.047                      +0.026                        +0.013              -0.000                -0.163                -0.150                -0.122              +0.001                                                                          +0.018                                                                          +0.027
+                         :                                                               tKink_80_80:tKink:   -0.011        -0.006            +1.000                    -0.007            +0.067                        +0.011                      +0.008                        -0.004              +0.013                -0.278                -0.303                -0.345              -0.007                                                                          +0.004                                                                          +0.004
+                         :                                                       segmComp_0.2_0.2:segmComp:   +0.157        -0.058            -0.007                    +1.000            +0.004                        -0.059                      +0.027                        +0.014              -0.001                +0.131                +0.180                +0.237              +0.015                                                                          +0.022                                                                          +0.030
+                         :                                                               fv_nC_25_25:fv_nC:   +0.049        +0.004            +0.067                    +0.004            +1.000                        +0.044                      +0.042                        -0.005              +0.027                -0.053                -0.055                -0.056              +0.012                                                                          +0.033                                                                          +0.045
+                         :                                                   fv_dphi3D_0.15_0.15:fv_dphi3D:   -0.303        -0.047            +0.011                    -0.059            +0.044                        +1.000                      -0.082                        -0.199              +0.069                -0.026                -0.032                -0.019              +0.017                                                                          -0.020                                                                          +0.007
+                         :                                                     fv_d3Dsig_100_100:fv_d3Dsig:   +0.147        +0.026            +0.008                    +0.027            +0.042                        -0.082                      +1.000                        +0.221              +0.090                +0.009                +0.011                +0.013              -0.051                                                                          +0.632                                                                          +0.857
+                         :                                                   mindca_iso_0.5_0.5:mindca_iso:   +0.045        +0.013            -0.004                    +0.014            -0.005                        -0.199                      +0.221                        +1.000              -0.383                -0.001                -0.000                -0.003              +0.003                                                                          +0.101                                                                          +0.124
+                         :                                                             trkRel_10_10:trkRel:   +0.145        -0.000            +0.013                    -0.001            +0.027                        +0.069                      +0.090                        -0.383              +1.000                +0.012                +0.002                -0.001              +0.002                                                                          +0.084                                                                          +0.127
+                         :                                                           MuonIDeval_Mu1.MuonID:   +0.042        -0.163            -0.278                    +0.131            -0.053                        -0.026                      +0.009                        -0.001              +0.012                +1.000                +0.024                +0.014              +0.055                                                                          +0.004                                                                          -0.001
+                         :                                                           MuonIDeval_Mu2.MuonID:   +0.051        -0.150            -0.303                    +0.180            -0.055                        -0.032                      +0.011                        -0.000              +0.002                +0.024                +1.000                +0.022              +0.033                                                                          +0.004                                                                          +0.002
+                         :                                                           MuonIDeval_Mu3.MuonID:   +0.032        -0.122            -0.345                    +0.237            -0.056                        -0.019                      +0.013                        -0.003              -0.001                +0.014                +0.022                +1.000              +0.003                                                                          +0.005                                                                          +0.009
+                         :                                                             MuonIDeval_Mu3.year:   +0.025        +0.001            -0.007                    +0.015            +0.012                        +0.017                      -0.051                        +0.003              +0.002                +0.055                +0.033                +0.003              +1.000                                                                          -0.022                                                                          -0.024
+                         : std_fmin_std_fmin_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_:   +0.084        +0.018            +0.004                    +0.022            +0.033                        -0.020                      +0.632                        +0.101              +0.084                +0.004                +0.004                +0.005              -0.022                                                                          +1.000                                                                          +0.624
+                         : std_fmax_std_fmax_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_:   +0.132        +0.027            +0.004                    +0.030            +0.045                        +0.007                      +0.857                        +0.124              +0.127                -0.001                +0.002                +0.009              -0.024                                                                          +0.624                                                                          +1.000
+                         : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<HEADER> DataSetInfo              : Correlation matrix (Background):
+                         : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                                                                                  Pt_tripl cLP_30_30:cLP tKink_80_80:tKink segmComp_0.2_0.2:segmComp fv_nC_25_25:fv_nC fv_dphi3D_0.15_0.15:fv_dphi3D fv_d3Dsig_100_100:fv_d3Dsig mindca_iso_0.5_0.5:mindca_iso trkRel_10_10:trkRel MuonIDeval_Mu1.MuonID MuonIDeval_Mu2.MuonID MuonIDeval_Mu3.MuonID MuonIDeval_Mu3.year std_fmin_std_fmin_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_ std_fmax_std_fmax_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_
+                         :                                                                        Pt_tripl:   +1.000        +0.151            -0.037                    +0.042            +0.046                        -0.336                      +0.088                        +0.029              +0.100                +0.093                -0.009                -0.043              +0.016                                                                          +0.059                                                                          +0.085
+                         :                                                                   cLP_30_30:cLP:   +0.151        +1.000            -0.041                    -0.436            +0.002                        -0.089                      +0.037                        +0.018              -0.027                -0.283                -0.285                -0.207              -0.071                                                                          +0.024                                                                          +0.030
+                         :                                                               tKink_80_80:tKink:   -0.037        -0.041            +1.000                    +0.028            +0.030                        -0.007                      +0.005                        +0.018              -0.042                -0.183                -0.258                -0.341              +0.001                                                                          +0.001                                                                          -0.001
+                         :                                                       segmComp_0.2_0.2:segmComp:   +0.042        -0.436            +0.028                    +1.000            +0.002                        +0.024                      -0.015                        -0.002              +0.011                +0.243                +0.265                +0.251              +0.092                                                                          -0.001                                                                          -0.004
+                         :                                                               fv_nC_25_25:fv_nC:   +0.046        +0.002            +0.030                    +0.002            +1.000                        +0.076                      +0.038                        -0.006              +0.110                -0.016                -0.004                -0.017              -0.230                                                                          +0.012                                                                          +0.088
+                         :                                                   fv_dphi3D_0.15_0.15:fv_dphi3D:   -0.336        -0.089            -0.007                    +0.024            +0.076                        +1.000                      -0.264                        -0.083              +0.031                +0.005                +0.032                +0.027              +0.047                                                                          -0.148                                                                          -0.118
+                         :                                                     fv_d3Dsig_100_100:fv_d3Dsig:   +0.088        +0.037            +0.005                    -0.015            +0.038                        -0.264                      +1.000                        +0.326              -0.109                -0.001                -0.012                -0.008              -0.069                                                                          +0.635                                                                          +0.853
+                         :                                                   mindca_iso_0.5_0.5:mindca_iso:   +0.029        +0.018            +0.018                    -0.002            -0.006                        -0.083                      +0.326                        +1.000              -0.333                -0.003                -0.019                -0.017              -0.024                                                                          +0.207                                                                          +0.273
+                         :                                                             trkRel_10_10:trkRel:   +0.100        -0.027            -0.042                    +0.011            +0.110                        +0.031                      -0.109                        -0.333              +1.000                +0.026                +0.033                +0.024              -0.015                                                                          -0.072                                                                          -0.066
+                         :                                                           MuonIDeval_Mu1.MuonID:   +0.093        -0.283            -0.183                    +0.243            -0.016                        +0.005                      -0.001                        -0.003              +0.026                +1.000                -0.039                -0.063              +0.055                                                                          -0.001                                                                          +0.002
+                         :                                                           MuonIDeval_Mu2.MuonID:   -0.009        -0.285            -0.258                    +0.265            -0.004                        +0.032                      -0.012                        -0.019              +0.033                -0.039                +1.000                -0.084              +0.027                                                                          -0.004                                                                          -0.007
+                         :                                                           MuonIDeval_Mu3.MuonID:   -0.043        -0.207            -0.341                    +0.251            -0.017                        +0.027                      -0.008                        -0.017              +0.024                -0.063                -0.084                +1.000              +0.014                                                                          +0.001                                                                          -0.008
+                         :                                                             MuonIDeval_Mu3.year:   +0.016        -0.071            +0.001                    +0.092            -0.230                        +0.047                      -0.069                        -0.024              -0.015                +0.055                +0.027                +0.014              +1.000                                                                          -0.033                                                                          -0.058
+                         : std_fmin_std_fmin_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_:   +0.059        +0.024            +0.001                    -0.001            +0.012                        -0.148                      +0.635                        +0.207              -0.072                -0.001                -0.004                +0.001              -0.033                                                                          +1.000                                                                          +0.578
+                         : std_fmax_std_fmax_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_:   +0.085        +0.030            -0.001                    -0.004            +0.088                        -0.118                      +0.853                        +0.273              -0.066                +0.002                -0.007                -0.008              -0.058                                                                          +0.578                                                                          +1.000
+                         : ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<HEADER> DataSetFactory           : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] :  
+                         : 
+                         : 
+                         : 
+                         : ========================================
+                         : Processing folds for method BDTG
+                         : ========================================
+                         : 
+                         : Creating fold output at:./BDTG_fold1.root
+<HEADER> Factory                  : Booking method: BDTG_fold1
+                         : 
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     <none>
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     Boost_num: "0" [Number of times the classifier will be boosted]
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
+<VERBOSE>                          :     H: "False" [Print method-specific help message]
+<VERBOSE>                          :     NTrees: "1000" [Number of trees in the forest]
+<VERBOSE>                          :     MaxDepth: "3" [Max depth of the decision tree allowed]
+<VERBOSE>                          :     MinNodeSize: "2.5%" [Minimum percentage of training events required in a leaf node (default: Classification: 5%, Regression: 0.2%)]
+<VERBOSE>                          :     nCuts: "50" [Number of grid points in variable range used in finding optimal cut in node splitting]
+<VERBOSE>                          :     BoostType: "AdaBoost" [Boosting type for the trees in the forest (note: AdaCost is still experimental)]
+<VERBOSE>                          :     UseBaggedBoost: "True" [Use only a random subsample of all events for growing the trees in each boost iteration.]
+<VERBOSE>                          :     AdaBoostBeta: "5.000000e-01" [Learning rate  for AdaBoost algorithm]
+<VERBOSE>                          :     BaggedSampleFraction: "5.000000e-01" [Relative size of bagged event sample to original size of the data sample (used whenever bagging is used (i.e. UseBaggedBoost, Bagging,)]
+<VERBOSE>                          :     SeparationType: "GiniIndex" [Separation criterion for node splitting]
+<VERBOSE>                          :     DoBoostMonitor: "True" [Create control plot with ROC integral vs tree number]
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     VerbosityLevel: "Default" [Verbosity level]
+<VERBOSE>                          :     VarTransform: "None" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
+<VERBOSE>                          :     CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
+<VERBOSE>                          :     IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in the training (but are included for testing and performance evaluation)]
+<VERBOSE>                          :     AdaBoostR2Loss: "Quadratic" [Type of Loss function in AdaBoostR2]
+<VERBOSE>                          :     Shrinkage: "1.000000e+00" [Learning rate for BoostType=Grad algorithm]
+<VERBOSE>                          :     UseRandomisedTrees: "False" [Determine at each node splitting the cut variable only as the best out of a random subset of variables (like in RandomForests)]
+<VERBOSE>                          :     UseNvars: "4" [Size of the subset of variables used with RandomisedTree option]
+<VERBOSE>                          :     UsePoissonNvars: "True" [Interpret "UseNvars" not as fixed number but as mean of a Poisson distribution in each split with RandomisedTree option]
+<VERBOSE>                          :     UseYesNoLeaf: "True" [Use Sig or Bkg categories, or the purity=S/(S+B) as classification of the leaf node -> Real-AdaBoost]
+<VERBOSE>                          :     NegWeightTreatment: "InverseBoostNegWeights" [How to treat events with negative weights in the BDT training (particular the boosting) : IgnoreInTraining;  Boost With inverse boostweight; Pair events with negative and positive weights in training sample and *annihilate* them (experimental!)]
+<VERBOSE>                          :     Css: "1.000000e+00" [AdaCost: cost of true signal selected signal]
+<VERBOSE>                          :     Cts_sb: "1.000000e+00" [AdaCost: cost of true signal selected bkg]
+<VERBOSE>                          :     Ctb_ss: "1.000000e+00" [AdaCost: cost of true bkg    selected signal]
+<VERBOSE>                          :     Cbb: "1.000000e+00" [AdaCost: cost of true bkg    selected bkg ]
+<VERBOSE>                          :     NodePurityLimit: "5.000000e-01" [In boosting/pruning, nodes with purity > NodePurityLimit are signal; background otherwise.]
+<VERBOSE>                          :     RegressionLossFunctionBDTG: "Huber" [Loss function for BDTG regression.]
+<VERBOSE>                          :     HuberQuantile: "7.000000e-01" [In the Huber loss function this is the quantile that separates the core from the tails in the residuals distribution.]
+<VERBOSE>                          :     UseFisherCuts: "False" [Use multivariate splits using the Fisher criterion]
+<VERBOSE>                          :     MinLinCorrForFisher: "8.000000e-01" [The minimum linear correlation between two variables demanded for use in Fisher criterion in node splitting]
+<VERBOSE>                          :     UseExclusiveVars: "False" [Variables already used in fisher criterion are not anymore analysed individually for node splitting]
+<VERBOSE>                          :     DoPreselection: "False" [and and apply automatic pre-selection for 100% efficient signal (bkg) cuts prior to training]
+<VERBOSE>                          :     SigToBkgFraction: "1.000000e+00" [Sig to Bkg ratio used in Training (similar to NodePurityLimit, which cannot be used in real adaboost]
+<VERBOSE>                          :     PruneMethod: "NoPruning" [Note: for BDTs use small trees (e.g.MaxDepth=3) and NoPruning:  Pruning: Method used for pruning (removal) of statistically insignificant branches ]
+<VERBOSE>                          :     PruneStrength: "0.000000e+00" [Pruning strength]
+<VERBOSE>                          :     PruningValFraction: "5.000000e-01" [Fraction of events to use for optimizing automatic pruning.]
+<VERBOSE>                          :     SkipNormalization: "False" [Skip normalization at initialization, to keep expectation value of BDT output according to the fraction of events]
+<VERBOSE>                          :     nEventsMin: "0" [deprecated: Use MinNodeSize (in % of training events) instead]
+<VERBOSE>                          :     UseBaggedGrad: "False" [deprecated: Use *UseBaggedBoost* instead:  Use only a random subsample of all events for growing the trees in each iteration.]
+<VERBOSE>                          :     GradBaggingFraction: "5.000000e-01" [deprecated: Use *BaggedSampleFraction* instead: Defines the fraction of events to be used in each iteration, e.g. when UseBaggedGrad=kTRUE. ]
+<VERBOSE>                          :     UseNTrainEvents: "0" [deprecated: Use *BaggedSampleFraction* instead: Number of randomly picked training events used in randomised (and bagged) trees]
+<VERBOSE>                          :     NNodesMax: "0" [deprecated: Use MaxDepth instead to limit the tree size]
+<HEADER> BDTG_fold1               : #events: (reweighted) sig: 70208 bkg: 70208
+                         : #events: (unweighted) sig: 100285 bkg: 40131
+                         : Training 1000 Decision Trees ... patience please
+0%, time left: unknown
+6%, time left: 119 sec
+12%, time left: 109 sec
+18%, time left: 100 sec
+25%, time left: 90 sec
+31%, time left: 86 sec
+37%, time left: 76 sec
+43%, time left: 69 sec
+50%, time left: 59 sec
+56%, time left: 53 sec
+62%, time left: 45 sec
+68%, time left: 37 sec
+75%, time left: 29 sec
+81%, time left: 22 sec
+87%, time left: 15 sec
+93%, time left: 7 sec
+                         : Elapsed time for training with 140416 events: 127 sec         
+<HEADER> BDTG_fold1               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold1 on training sample (140416 events)
+0%, time left: unknown
+6%, time left: 14 sec
+12%, time left: 12 sec
+18%, time left: 11 sec
+25%, time left: 10 sec
+31%, time left: 10 sec
+37%, time left: 9 sec
+43%, time left: 8 sec
+50%, time left: 7 sec
+56%, time left: 6 sec
+62%, time left: 5 sec
+68%, time left: 4 sec
+75%, time left: 3 sec
+81%, time left: 2 sec
+87%, time left: 1 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 140416 events: 14.9 sec       
+                         : Creating xml weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold1.weights.xml
+                         : Creating standalone class: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold1.class.C
+                         : ./BDTG_fold1.root:/training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/Method_BDT/BDTG_fold1
+<HEADER> Factory                  : Test all methods
+<HEADER> Factory                  : Test method: BDTG_fold1 for Classification performance
+                         : 
+<HEADER> BDTG_fold1               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold1 on testing sample (35125 events)
+0%, time left: unknown
+6%, time left: 3 sec
+12%, time left: 3 sec
+18%, time left: 3 sec
+25%, time left: 2 sec
+31%, time left: 2 sec
+37%, time left: 2 sec
+43%, time left: 2 sec
+50%, time left: 1 sec
+56%, time left: 1 sec
+62%, time left: 1 sec
+68%, time left: 1 sec
+75%, time left: 0 sec
+81%, time left: 0 sec
+87%, time left: 0 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 35125 events: 3.83 sec       
+<HEADER> Factory                  : Evaluate all methods
+<HEADER> Factory                  : Evaluate classifier: BDTG_fold1
+                         : 
+<HEADER> BDTG_fold1               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Loop over test events and fill histograms with classifier response...
+                         : 
+<HEADER> TFHandler_BDTG_fold1     :                                                                    Variable                                                                           Mean                                                                           RMS                                                                   [        Min                                                                           Max ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                                                                    Pt_tripl:                                                                       24.238                                                                       10.073   [                                                                       10.122                                                                       159.43 ]
+                         :                                                               cLP>30?30:cLP:                                                                       6.1778                                                                       7.5113   [                                                                     0.078238                                                                       30.000 ]
+                         :                                                           tKink>80?80:tKink:                                                                       14.129                                                                       12.342   [                                                                       1.8157                                                                       80.000 ]
+                         :                                                   segmComp<0.2?0.2:segmComp:                                                                      0.65777                                                                      0.20834   [                                                                      0.20000                                                                       1.0000 ]
+                         :                                                           fv_nC>25?25:fv_nC:                                                                       2.0917                                                                       3.2565   [                                                                   0.00014816                                                                       25.000 ]
+                         :                                               fv_dphi3D>0.15?0.15:fv_dphi3D:                                                                     0.028599                                                                     0.027584   [                                                                       0.0000                                                                      0.15000 ]
+                         :                                                 fv_d3Dsig>100?100:fv_d3Dsig:                                                                       24.849                                                                       22.032   [                                                                       1.4782                                                                       100.00 ]
+                         :                                               mindca_iso>0.5?0.5:mindca_iso:                                                                     0.048526                                                                     0.069176   [                                                                   3.2546e-05                                                                      0.50000 ]
+                         :                                                         trkRel>10?10:trkRel:                                                                       1.4170                                                                       1.7868   [                                                                       0.0000                                                                       10.000 ]
+                         :                                                       MuonIDeval_Mu1.MuonID:                                                                      0.59501                                                                     0.076290   [                                                                     0.097784                                                                      0.70349 ]
+                         :                                                       MuonIDeval_Mu2.MuonID:                                                                      0.58355                                                                     0.083014   [                                                                     0.086330                                                                      0.70813 ]
+                         :                                                       MuonIDeval_Mu3.MuonID:                                                                      0.57660                                                                     0.084468   [                                                                     0.083260                                                                      0.70081 ]
+                         :                                                         MuonIDeval_Mu3.year:                                                                       2017.6                                                                      0.47826   [                                                                       2017.0                                                                       2018.0 ]
+                         : std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       3.2982                                                                       4.4574   [                                                                   1.1272e-05                                                                       67.771 ]
+                         : std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       13.648                                                                       13.766   [                                                                      0.19482                                                                       248.18 ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold1     : 0.918
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold1     : 0.288 (0.331)       0.746 (0.758)      0.936 (0.935)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TestTree' with 35125 events
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TrainTree' with 140416 events
+                         : 
+<HEADER> Factory                  : Thank you for using TMVA!
+                         : For citation information, please visit: http://tmva.sf.net/citeTMVA.html
+                         : Creating fold output at:./BDTG_fold2.root
+<HEADER> Factory                  : Booking method: BDTG_fold2
+                         : 
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     <none>
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     Boost_num: "0" [Number of times the classifier will be boosted]
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
+<VERBOSE>                          :     H: "False" [Print method-specific help message]
+<VERBOSE>                          :     NTrees: "1000" [Number of trees in the forest]
+<VERBOSE>                          :     MaxDepth: "3" [Max depth of the decision tree allowed]
+<VERBOSE>                          :     MinNodeSize: "2.5%" [Minimum percentage of training events required in a leaf node (default: Classification: 5%, Regression: 0.2%)]
+<VERBOSE>                          :     nCuts: "50" [Number of grid points in variable range used in finding optimal cut in node splitting]
+<VERBOSE>                          :     BoostType: "AdaBoost" [Boosting type for the trees in the forest (note: AdaCost is still experimental)]
+<VERBOSE>                          :     UseBaggedBoost: "True" [Use only a random subsample of all events for growing the trees in each boost iteration.]
+<VERBOSE>                          :     AdaBoostBeta: "5.000000e-01" [Learning rate  for AdaBoost algorithm]
+<VERBOSE>                          :     BaggedSampleFraction: "5.000000e-01" [Relative size of bagged event sample to original size of the data sample (used whenever bagging is used (i.e. UseBaggedBoost, Bagging,)]
+<VERBOSE>                          :     SeparationType: "GiniIndex" [Separation criterion for node splitting]
+<VERBOSE>                          :     DoBoostMonitor: "True" [Create control plot with ROC integral vs tree number]
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     VerbosityLevel: "Default" [Verbosity level]
+<VERBOSE>                          :     VarTransform: "None" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
+<VERBOSE>                          :     CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
+<VERBOSE>                          :     IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in the training (but are included for testing and performance evaluation)]
+<VERBOSE>                          :     AdaBoostR2Loss: "Quadratic" [Type of Loss function in AdaBoostR2]
+<VERBOSE>                          :     Shrinkage: "1.000000e+00" [Learning rate for BoostType=Grad algorithm]
+<VERBOSE>                          :     UseRandomisedTrees: "False" [Determine at each node splitting the cut variable only as the best out of a random subset of variables (like in RandomForests)]
+<VERBOSE>                          :     UseNvars: "4" [Size of the subset of variables used with RandomisedTree option]
+<VERBOSE>                          :     UsePoissonNvars: "True" [Interpret "UseNvars" not as fixed number but as mean of a Poisson distribution in each split with RandomisedTree option]
+<VERBOSE>                          :     UseYesNoLeaf: "True" [Use Sig or Bkg categories, or the purity=S/(S+B) as classification of the leaf node -> Real-AdaBoost]
+<VERBOSE>                          :     NegWeightTreatment: "InverseBoostNegWeights" [How to treat events with negative weights in the BDT training (particular the boosting) : IgnoreInTraining;  Boost With inverse boostweight; Pair events with negative and positive weights in training sample and *annihilate* them (experimental!)]
+<VERBOSE>                          :     Css: "1.000000e+00" [AdaCost: cost of true signal selected signal]
+<VERBOSE>                          :     Cts_sb: "1.000000e+00" [AdaCost: cost of true signal selected bkg]
+<VERBOSE>                          :     Ctb_ss: "1.000000e+00" [AdaCost: cost of true bkg    selected signal]
+<VERBOSE>                          :     Cbb: "1.000000e+00" [AdaCost: cost of true bkg    selected bkg ]
+<VERBOSE>                          :     NodePurityLimit: "5.000000e-01" [In boosting/pruning, nodes with purity > NodePurityLimit are signal; background otherwise.]
+<VERBOSE>                          :     RegressionLossFunctionBDTG: "Huber" [Loss function for BDTG regression.]
+<VERBOSE>                          :     HuberQuantile: "7.000000e-01" [In the Huber loss function this is the quantile that separates the core from the tails in the residuals distribution.]
+<VERBOSE>                          :     UseFisherCuts: "False" [Use multivariate splits using the Fisher criterion]
+<VERBOSE>                          :     MinLinCorrForFisher: "8.000000e-01" [The minimum linear correlation between two variables demanded for use in Fisher criterion in node splitting]
+<VERBOSE>                          :     UseExclusiveVars: "False" [Variables already used in fisher criterion are not anymore analysed individually for node splitting]
+<VERBOSE>                          :     DoPreselection: "False" [and and apply automatic pre-selection for 100% efficient signal (bkg) cuts prior to training]
+<VERBOSE>                          :     SigToBkgFraction: "1.000000e+00" [Sig to Bkg ratio used in Training (similar to NodePurityLimit, which cannot be used in real adaboost]
+<VERBOSE>                          :     PruneMethod: "NoPruning" [Note: for BDTs use small trees (e.g.MaxDepth=3) and NoPruning:  Pruning: Method used for pruning (removal) of statistically insignificant branches ]
+<VERBOSE>                          :     PruneStrength: "0.000000e+00" [Pruning strength]
+<VERBOSE>                          :     PruningValFraction: "5.000000e-01" [Fraction of events to use for optimizing automatic pruning.]
+<VERBOSE>                          :     SkipNormalization: "False" [Skip normalization at initialization, to keep expectation value of BDT output according to the fraction of events]
+<VERBOSE>                          :     nEventsMin: "0" [deprecated: Use MinNodeSize (in % of training events) instead]
+<VERBOSE>                          :     UseBaggedGrad: "False" [deprecated: Use *UseBaggedBoost* instead:  Use only a random subsample of all events for growing the trees in each iteration.]
+<VERBOSE>                          :     GradBaggingFraction: "5.000000e-01" [deprecated: Use *BaggedSampleFraction* instead: Defines the fraction of events to be used in each iteration, e.g. when UseBaggedGrad=kTRUE. ]
+<VERBOSE>                          :     UseNTrainEvents: "0" [deprecated: Use *BaggedSampleFraction* instead: Number of randomly picked training events used in randomised (and bagged) trees]
+<VERBOSE>                          :     NNodesMax: "0" [deprecated: Use MaxDepth instead to limit the tree size]
+                         : Events with weight == 0 are going to be simply ignored 
+<HEADER> BDTG_fold2               : #events: (reweighted) sig: 70268.5 bkg: 70268.5
+                         : #events: (unweighted) sig: 100618 bkg: 39919
+                         : Training 1000 Decision Trees ... patience please
+0%, time left: unknown
+6%, time left: 127 sec
+12%, time left: 110 sec
+18%, time left: 99 sec
+25%, time left: 89 sec
+31%, time left: 83 sec
+37%, time left: 73 sec
+43%, time left: 66 sec
+50%, time left: 58 sec
+56%, time left: 51 sec
+62%, time left: 43 sec
+68%, time left: 35 sec
+75%, time left: 28 sec
+81%, time left: 21 sec
+87%, time left: 14 sec
+93%, time left: 7 sec
+                         : Elapsed time for training with 140539 events: 118 sec         
+<HEADER> BDTG_fold2               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold2 on training sample (140539 events)
+0%, time left: unknown
+6%, time left: 12 sec
+12%, time left: 11 sec
+18%, time left: 10 sec
+25%, time left: 9 sec
+31%, time left: 8 sec
+37%, time left: 8 sec
+43%, time left: 7 sec
+50%, time left: 6 sec
+56%, time left: 5 sec
+62%, time left: 5 sec
+68%, time left: 4 sec
+75%, time left: 3 sec
+81%, time left: 2 sec
+87%, time left: 1 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 140539 events: 13.4 sec       
+                         : Creating xml weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold2.weights.xml
+                         : Creating standalone class: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold2.class.C
+                         : ./BDTG_fold2.root:/training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/Method_BDT/BDTG_fold2
+<HEADER> Factory                  : Test all methods
+<HEADER> Factory                  : Test method: BDTG_fold2 for Classification performance
+                         : 
+<HEADER> BDTG_fold2               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold2 on testing sample (35002 events)
+0%, time left: unknown
+7%, time left: 2 sec
+13%, time left: 2 sec
+19%, time left: 2 sec
+26%, time left: 2 sec
+32%, time left: 2 sec
+38%, time left: 2 sec
+44%, time left: 1 sec
+50%, time left: 1 sec
+56%, time left: 1 sec
+62%, time left: 1 sec
+68%, time left: 1 sec
+75%, time left: 0 sec
+81%, time left: 0 sec
+87%, time left: 0 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 35002 events: 3.26 sec       
+<HEADER> Factory                  : Evaluate all methods
+<HEADER> Factory                  : Evaluate classifier: BDTG_fold2
+                         : 
+<HEADER> BDTG_fold2               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Loop over test events and fill histograms with classifier response...
+                         : 
+<HEADER> TFHandler_BDTG_fold2     :                                                                    Variable                                                                           Mean                                                                           RMS                                                                   [        Min                                                                           Max ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                                                                    Pt_tripl:                                                                       24.330                                                                       10.064   [                                                                       10.674                                                                       132.94 ]
+                         :                                                               cLP>30?30:cLP:                                                                       6.2256                                                                       7.5450   [                                                                     0.046971                                                                       30.000 ]
+                         :                                                           tKink>80?80:tKink:                                                                       14.253                                                                       12.472   [                                                                       2.3548                                                                       80.000 ]
+                         :                                                   segmComp<0.2?0.2:segmComp:                                                                      0.66153                                                                      0.20865   [                                                                      0.20000                                                                       1.0000 ]
+                         :                                                           fv_nC>25?25:fv_nC:                                                                       2.1040                                                                       3.2633   [                                                                    0.0012096                                                                       25.000 ]
+                         :                                               fv_dphi3D>0.15?0.15:fv_dphi3D:                                                                     0.028857                                                                     0.027954   [                                                                       0.0000                                                                      0.15000 ]
+                         :                                                 fv_d3Dsig>100?100:fv_d3Dsig:                                                                       25.171                                                                       22.314   [                                                                      0.91901                                                                       100.00 ]
+                         :                                               mindca_iso>0.5?0.5:mindca_iso:                                                                     0.048549                                                                     0.069540   [                                                                   6.8360e-05                                                                      0.50000 ]
+                         :                                                         trkRel>10?10:trkRel:                                                                       1.4170                                                                       1.7905   [                                                                       0.0000                                                                       10.000 ]
+                         :                                                       MuonIDeval_Mu1.MuonID:                                                                      0.59420                                                                     0.077010   [                                                                     0.093666                                                                      0.70081 ]
+                         :                                                       MuonIDeval_Mu2.MuonID:                                                                      0.58327                                                                     0.083179   [                                                                     0.080077                                                                      0.70222 ]
+                         :                                                       MuonIDeval_Mu3.MuonID:                                                                      0.57586                                                                     0.084658   [                                                                     0.088295                                                                      0.69933 ]
+                         :                                                         MuonIDeval_Mu3.year:                                                                       2017.6                                                                      0.47844   [                                                                       2017.0                                                                       2018.0 ]
+                         : std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       3.3343                                                                       4.5342   [                                                                   0.00019685                                                                       82.967 ]
+                         : std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       13.829                                                                       14.019   [                                                                      0.26192                                                                       201.09 ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold2     : 0.917
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold2     : 0.269 (0.320)       0.742 (0.750)      0.930 (0.935)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TestTree' with 35002 events
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TrainTree' with 140539 events
+                         : 
+<HEADER> Factory                  : Thank you for using TMVA!
+                         : For citation information, please visit: http://tmva.sf.net/citeTMVA.html
+                         : Creating fold output at:./BDTG_fold3.root
+<HEADER> Factory                  : Booking method: BDTG_fold3
+                         : 
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     <none>
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     Boost_num: "0" [Number of times the classifier will be boosted]
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
+<VERBOSE>                          :     H: "False" [Print method-specific help message]
+<VERBOSE>                          :     NTrees: "1000" [Number of trees in the forest]
+<VERBOSE>                          :     MaxDepth: "3" [Max depth of the decision tree allowed]
+<VERBOSE>                          :     MinNodeSize: "2.5%" [Minimum percentage of training events required in a leaf node (default: Classification: 5%, Regression: 0.2%)]
+<VERBOSE>                          :     nCuts: "50" [Number of grid points in variable range used in finding optimal cut in node splitting]
+<VERBOSE>                          :     BoostType: "AdaBoost" [Boosting type for the trees in the forest (note: AdaCost is still experimental)]
+<VERBOSE>                          :     UseBaggedBoost: "True" [Use only a random subsample of all events for growing the trees in each boost iteration.]
+<VERBOSE>                          :     AdaBoostBeta: "5.000000e-01" [Learning rate  for AdaBoost algorithm]
+<VERBOSE>                          :     BaggedSampleFraction: "5.000000e-01" [Relative size of bagged event sample to original size of the data sample (used whenever bagging is used (i.e. UseBaggedBoost, Bagging,)]
+<VERBOSE>                          :     SeparationType: "GiniIndex" [Separation criterion for node splitting]
+<VERBOSE>                          :     DoBoostMonitor: "True" [Create control plot with ROC integral vs tree number]
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     VerbosityLevel: "Default" [Verbosity level]
+<VERBOSE>                          :     VarTransform: "None" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
+<VERBOSE>                          :     CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
+<VERBOSE>                          :     IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in the training (but are included for testing and performance evaluation)]
+<VERBOSE>                          :     AdaBoostR2Loss: "Quadratic" [Type of Loss function in AdaBoostR2]
+<VERBOSE>                          :     Shrinkage: "1.000000e+00" [Learning rate for BoostType=Grad algorithm]
+<VERBOSE>                          :     UseRandomisedTrees: "False" [Determine at each node splitting the cut variable only as the best out of a random subset of variables (like in RandomForests)]
+<VERBOSE>                          :     UseNvars: "4" [Size of the subset of variables used with RandomisedTree option]
+<VERBOSE>                          :     UsePoissonNvars: "True" [Interpret "UseNvars" not as fixed number but as mean of a Poisson distribution in each split with RandomisedTree option]
+<VERBOSE>                          :     UseYesNoLeaf: "True" [Use Sig or Bkg categories, or the purity=S/(S+B) as classification of the leaf node -> Real-AdaBoost]
+<VERBOSE>                          :     NegWeightTreatment: "InverseBoostNegWeights" [How to treat events with negative weights in the BDT training (particular the boosting) : IgnoreInTraining;  Boost With inverse boostweight; Pair events with negative and positive weights in training sample and *annihilate* them (experimental!)]
+<VERBOSE>                          :     Css: "1.000000e+00" [AdaCost: cost of true signal selected signal]
+<VERBOSE>                          :     Cts_sb: "1.000000e+00" [AdaCost: cost of true signal selected bkg]
+<VERBOSE>                          :     Ctb_ss: "1.000000e+00" [AdaCost: cost of true bkg    selected signal]
+<VERBOSE>                          :     Cbb: "1.000000e+00" [AdaCost: cost of true bkg    selected bkg ]
+<VERBOSE>                          :     NodePurityLimit: "5.000000e-01" [In boosting/pruning, nodes with purity > NodePurityLimit are signal; background otherwise.]
+<VERBOSE>                          :     RegressionLossFunctionBDTG: "Huber" [Loss function for BDTG regression.]
+<VERBOSE>                          :     HuberQuantile: "7.000000e-01" [In the Huber loss function this is the quantile that separates the core from the tails in the residuals distribution.]
+<VERBOSE>                          :     UseFisherCuts: "False" [Use multivariate splits using the Fisher criterion]
+<VERBOSE>                          :     MinLinCorrForFisher: "8.000000e-01" [The minimum linear correlation between two variables demanded for use in Fisher criterion in node splitting]
+<VERBOSE>                          :     UseExclusiveVars: "False" [Variables already used in fisher criterion are not anymore analysed individually for node splitting]
+<VERBOSE>                          :     DoPreselection: "False" [and and apply automatic pre-selection for 100% efficient signal (bkg) cuts prior to training]
+<VERBOSE>                          :     SigToBkgFraction: "1.000000e+00" [Sig to Bkg ratio used in Training (similar to NodePurityLimit, which cannot be used in real adaboost]
+<VERBOSE>                          :     PruneMethod: "NoPruning" [Note: for BDTs use small trees (e.g.MaxDepth=3) and NoPruning:  Pruning: Method used for pruning (removal) of statistically insignificant branches ]
+<VERBOSE>                          :     PruneStrength: "0.000000e+00" [Pruning strength]
+<VERBOSE>                          :     PruningValFraction: "5.000000e-01" [Fraction of events to use for optimizing automatic pruning.]
+<VERBOSE>                          :     SkipNormalization: "False" [Skip normalization at initialization, to keep expectation value of BDT output according to the fraction of events]
+<VERBOSE>                          :     nEventsMin: "0" [deprecated: Use MinNodeSize (in % of training events) instead]
+<VERBOSE>                          :     UseBaggedGrad: "False" [deprecated: Use *UseBaggedBoost* instead:  Use only a random subsample of all events for growing the trees in each iteration.]
+<VERBOSE>                          :     GradBaggingFraction: "5.000000e-01" [deprecated: Use *BaggedSampleFraction* instead: Defines the fraction of events to be used in each iteration, e.g. when UseBaggedGrad=kTRUE. ]
+<VERBOSE>                          :     UseNTrainEvents: "0" [deprecated: Use *BaggedSampleFraction* instead: Number of randomly picked training events used in randomised (and bagged) trees]
+<VERBOSE>                          :     NNodesMax: "0" [deprecated: Use MaxDepth instead to limit the tree size]
+                         : Events with weight == 0 are going to be simply ignored 
+<HEADER> BDTG_fold3               : #events: (reweighted) sig: 70133 bkg: 70133
+                         : #events: (unweighted) sig: 100166 bkg: 40100
+                         : Training 1000 Decision Trees ... patience please
+0%, time left: unknown
+6%, time left: 108 sec
+12%, time left: 98 sec
+18%, time left: 91 sec
+25%, time left: 83 sec
+31%, time left: 78 sec
+37%, time left: 70 sec
+43%, time left: 63 sec
+50%, time left: 56 sec
+56%, time left: 50 sec
+62%, time left: 42 sec
+68%, time left: 35 sec
+75%, time left: 28 sec
+81%, time left: 21 sec
+87%, time left: 14 sec
+93%, time left: 7 sec
+                         : Elapsed time for training with 140268 events: 119 sec         
+<HEADER> BDTG_fold3               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold3 on training sample (140268 events)
+0%, time left: unknown
+6%, time left: 13 sec
+12%, time left: 12 sec
+18%, time left: 11 sec
+25%, time left: 10 sec
+31%, time left: 9 sec
+37%, time left: 8 sec
+43%, time left: 7 sec
+50%, time left: 6 sec
+56%, time left: 6 sec
+62%, time left: 5 sec
+68%, time left: 4 sec
+75%, time left: 3 sec
+81%, time left: 2 sec
+87%, time left: 1 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 140268 events: 14 sec       
+                         : Creating xml weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold3.weights.xml
+                         : Creating standalone class: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold3.class.C
+                         : ./BDTG_fold3.root:/training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/Method_BDT/BDTG_fold3
+<HEADER> Factory                  : Test all methods
+<HEADER> Factory                  : Test method: BDTG_fold3 for Classification performance
+                         : 
+<HEADER> BDTG_fold3               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold3 on testing sample (35273 events)
+0%, time left: unknown
+6%, time left: 3 sec
+12%, time left: 3 sec
+18%, time left: 2 sec
+25%, time left: 2 sec
+31%, time left: 2 sec
+37%, time left: 2 sec
+43%, time left: 1 sec
+50%, time left: 1 sec
+56%, time left: 1 sec
+62%, time left: 1 sec
+68%, time left: 1 sec
+75%, time left: 0 sec
+81%, time left: 0 sec
+87%, time left: 0 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 35273 events: 3.45 sec       
+<HEADER> Factory                  : Evaluate all methods
+<HEADER> Factory                  : Evaluate classifier: BDTG_fold3
+                         : 
+<HEADER> BDTG_fold3               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Loop over test events and fill histograms with classifier response...
+                         : 
+<HEADER> TFHandler_BDTG_fold3     :                                                                    Variable                                                                           Mean                                                                           RMS                                                                   [        Min                                                                           Max ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                                                                    Pt_tripl:                                                                       24.242                                                                       10.047   [                                                                       10.605                                                                       143.19 ]
+                         :                                                               cLP>30?30:cLP:                                                                       6.1242                                                                       7.4591   [                                                                     0.048031                                                                       30.000 ]
+                         :                                                           tKink>80?80:tKink:                                                                       14.229                                                                       12.539   [                                                                       1.6304                                                                       80.000 ]
+                         :                                                   segmComp<0.2?0.2:segmComp:                                                                      0.65979                                                                      0.20790   [                                                                      0.20000                                                                       1.0000 ]
+                         :                                                           fv_nC>25?25:fv_nC:                                                                       2.0699                                                                       3.2353   [                                                                    0.0010048                                                                       25.000 ]
+                         :                                               fv_dphi3D>0.15?0.15:fv_dphi3D:                                                                     0.028818                                                                     0.027942   [                                                                       0.0000                                                                      0.15000 ]
+                         :                                                 fv_d3Dsig>100?100:fv_d3Dsig:                                                                       24.762                                                                       21.907   [                                                                      0.45256                                                                       100.00 ]
+                         :                                               mindca_iso>0.5?0.5:mindca_iso:                                                                     0.048935                                                                     0.069778   [                                                                   7.7885e-05                                                                      0.50000 ]
+                         :                                                         trkRel>10?10:trkRel:                                                                       1.4073                                                                       1.8072   [                                                                       0.0000                                                                       10.000 ]
+                         :                                                       MuonIDeval_Mu1.MuonID:                                                                      0.59444                                                                     0.076715   [                                                                     0.087438                                                                      0.69933 ]
+                         :                                                       MuonIDeval_Mu2.MuonID:                                                                      0.58336                                                                     0.082143   [                                                                     0.089494                                                                      0.70163 ]
+                         :                                                       MuonIDeval_Mu3.MuonID:                                                                      0.57650                                                                     0.084705   [                                                                     0.085688                                                                      0.70000 ]
+                         :                                                         MuonIDeval_Mu3.year:                                                                       2017.6                                                                      0.47862   [                                                                       2017.0                                                                       2018.0 ]
+                         : std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       3.3122                                                                       4.4112   [                                                                   2.3814e-06                                                                       66.035 ]
+                         : std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       13.636                                                                       13.628   [                                                                      0.10711                                                                       172.47 ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold3     : 0.917
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold3     : 0.265 (0.318)       0.736 (0.757)      0.936 (0.938)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TestTree' with 35273 events
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TrainTree' with 140268 events
+                         : 
+<HEADER> Factory                  : Thank you for using TMVA!
+                         : For citation information, please visit: http://tmva.sf.net/citeTMVA.html
+                         : Creating fold output at:./BDTG_fold4.root
+<HEADER> Factory                  : Booking method: BDTG_fold4
+                         : 
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     <none>
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     Boost_num: "0" [Number of times the classifier will be boosted]
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
+<VERBOSE>                          :     H: "False" [Print method-specific help message]
+<VERBOSE>                          :     NTrees: "1000" [Number of trees in the forest]
+<VERBOSE>                          :     MaxDepth: "3" [Max depth of the decision tree allowed]
+<VERBOSE>                          :     MinNodeSize: "2.5%" [Minimum percentage of training events required in a leaf node (default: Classification: 5%, Regression: 0.2%)]
+<VERBOSE>                          :     nCuts: "50" [Number of grid points in variable range used in finding optimal cut in node splitting]
+<VERBOSE>                          :     BoostType: "AdaBoost" [Boosting type for the trees in the forest (note: AdaCost is still experimental)]
+<VERBOSE>                          :     UseBaggedBoost: "True" [Use only a random subsample of all events for growing the trees in each boost iteration.]
+<VERBOSE>                          :     AdaBoostBeta: "5.000000e-01" [Learning rate  for AdaBoost algorithm]
+<VERBOSE>                          :     BaggedSampleFraction: "5.000000e-01" [Relative size of bagged event sample to original size of the data sample (used whenever bagging is used (i.e. UseBaggedBoost, Bagging,)]
+<VERBOSE>                          :     SeparationType: "GiniIndex" [Separation criterion for node splitting]
+<VERBOSE>                          :     DoBoostMonitor: "True" [Create control plot with ROC integral vs tree number]
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     VerbosityLevel: "Default" [Verbosity level]
+<VERBOSE>                          :     VarTransform: "None" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
+<VERBOSE>                          :     CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
+<VERBOSE>                          :     IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in the training (but are included for testing and performance evaluation)]
+<VERBOSE>                          :     AdaBoostR2Loss: "Quadratic" [Type of Loss function in AdaBoostR2]
+<VERBOSE>                          :     Shrinkage: "1.000000e+00" [Learning rate for BoostType=Grad algorithm]
+<VERBOSE>                          :     UseRandomisedTrees: "False" [Determine at each node splitting the cut variable only as the best out of a random subset of variables (like in RandomForests)]
+<VERBOSE>                          :     UseNvars: "4" [Size of the subset of variables used with RandomisedTree option]
+<VERBOSE>                          :     UsePoissonNvars: "True" [Interpret "UseNvars" not as fixed number but as mean of a Poisson distribution in each split with RandomisedTree option]
+<VERBOSE>                          :     UseYesNoLeaf: "True" [Use Sig or Bkg categories, or the purity=S/(S+B) as classification of the leaf node -> Real-AdaBoost]
+<VERBOSE>                          :     NegWeightTreatment: "InverseBoostNegWeights" [How to treat events with negative weights in the BDT training (particular the boosting) : IgnoreInTraining;  Boost With inverse boostweight; Pair events with negative and positive weights in training sample and *annihilate* them (experimental!)]
+<VERBOSE>                          :     Css: "1.000000e+00" [AdaCost: cost of true signal selected signal]
+<VERBOSE>                          :     Cts_sb: "1.000000e+00" [AdaCost: cost of true signal selected bkg]
+<VERBOSE>                          :     Ctb_ss: "1.000000e+00" [AdaCost: cost of true bkg    selected signal]
+<VERBOSE>                          :     Cbb: "1.000000e+00" [AdaCost: cost of true bkg    selected bkg ]
+<VERBOSE>                          :     NodePurityLimit: "5.000000e-01" [In boosting/pruning, nodes with purity > NodePurityLimit are signal; background otherwise.]
+<VERBOSE>                          :     RegressionLossFunctionBDTG: "Huber" [Loss function for BDTG regression.]
+<VERBOSE>                          :     HuberQuantile: "7.000000e-01" [In the Huber loss function this is the quantile that separates the core from the tails in the residuals distribution.]
+<VERBOSE>                          :     UseFisherCuts: "False" [Use multivariate splits using the Fisher criterion]
+<VERBOSE>                          :     MinLinCorrForFisher: "8.000000e-01" [The minimum linear correlation between two variables demanded for use in Fisher criterion in node splitting]
+<VERBOSE>                          :     UseExclusiveVars: "False" [Variables already used in fisher criterion are not anymore analysed individually for node splitting]
+<VERBOSE>                          :     DoPreselection: "False" [and and apply automatic pre-selection for 100% efficient signal (bkg) cuts prior to training]
+<VERBOSE>                          :     SigToBkgFraction: "1.000000e+00" [Sig to Bkg ratio used in Training (similar to NodePurityLimit, which cannot be used in real adaboost]
+<VERBOSE>                          :     PruneMethod: "NoPruning" [Note: for BDTs use small trees (e.g.MaxDepth=3) and NoPruning:  Pruning: Method used for pruning (removal) of statistically insignificant branches ]
+<VERBOSE>                          :     PruneStrength: "0.000000e+00" [Pruning strength]
+<VERBOSE>                          :     PruningValFraction: "5.000000e-01" [Fraction of events to use for optimizing automatic pruning.]
+<VERBOSE>                          :     SkipNormalization: "False" [Skip normalization at initialization, to keep expectation value of BDT output according to the fraction of events]
+<VERBOSE>                          :     nEventsMin: "0" [deprecated: Use MinNodeSize (in % of training events) instead]
+<VERBOSE>                          :     UseBaggedGrad: "False" [deprecated: Use *UseBaggedBoost* instead:  Use only a random subsample of all events for growing the trees in each iteration.]
+<VERBOSE>                          :     GradBaggingFraction: "5.000000e-01" [deprecated: Use *BaggedSampleFraction* instead: Defines the fraction of events to be used in each iteration, e.g. when UseBaggedGrad=kTRUE. ]
+<VERBOSE>                          :     UseNTrainEvents: "0" [deprecated: Use *BaggedSampleFraction* instead: Number of randomly picked training events used in randomised (and bagged) trees]
+<VERBOSE>                          :     NNodesMax: "0" [deprecated: Use MaxDepth instead to limit the tree size]
+                         : Events with weight == 0 are going to be simply ignored 
+<HEADER> BDTG_fold4               : #events: (reweighted) sig: 70349 bkg: 70349
+                         : #events: (unweighted) sig: 100440 bkg: 40258
+                         : Training 1000 Decision Trees ... patience please
+0%, time left: unknown
+6%, time left: 112 sec
+12%, time left: 100 sec
+18%, time left: 94 sec
+25%, time left: 86 sec
+31%, time left: 81 sec
+37%, time left: 73 sec
+43%, time left: 66 sec
+50%, time left: 58 sec
+56%, time left: 51 sec
+62%, time left: 43 sec
+68%, time left: 35 sec
+75%, time left: 28 sec
+81%, time left: 21 sec
+87%, time left: 14 sec
+93%, time left: 7 sec
+                         : Elapsed time for training with 140700 events: 119 sec         
+<HEADER> BDTG_fold4               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold4 on training sample (140700 events)
+0%, time left: unknown
+7%, time left: 12 sec
+13%, time left: 12 sec
+19%, time left: 11 sec
+25%, time left: 10 sec
+32%, time left: 9 sec
+38%, time left: 8 sec
+44%, time left: 7 sec
+50%, time left: 6 sec
+57%, time left: 5 sec
+63%, time left: 5 sec
+69%, time left: 4 sec
+75%, time left: 3 sec
+82%, time left: 2 sec
+88%, time left: 1 sec
+94%, time left: 0 sec
+                         : Elapsed time for evaluation of 140700 events: 14 sec       
+                         : Creating xml weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold4.weights.xml
+                         : Creating standalone class: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold4.class.C
+                         : ./BDTG_fold4.root:/training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/Method_BDT/BDTG_fold4
+<HEADER> Factory                  : Test all methods
+<HEADER> Factory                  : Test method: BDTG_fold4 for Classification performance
+                         : 
+<HEADER> BDTG_fold4               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold4 on testing sample (34841 events)
+0%, time left: unknown
+6%, time left: 3 sec
+12%, time left: 3 sec
+18%, time left: 3 sec
+25%, time left: 2 sec
+31%, time left: 2 sec
+37%, time left: 2 sec
+43%, time left: 2 sec
+50%, time left: 1 sec
+56%, time left: 1 sec
+62%, time left: 1 sec
+68%, time left: 1 sec
+75%, time left: 0 sec
+81%, time left: 0 sec
+87%, time left: 0 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 34841 events: 3.66 sec       
+<HEADER> Factory                  : Evaluate all methods
+<HEADER> Factory                  : Evaluate classifier: BDTG_fold4
+                         : 
+<HEADER> BDTG_fold4               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Loop over test events and fill histograms with classifier response...
+                         : 
+<HEADER> TFHandler_BDTG_fold4     :                                                                    Variable                                                                           Mean                                                                           RMS                                                                   [        Min                                                                           Max ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                                                                    Pt_tripl:                                                                       24.269                                                                       10.096   [                                                                       10.478                                                                       157.13 ]
+                         :                                                               cLP>30?30:cLP:                                                                       6.0924                                                                       7.3991   [                                                                     0.065639                                                                       30.000 ]
+                         :                                                           tKink>80?80:tKink:                                                                       14.223                                                                       12.428   [                                                                       1.7227                                                                       80.000 ]
+                         :                                                   segmComp<0.2?0.2:segmComp:                                                                      0.66240                                                                      0.20669   [                                                                      0.20000                                                                       1.0000 ]
+                         :                                                           fv_nC>25?25:fv_nC:                                                                       2.0836                                                                       3.2652   [                                                                   7.6161e-05                                                                       25.000 ]
+                         :                                               fv_dphi3D>0.15?0.15:fv_dphi3D:                                                                     0.028664                                                                     0.027702   [                                                                       0.0000                                                                      0.15000 ]
+                         :                                                 fv_d3Dsig>100?100:fv_d3Dsig:                                                                       25.044                                                                       22.202   [                                                                       1.0157                                                                       100.00 ]
+                         :                                               mindca_iso>0.5?0.5:mindca_iso:                                                                     0.049317                                                                     0.071098   [                                                                   2.1150e-05                                                                      0.50000 ]
+                         :                                                         trkRel>10?10:trkRel:                                                                       1.4147                                                                       1.8051   [                                                                       0.0000                                                                       10.000 ]
+                         :                                                       MuonIDeval_Mu1.MuonID:                                                                      0.59502                                                                     0.076231   [                                                                     0.087535                                                                      0.72114 ]
+                         :                                                       MuonIDeval_Mu2.MuonID:                                                                      0.58340                                                                     0.082731   [                                                                     0.080135                                                                      0.70849 ]
+                         :                                                       MuonIDeval_Mu3.MuonID:                                                                      0.57653                                                                     0.084421   [                                                                     0.082105                                                                      0.70669 ]
+                         :                                                         MuonIDeval_Mu3.year:                                                                       2017.6                                                                      0.47722   [                                                                       2017.0                                                                       2018.0 ]
+                         : std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       3.3176                                                                       4.4308   [                                                                   1.7212e-05                                                                       68.327 ]
+                         : std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       13.838                                                                       14.022   [                                                                      0.11280                                                                       275.15 ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold4     : 0.919
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold4     : 0.287 (0.325)       0.749 (0.754)      0.936 (0.938)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TestTree' with 34841 events
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TrainTree' with 140700 events
+                         : 
+<HEADER> Factory                  : Thank you for using TMVA!
+                         : For citation information, please visit: http://tmva.sf.net/citeTMVA.html
+                         : Creating fold output at:./BDTG_fold5.root
+<HEADER> Factory                  : Booking method: BDTG_fold5
+                         : 
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     <none>
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     Boost_num: "0" [Number of times the classifier will be boosted]
+<VERBOSE>                          : Parsing option string: 
+<VERBOSE>                          : ... "!H:V:NTrees=1000:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:DoBoostMonitor=True:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=50"
+<VERBOSE>                          : The following options are set:
+<VERBOSE>                          : - By User:
+<VERBOSE>                          :     V: "True" [Verbose output (short form of "VerbosityLevel" below - overrides the latter one)]
+<VERBOSE>                          :     H: "False" [Print method-specific help message]
+<VERBOSE>                          :     NTrees: "1000" [Number of trees in the forest]
+<VERBOSE>                          :     MaxDepth: "3" [Max depth of the decision tree allowed]
+<VERBOSE>                          :     MinNodeSize: "2.5%" [Minimum percentage of training events required in a leaf node (default: Classification: 5%, Regression: 0.2%)]
+<VERBOSE>                          :     nCuts: "50" [Number of grid points in variable range used in finding optimal cut in node splitting]
+<VERBOSE>                          :     BoostType: "AdaBoost" [Boosting type for the trees in the forest (note: AdaCost is still experimental)]
+<VERBOSE>                          :     UseBaggedBoost: "True" [Use only a random subsample of all events for growing the trees in each boost iteration.]
+<VERBOSE>                          :     AdaBoostBeta: "5.000000e-01" [Learning rate  for AdaBoost algorithm]
+<VERBOSE>                          :     BaggedSampleFraction: "5.000000e-01" [Relative size of bagged event sample to original size of the data sample (used whenever bagging is used (i.e. UseBaggedBoost, Bagging,)]
+<VERBOSE>                          :     SeparationType: "GiniIndex" [Separation criterion for node splitting]
+<VERBOSE>                          :     DoBoostMonitor: "True" [Create control plot with ROC integral vs tree number]
+<VERBOSE>                          : - Default:
+<VERBOSE>                          :     VerbosityLevel: "Default" [Verbosity level]
+<VERBOSE>                          :     VarTransform: "None" [List of variable transformations performed before training, e.g., "D_Background,P_Signal,G,N_AllClasses" for: "Decorrelation, PCA-transformation, Gaussianisation, Normalisation, each for the given class of events ('AllClasses' denotes all events of all classes, if no class indication is given, 'All' is assumed)"]
+<VERBOSE>                          :     CreateMVAPdfs: "False" [Create PDFs for classifier outputs (signal and background)]
+<VERBOSE>                          :     IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in the training (but are included for testing and performance evaluation)]
+<VERBOSE>                          :     AdaBoostR2Loss: "Quadratic" [Type of Loss function in AdaBoostR2]
+<VERBOSE>                          :     Shrinkage: "1.000000e+00" [Learning rate for BoostType=Grad algorithm]
+<VERBOSE>                          :     UseRandomisedTrees: "False" [Determine at each node splitting the cut variable only as the best out of a random subset of variables (like in RandomForests)]
+<VERBOSE>                          :     UseNvars: "4" [Size of the subset of variables used with RandomisedTree option]
+<VERBOSE>                          :     UsePoissonNvars: "True" [Interpret "UseNvars" not as fixed number but as mean of a Poisson distribution in each split with RandomisedTree option]
+<VERBOSE>                          :     UseYesNoLeaf: "True" [Use Sig or Bkg categories, or the purity=S/(S+B) as classification of the leaf node -> Real-AdaBoost]
+<VERBOSE>                          :     NegWeightTreatment: "InverseBoostNegWeights" [How to treat events with negative weights in the BDT training (particular the boosting) : IgnoreInTraining;  Boost With inverse boostweight; Pair events with negative and positive weights in training sample and *annihilate* them (experimental!)]
+<VERBOSE>                          :     Css: "1.000000e+00" [AdaCost: cost of true signal selected signal]
+<VERBOSE>                          :     Cts_sb: "1.000000e+00" [AdaCost: cost of true signal selected bkg]
+<VERBOSE>                          :     Ctb_ss: "1.000000e+00" [AdaCost: cost of true bkg    selected signal]
+<VERBOSE>                          :     Cbb: "1.000000e+00" [AdaCost: cost of true bkg    selected bkg ]
+<VERBOSE>                          :     NodePurityLimit: "5.000000e-01" [In boosting/pruning, nodes with purity > NodePurityLimit are signal; background otherwise.]
+<VERBOSE>                          :     RegressionLossFunctionBDTG: "Huber" [Loss function for BDTG regression.]
+<VERBOSE>                          :     HuberQuantile: "7.000000e-01" [In the Huber loss function this is the quantile that separates the core from the tails in the residuals distribution.]
+<VERBOSE>                          :     UseFisherCuts: "False" [Use multivariate splits using the Fisher criterion]
+<VERBOSE>                          :     MinLinCorrForFisher: "8.000000e-01" [The minimum linear correlation between two variables demanded for use in Fisher criterion in node splitting]
+<VERBOSE>                          :     UseExclusiveVars: "False" [Variables already used in fisher criterion are not anymore analysed individually for node splitting]
+<VERBOSE>                          :     DoPreselection: "False" [and and apply automatic pre-selection for 100% efficient signal (bkg) cuts prior to training]
+<VERBOSE>                          :     SigToBkgFraction: "1.000000e+00" [Sig to Bkg ratio used in Training (similar to NodePurityLimit, which cannot be used in real adaboost]
+<VERBOSE>                          :     PruneMethod: "NoPruning" [Note: for BDTs use small trees (e.g.MaxDepth=3) and NoPruning:  Pruning: Method used for pruning (removal) of statistically insignificant branches ]
+<VERBOSE>                          :     PruneStrength: "0.000000e+00" [Pruning strength]
+<VERBOSE>                          :     PruningValFraction: "5.000000e-01" [Fraction of events to use for optimizing automatic pruning.]
+<VERBOSE>                          :     SkipNormalization: "False" [Skip normalization at initialization, to keep expectation value of BDT output according to the fraction of events]
+<VERBOSE>                          :     nEventsMin: "0" [deprecated: Use MinNodeSize (in % of training events) instead]
+<VERBOSE>                          :     UseBaggedGrad: "False" [deprecated: Use *UseBaggedBoost* instead:  Use only a random subsample of all events for growing the trees in each iteration.]
+<VERBOSE>                          :     GradBaggingFraction: "5.000000e-01" [deprecated: Use *BaggedSampleFraction* instead: Defines the fraction of events to be used in each iteration, e.g. when UseBaggedGrad=kTRUE. ]
+<VERBOSE>                          :     UseNTrainEvents: "0" [deprecated: Use *BaggedSampleFraction* instead: Number of randomly picked training events used in randomised (and bagged) trees]
+<VERBOSE>                          :     NNodesMax: "0" [deprecated: Use MaxDepth instead to limit the tree size]
+                         : Events with weight == 0 are going to be simply ignored 
+<HEADER> BDTG_fold5               : #events: (reweighted) sig: 70119.5 bkg: 70119.5
+                         : #events: (unweighted) sig: 100163 bkg: 40076
+                         : Training 1000 Decision Trees ... patience please
+0%, time left: unknown
+6%, time left: 119 sec
+12%, time left: 102 sec
+18%, time left: 93 sec
+25%, time left: 85 sec
+31%, time left: 80 sec
+37%, time left: 72 sec
+43%, time left: 65 sec
+50%, time left: 57 sec
+56%, time left: 51 sec
+62%, time left: 43 sec
+68%, time left: 36 sec
+75%, time left: 28 sec
+81%, time left: 22 sec
+87%, time left: 14 sec
+93%, time left: 7 sec
+                         : Elapsed time for training with 140241 events: 123 sec         
+<HEADER> BDTG_fold5               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold5 on training sample (140241 events)
+0%, time left: unknown
+6%, time left: 12 sec
+12%, time left: 12 sec
+18%, time left: 11 sec
+25%, time left: 10 sec
+31%, time left: 9 sec
+37%, time left: 8 sec
+43%, time left: 8 sec
+50%, time left: 7 sec
+56%, time left: 6 sec
+62%, time left: 5 sec
+68%, time left: 4 sec
+75%, time left: 3 sec
+81%, time left: 2 sec
+87%, time left: 1 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 140241 events: 14.6 sec       
+                         : Creating xml weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold5.weights.xml
+                         : Creating standalone class: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold5.class.C
+                         : ./BDTG_fold5.root:/training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/Method_BDT/BDTG_fold5
+<HEADER> Factory                  : Test all methods
+<HEADER> Factory                  : Test method: BDTG_fold5 for Classification performance
+                         : 
+<HEADER> BDTG_fold5               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG_fold5 on testing sample (35300 events)
+0%, time left: unknown
+7%, time left: 3 sec
+13%, time left: 3 sec
+19%, time left: 3 sec
+25%, time left: 2 sec
+32%, time left: 2 sec
+38%, time left: 2 sec
+44%, time left: 2 sec
+50%, time left: 1 sec
+57%, time left: 1 sec
+63%, time left: 1 sec
+69%, time left: 1 sec
+75%, time left: 0 sec
+82%, time left: 0 sec
+88%, time left: 0 sec
+94%, time left: 0 sec
+                         : Elapsed time for evaluation of 35300 events: 3.69 sec       
+<HEADER> Factory                  : Evaluate all methods
+<HEADER> Factory                  : Evaluate classifier: BDTG_fold5
+                         : 
+<HEADER> BDTG_fold5               : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Loop over test events and fill histograms with classifier response...
+                         : 
+<HEADER> TFHandler_BDTG_fold5     :                                                                    Variable                                                                           Mean                                                                           RMS                                                                   [        Min                                                                           Max ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                                                                    Pt_tripl:                                                                       24.285                                                                       9.9443   [                                                                       10.724                                                                       141.66 ]
+                         :                                                               cLP>30?30:cLP:                                                                       6.2227                                                                       7.5628   [                                                                     0.065157                                                                       30.000 ]
+                         :                                                           tKink>80?80:tKink:                                                                       14.262                                                                       12.457   [                                                                       1.9826                                                                       80.000 ]
+                         :                                                   segmComp<0.2?0.2:segmComp:                                                                      0.65862                                                                      0.20861   [                                                                      0.20000                                                                       1.0000 ]
+                         :                                                           fv_nC>25?25:fv_nC:                                                                       2.0607                                                                       3.2265   [                                                                   0.00059046                                                                       25.000 ]
+                         :                                               fv_dphi3D>0.15?0.15:fv_dphi3D:                                                                     0.028479                                                                     0.027638   [                                                                       0.0000                                                                      0.15000 ]
+                         :                                                 fv_d3Dsig>100?100:fv_d3Dsig:                                                                       25.134                                                                       22.164   [                                                                       1.7591                                                                       100.00 ]
+                         :                                               mindca_iso>0.5?0.5:mindca_iso:                                                                     0.049216                                                                     0.069734   [                                                                   4.1307e-05                                                                      0.50000 ]
+                         :                                                         trkRel>10?10:trkRel:                                                                       1.4105                                                                       1.7988   [                                                                       0.0000                                                                       10.000 ]
+                         :                                                       MuonIDeval_Mu1.MuonID:                                                                      0.59479                                                                     0.075658   [                                                                     0.091671                                                                      0.69716 ]
+                         :                                                       MuonIDeval_Mu2.MuonID:                                                                      0.58287                                                                     0.083757   [                                                                     0.082143                                                                      0.70182 ]
+                         :                                                       MuonIDeval_Mu3.MuonID:                                                                      0.57592                                                                     0.084943   [                                                                     0.085125                                                                      0.70316 ]
+                         :                                                         MuonIDeval_Mu3.year:                                                                       2017.6                                                                      0.47899   [                                                                       2017.0                                                                       2018.0 ]
+                         : std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       3.3492                                                                       4.5376   [                                                                   5.2228e-06                                                                       81.536 ]
+                         : std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       13.858                                                                       13.903   [                                                                     0.053308                                                                       261.27 ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold5     : 0.919
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG_fold5     : 0.310 (0.331)       0.748 (0.759)      0.934 (0.938)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TestTree' with 35300 events
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TrainTree' with 140241 events
+                         : 
+<HEADER> Factory                  : Thank you for using TMVA!
+                         : For citation information, please visit: http://tmva.sf.net/citeTMVA.html
+<HEADER> Factory                  : Booking method: BDTG
+                         : 
+                         : Reading weightfile: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold1.weights.xml
+                         : Reading weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold1.weights.xml
+                         : Reading weightfile: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold2.weights.xml
+                         : Reading weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold2.weights.xml
+                         : Reading weightfile: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold3.weights.xml
+                         : Reading weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold3.weights.xml
+                         : Reading weightfile: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold4.weights.xml
+                         : Reading weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold4.weights.xml
+                         : Reading weightfile: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold5.weights.xml
+                         : Reading weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG_fold5.weights.xml
+                         : 
+                         : 
+                         : ========================================
+                         : Folds processed for all methods, evaluating.
+                         : ========================================
+                         : 
+<HEADER> Factory                  : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Create Transformation "I" with events from all classes.
+                         : 
+<HEADER>                          : Transformation, Variable selection : 
+                         : Input : variable 'Pt_tripl' <---> Output : variable 'Pt_tripl'
+                         : Input : variable 'cLP>30?30:cLP' <---> Output : variable 'cLP>30?30:cLP'
+                         : Input : variable 'tKink>80?80:tKink' <---> Output : variable 'tKink>80?80:tKink'
+                         : Input : variable 'segmComp<0.2?0.2:segmComp' <---> Output : variable 'segmComp<0.2?0.2:segmComp'
+                         : Input : variable 'fv_nC>25?25:fv_nC' <---> Output : variable 'fv_nC>25?25:fv_nC'
+                         : Input : variable 'fv_dphi3D>0.15?0.15:fv_dphi3D' <---> Output : variable 'fv_dphi3D>0.15?0.15:fv_dphi3D'
+                         : Input : variable 'fv_d3Dsig>100?100:fv_d3Dsig' <---> Output : variable 'fv_d3Dsig>100?100:fv_d3Dsig'
+                         : Input : variable 'mindca_iso>0.5?0.5:mindca_iso' <---> Output : variable 'mindca_iso>0.5?0.5:mindca_iso'
+                         : Input : variable 'trkRel>10?10:trkRel' <---> Output : variable 'trkRel>10?10:trkRel'
+                         : Input : variable 'MuonIDeval_Mu1.MuonID' <---> Output : variable 'MuonIDeval_Mu1.MuonID'
+                         : Input : variable 'MuonIDeval_Mu2.MuonID' <---> Output : variable 'MuonIDeval_Mu2.MuonID'
+                         : Input : variable 'MuonIDeval_Mu3.MuonID' <---> Output : variable 'MuonIDeval_Mu3.MuonID'
+                         : Input : variable 'MuonIDeval_Mu3.year' <---> Output : variable 'MuonIDeval_Mu3.year'
+                         : Input : variable 'std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)' <---> Output : variable 'std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)'
+                         : Input : variable 'std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)' <---> Output : variable 'std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)'
+<HEADER> TFHandler_Factory        :                                                                    Variable                                                                           Mean                                                                           RMS                                                                   [        Min                                                                           Max ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                                                                    Pt_tripl:                                                                       24.273                                                                       10.045   [                                                                       10.122                                                                       159.43 ]
+                         :                                                               cLP>30?30:cLP:                                                                       6.1686                                                                       7.4961   [                                                                     0.046971                                                                       30.000 ]
+                         :                                                           tKink>80?80:tKink:                                                                       14.219                                                                       12.448   [                                                                       1.6304                                                                       80.000 ]
+                         :                                                   segmComp<0.2?0.2:segmComp:                                                                      0.66002                                                                      0.20805   [                                                                      0.20000                                                                       1.0000 ]
+                         :                                                           fv_nC>25?25:fv_nC:                                                                       2.0820                                                                       3.2494   [                                                                   7.6161e-05                                                                       25.000 ]
+                         :                                               fv_dphi3D>0.15?0.15:fv_dphi3D:                                                                     0.028683                                                                     0.027765   [                                                                       0.0000                                                                      0.15000 ]
+                         :                                                 fv_d3Dsig>100?100:fv_d3Dsig:                                                                       24.992                                                                       22.124   [                                                                      0.45256                                                                       100.00 ]
+                         :                                               mindca_iso>0.5?0.5:mindca_iso:                                                                     0.048909                                                                     0.069867   [                                                                   2.1150e-05                                                                      0.50000 ]
+                         :                                                         trkRel>10?10:trkRel:                                                                       1.4133                                                                       1.7977   [                                                                       0.0000                                                                       10.000 ]
+                         :                                                       MuonIDeval_Mu1.MuonID:                                                                      0.59469                                                                     0.076382   [                                                                     0.087438                                                                      0.72114 ]
+                         :                                                       MuonIDeval_Mu2.MuonID:                                                                      0.58329                                                                     0.082967   [                                                                     0.080077                                                                      0.70849 ]
+                         :                                                       MuonIDeval_Mu3.MuonID:                                                                      0.57628                                                                     0.084641   [                                                                     0.082105                                                                      0.70669 ]
+                         :                                                         MuonIDeval_Mu3.year:                                                                       2017.6                                                                      0.47831   [                                                                       2017.0                                                                       2018.0 ]
+                         : std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       3.3223                                                                       4.4746   [                                                                   2.3814e-06                                                                       82.967 ]
+                         : std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       13.762                                                                       13.868   [                                                                     0.053308                                                                       275.15 ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         : Ranking input variables (method unspecific)...
+<HEADER> IdTransformation         : Ranking result (top variable is best ranked)
+                         : ----------------------------------------------
+                         : Rank : Variable              : Separation
+                         : ----------------------------------------------
+                         :    1 : fv_dphi3D             : 2.496e-01
+                         :    2 : fv_nC                 : 2.235e-01
+                         :    3 : mindca_iso            : 7.905e-02
+                         :    4 : MuonIDeval_Mu3.MuonID : 7.807e-02
+                         :    5 : fv_d3Dsig             : 6.851e-02
+                         :    6 : MuonIDeval_Mu2.MuonID : 6.399e-02
+                         :    7 : segmComp              : 5.566e-02
+                         :    8 : tKink                 : 5.290e-02
+                         :    9 : cLP                   : 4.986e-02
+                         :   10 : MuonIDeval_Mu1.MuonID : 4.110e-02
+                         :   11 : trkRel                : 2.958e-02
+                         :   12 : d0sig_min             : 2.454e-02
+                         :   13 : d0sig_max             : 1.153e-02
+                         :   14 : MuonIDeval_Mu3.year   : 5.922e-04
+                         :   15 : Pt_tripl              : 2.444e-04
+                         : ----------------------------------------------
+                         : Elapsed time for training with 175541 events: 1e-05 sec         
+<HEADER> BDTG                     : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG on training sample (175541 events)
+0%, time left: unknown
+6%, time left: 12 sec
+12%, time left: 11 sec
+18%, time left: 11 sec
+25%, time left: 10 sec
+31%, time left: 9 sec
+37%, time left: 8 sec
+43%, time left: 7 sec
+50%, time left: 6 sec
+56%, time left: 5 sec
+62%, time left: 5 sec
+68%, time left: 4 sec
+75%, time left: 3 sec
+81%, time left: 2 sec
+87%, time left: 1 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 175541 events: 13.8 sec       
+                         : Creating xml weight file: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG.weights.xml
+                         : Creating standalone class: training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A/weights/TMVACrossValidation_BDTG.class.C
+<WARNING> <WARNING>                : MakeClassSpecificHeader not implemented for CrossValidation
+<WARNING> <WARNING>                : MakeClassSpecific not implemented for CrossValidation
+<HEADER> Factory                  : Test all methods
+<HEADER> Factory                  : Test method: BDTG for Classification performance
+                         : 
+<HEADER> BDTG                     : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Evaluation of BDTG on testing sample (175541 events)
+0%, time left: unknown
+6%, time left: 12 sec
+12%, time left: 11 sec
+18%, time left: 10 sec
+25%, time left: 10 sec
+31%, time left: 9 sec
+37%, time left: 8 sec
+43%, time left: 7 sec
+50%, time left: 6 sec
+56%, time left: 5 sec
+62%, time left: 5 sec
+68%, time left: 4 sec
+75%, time left: 3 sec
+81%, time left: 2 sec
+87%, time left: 1 sec
+93%, time left: 0 sec
+                         : Elapsed time for evaluation of 175541 events: 13.5 sec       
+<HEADER> Factory                  : Evaluate all methods
+<HEADER> Factory                  : Evaluate classifier: BDTG
+                         : 
+<HEADER> BDTG                     : [training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A] : Loop over test events and fill histograms with classifier response...
+                         : 
+<HEADER> TFHandler_BDTG           :                                                                    Variable                                                                           Mean                                                                           RMS                                                                   [        Min                                                                           Max ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         :                                                                    Pt_tripl:                                                                       24.273                                                                       10.045   [                                                                       10.122                                                                       159.43 ]
+                         :                                                               cLP>30?30:cLP:                                                                       6.1686                                                                       7.4961   [                                                                     0.046971                                                                       30.000 ]
+                         :                                                           tKink>80?80:tKink:                                                                       14.219                                                                       12.448   [                                                                       1.6304                                                                       80.000 ]
+                         :                                                   segmComp<0.2?0.2:segmComp:                                                                      0.66002                                                                      0.20805   [                                                                      0.20000                                                                       1.0000 ]
+                         :                                                           fv_nC>25?25:fv_nC:                                                                       2.0820                                                                       3.2494   [                                                                   7.6161e-05                                                                       25.000 ]
+                         :                                               fv_dphi3D>0.15?0.15:fv_dphi3D:                                                                     0.028683                                                                     0.027765   [                                                                       0.0000                                                                      0.15000 ]
+                         :                                                 fv_d3Dsig>100?100:fv_d3Dsig:                                                                       24.992                                                                       22.124   [                                                                      0.45256                                                                       100.00 ]
+                         :                                               mindca_iso>0.5?0.5:mindca_iso:                                                                     0.048909                                                                     0.069867   [                                                                   2.1150e-05                                                                      0.50000 ]
+                         :                                                         trkRel>10?10:trkRel:                                                                       1.4133                                                                       1.7977   [                                                                       0.0000                                                                       10.000 ]
+                         :                                                       MuonIDeval_Mu1.MuonID:                                                                      0.59469                                                                     0.076382   [                                                                     0.087438                                                                      0.72114 ]
+                         :                                                       MuonIDeval_Mu2.MuonID:                                                                      0.58329                                                                     0.082967   [                                                                     0.080077                                                                      0.70849 ]
+                         :                                                       MuonIDeval_Mu3.MuonID:                                                                      0.57628                                                                     0.084641   [                                                                     0.082105                                                                      0.70669 ]
+                         :                                                         MuonIDeval_Mu3.year:                                                                       2017.6                                                                      0.47831   [                                                                       2017.0                                                                       2018.0 ]
+                         : std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       3.3223                                                                       4.4746   [                                                                   2.3814e-06                                                                       82.967 ]
+                         : std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3):                                                                       13.762                                                                       13.868   [                                                                     0.053308                                                                       275.15 ]
+                         : ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Evaluation results ranked by best signal efficiency and purity (area)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet       MVA                       
+                         : Name:         Method:          ROC-integ
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG           : 0.918
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+                         : Testing efficiency compared to training efficiency (overtraining check)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : DataSet              MVA              Signal efficiency: from test sample (from training sample) 
+                         : Name:                Method:          @B=0.01             @B=0.10            @B=0.30   
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A BDTG           : 0.283 (0.283)       0.744 (0.744)      0.935 (0.935)
+                         : -------------------------------------------------------------------------------------------------------------------
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TestTree' with 175541 events
+                         : 
+<HEADER> Dataset:training_run2_...: Created tree 'TrainTree' with 175541 events
+                         : 
+<HEADER> Factory                  : Thank you for using TMVA!
+                         : For citation information, please visit: http://tmva.sf.net/citeTMVA.html
+                         : Evaluation done.
+Summary for method BDT
+	Fold 0: ROC int: 0.918184, BkgEff@SigEff=0.3: 0.936
+	Fold 1: ROC int: 0.916597, BkgEff@SigEff=0.3: 0.93
+	Fold 2: ROC int: 0.916777, BkgEff@SigEff=0.3: 0.936
+	Fold 3: ROC int: 0.919176, BkgEff@SigEff=0.3: 0.936
+	Fold 4: ROC int: 0.918902, BkgEff@SigEff=0.3: 0.934
+==> Wrote root file: TMVA_training_run2_CV_ntrees1000depth3beta0p5cuts50_5folds_A.root
+Exiting ROOT
