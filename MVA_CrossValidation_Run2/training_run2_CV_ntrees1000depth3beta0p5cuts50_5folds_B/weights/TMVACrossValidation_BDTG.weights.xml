@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<MethodSetup Method="CrossValidation::BDTG">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.2.1 [262657]"/>
+    <Info name="ROOT Release" value="6.24/06 [399366]"/>
+    <Info name="Creator" value="fsimone"/>
+    <Info name="Date" value="Mon Mar  7 11:05:28 2022"/>
+    <Info name="Host" value="Linux 88470cd8874b 5.8.0-1040-azure #43~20.04.1-Ubuntu SMP Mon Aug 2 22:06:11 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux"/>
+    <Info name="Dir" value="/lustrehome/fsimone/MVA_CrossValidation_Run2"/>
+    <Info name="Training events" value="337893"/>
+    <Info name="TrainingTime" value="5.00679016e-06"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="No">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="No">None</Option>
+    <Option name="H" modified="No">False</Option>
+    <Option name="CreateMVAPdfs" modified="No">False</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+    <Option name="EncapsulatedMethodName" modified="Yes">BDTG</Option>
+    <Option name="EncapsulatedMethodTypeName" modified="Yes">BDT</Option>
+    <Option name="NumFolds" modified="Yes">5</Option>
+    <Option name="OutputEnsembling" modified="Yes">None</Option>
+    <Option name="SplitExpr" modified="Yes">int(fabs([evt]))%int([NumFolds])</Option>
+  </Options>
+  <Variables NVar="15">
+    <Variable VarIndex="0" Expression="Pt_tripl" Label="Pt_tripl" Title="Pt_tripl" Unit="" Internal="Pt_tripl" Type="D" Min="7.99005556e+00" Max="2.06410965e+02"/>
+    <Variable VarIndex="1" Expression="cLP&gt;30?30:cLP" Label="cLP&gt;30?30:cLP" Title="cLP" Unit="" Internal="cLP_30_30:cLP" Type="D" Min="1.50933862e-02" Max="3.00000000e+01"/>
+    <Variable VarIndex="2" Expression="tKink&gt;80?80:tKink" Label="tKink&gt;80?80:tKink" Title="tKink" Unit="" Internal="tKink_80_80:tKink" Type="D" Min="1.56734824e+00" Max="8.00000000e+01"/>
+    <Variable VarIndex="3" Expression="segmComp&lt;0.2?0.2:segmComp" Label="segmComp&lt;0.2?0.2:segmComp" Title="segmComp" Unit="" Internal="segmComp_0.2_0.2:segmComp" Type="D" Min="2.00000003e-01" Max="1.00000000e+00"/>
+    <Variable VarIndex="4" Expression="fv_nC&gt;25?25:fv_nC" Label="fv_nC&gt;25?25:fv_nC" Title="fv_nC" Unit="" Internal="fv_nC_25_25:fv_nC" Type="D" Min="1.98200505e-04" Max="2.50000000e+01"/>
+    <Variable VarIndex="5" Expression="fv_dphi3D&gt;0.15?0.15:fv_dphi3D" Label="fv_dphi3D&gt;0.15?0.15:fv_dphi3D" Title="fv_dphi3D" Unit="" Internal="fv_dphi3D_0.15_0.15:fv_dphi3D" Type="D" Min="0.00000000e+00" Max="1.50000006e-01"/>
+    <Variable VarIndex="6" Expression="fv_d3Dsig&gt;100?100:fv_d3Dsig" Label="fv_d3Dsig&gt;100?100:fv_d3Dsig" Title="fv_d3Dsig" Unit="" Internal="fv_d3Dsig_100_100:fv_d3Dsig" Type="D" Min="7.18536153e-02" Max="1.00000000e+02"/>
+    <Variable VarIndex="7" Expression="mindca_iso&gt;0.5?0.5:mindca_iso" Label="mindca_iso&gt;0.5?0.5:mindca_iso" Title="mindca_iso" Unit="" Internal="mindca_iso_0.5_0.5:mindca_iso" Type="D" Min="1.25099650e-05" Max="5.00000000e-01"/>
+    <Variable VarIndex="8" Expression="trkRel&gt;10?10:trkRel" Label="trkRel&gt;10?10:trkRel" Title="trkRel" Unit="" Internal="trkRel_10_10:trkRel" Type="D" Min="0.00000000e+00" Max="1.00000000e+01"/>
+    <Variable VarIndex="9" Expression="MuonIDeval_Mu1.MuonID" Label="MuonIDeval_Mu1.MuonID" Title="MuonIDeval_Mu1.MuonID" Unit="" Internal="MuonIDeval_Mu1.MuonID" Type="D" Min="9.15317759e-02" Max="7.38192081e-01"/>
+    <Variable VarIndex="10" Expression="MuonIDeval_Mu2.MuonID" Label="MuonIDeval_Mu2.MuonID" Title="MuonIDeval_Mu2.MuonID" Unit="" Internal="MuonIDeval_Mu2.MuonID" Type="D" Min="8.69457796e-02" Max="7.37134576e-01"/>
+    <Variable VarIndex="11" Expression="MuonIDeval_Mu3.MuonID" Label="MuonIDeval_Mu3.MuonID" Title="MuonIDeval_Mu3.MuonID" Unit="" Internal="MuonIDeval_Mu3.MuonID" Type="D" Min="8.63316879e-02" Max="7.36072898e-01"/>
+    <Variable VarIndex="12" Expression="MuonIDeval_Mu3.year" Label="MuonIDeval_Mu3.year" Title="MuonIDeval_Mu3.year" Unit="" Internal="MuonIDeval_Mu3.year" Type="D" Min="2.01700000e+03" Max="2.01800000e+03"/>
+    <Variable VarIndex="13" Expression="std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)" Label="std::fmin(std::fmin(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)" Title="d0sig_min" Unit="" Internal="std_fmin_std_fmin_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_" Type="D" Min="6.07433276e-06" Max="7.07659836e+01"/>
+    <Variable VarIndex="14" Expression="std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)" Label="std::fmax(std::fmax(abs(dxy1)/dxyErr1,abs(dxy2)/dxyErr2),abs(dxy3)/dxyErr3)" Title="d0sig_max" Unit="" Internal="std_fmax_std_fmax_abs_dxy1__D_dxyErr1,abs_dxy2__D_dxyErr2_,abs_dxy3__D_dxyErr3_" Type="D" Min="1.06699644e-02" Max="2.21391174e+02"/>
+  </Variables>
+  <Spectators NSpec="4">
+    <Spectator SpecIndex="0" Expression="tripletMass" Label="tripletMass" Title="tripletMass" Unit="" Internal="tripletMass" Type="F" Min="1.62000012e+00" Max="1.99999738e+00"/>
+    <Spectator SpecIndex="1" Expression="tripletMassReso" Label="tripletMassReso" Title="tripletMassReso" Unit="" Internal="tripletMassReso" Type="F" Min="7.00002909e-03" Max="1.04999915e-02"/>
+    <Spectator SpecIndex="2" Expression="puFactor" Label="puFactor" Title="puFactor" Unit="" Internal="puFactor" Type="F" Min="0.00000000e+00" Max="2.94422269e+00"/>
+    <Spectator SpecIndex="3" Expression="int(evt)%4096" Label="evt" Title="I" Unit="" Internal="evt" Type="F" Min="0.00000000e+00" Max="4.09500000e+03"/>
+  </Spectators>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs/>
+  <Weights JobName="TMVACrossValidation" SplitExpr="int(fabs([evt]))%int([NumFolds])" NumFolds="5" EncapsulatedMethodName="BDTG" EncapsulatedMethodTypeName="BDT" OutputEnsembling="None"/>
+</MethodSetup>
