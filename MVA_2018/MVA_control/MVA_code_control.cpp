@@ -36,6 +36,7 @@ void MVA_code_control(){
     TString treeName = "FinalTree_Control";
     //DsPhiPi MC
     TFile *f_sig_ds = (TFile*)gROOT->GetListOfFiles()->FindObject(inputpath_DsPhiPi);
+    cout<<"Opening input file "<<inputpath_DsPhiPi<<endl;
     if (!f_sig_ds || !f_sig_ds->IsOpen()) {
          f_sig_ds = new TFile(inputpath_DsPhiPi);
     }
@@ -46,19 +47,20 @@ void MVA_code_control(){
     int n_bkg = sizeof(inputpath_datarun_control)/sizeof(inputpath_datarun_control[0]);
     for(int j = 0; j<n_bkg; j++){
         TFile *f_bkg = (TFile*)gROOT->GetListOfFiles()->FindObject(inputpath_datarun_control[j]);
+        cout<<"Opening input file "<<inputpath_datarun_control[j]<<endl;
         if (!f_bkg || !f_bkg->IsOpen()) {
             f_bkg = new TFile(inputpath_datarun_control[j]);
         }
         bkgTree.push_back((TTree*)f_bkg->Get(treeName));
     }
-/*
+
     //add TTreeFriend - muon quality variables
-    TString friendTreeName[] = {"TreeMu1=TreeMu1", "TreeMu2=TreeMu2", "TreeMu3=TreeMu3"};
-    for(int i=0; i<3; i++){
+    TString friendTreeName[] = {"TreeMu1=TreeMu1", "TreeMu2=TreeMu2"};
+    for(int i=0; i<2; i++){
         cout<<"Adding FriendTree "<<friendTreeName[i]<<" from file "<<inputpath_DsPhiPi<<endl;
         sigTree.at(0)->AddFriend(friendTreeName[i], inputpath_DsPhiPi);
     }
-    for(int i=0; i<3; i++){
+    for(int i=0; i<2; i++){
         for(int j=0; j<n_bkg; j++){
             cout<<"Adding FriendTree "<<friendTreeName[i]<<" from file "<<inputpath_datarun_control[j]<<endl;
             bkgTree.at(j)->AddFriend(friendTreeName[i], inputpath_datarun_control[j]);
@@ -66,21 +68,21 @@ void MVA_code_control(){
     }
 
     //add TTreeFriend - MuonID evaluation
-    TString muIdTreeName[] = {"MuonIDeval_Mu1=MuonIDeval_Mu1", "MuonIDeval_Mu2=MuonIDeval_Mu2", "MuonIDeval_Mu3=MuonIDeval_Mu3"};
+    TString muIdTreeName[] = {"MuonIDeval_Mu1=MuonIDeval_Mu1", "MuonIDeval_Mu2=MuonIDeval_Mu2"};
     TString inputpath_DsPhiPi_muId = inputpath_DsPhiPi.ReplaceAll(".root", "_MuonID.root");
-    for(int i=0; i<3; i++){
+    for(int i=0; i<2; i++){
         cout<<"Adding FriendTree "<<muIdTreeName[i]<<" from file "<<inputpath_DsPhiPi_muId<<endl;
         sigTree.at(0)->AddFriend(muIdTreeName[i], inputpath_DsPhiPi_muId);
     }
     for(int j=0; j<n_bkg; j++){
         TString inputpath_data_muId = inputpath_datarun_control[j].ReplaceAll(".root", "_MuonID.root");
-        for(int i=0; i<3; i++){
+        for(int i=0; i<2; i++){
             cout<<"Adding FriendTree "<<muIdTreeName[i]<<" from file "<<inputpath_data_muId<<endl;
             bkgTree.at(j)->AddFriend(muIdTreeName[i], inputpath_data_muId);
         }
     }
 
-*/
+
     // Set the event weights per tree
     Double_t sigWeight  = 1.; //1.0 DsPhiPi
 
@@ -124,10 +126,10 @@ void MVA_code_control(){
     }
 
 
-    //dataloader->SetSignalWeightExpression( "puFactor" );
+    dataloader->SetSignalWeightExpression( "puFactor" );
 
     TCut cutS = "((tripletMass<2.02 && tripletMass>1.92))"; //Signal -> MC Ds peak 
-    TCut cutB = "( (tripletMass<1.80 && tripletMass>1.70) )"; //Background -> data sidebands
+    TCut cutB = "( (tripletMass<1.80 && tripletMass>1.72) )"; //Background -> data sidebands
     TCut preselCut = "";
 
     TString prepareTrainTestOptions = ":SplitMode=Random"
