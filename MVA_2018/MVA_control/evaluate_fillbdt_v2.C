@@ -5,6 +5,8 @@
 #include "Control_common.h"
 #include "TTreeReader.h"
 #include "TTreeReaderValue.h"
+#include "TRandom.h"
+#include "TRandom3.h"
 
 void fill_BDT_score(TChain *t, TH1F* hBDTdecision, Int_t isMC, TTree *tout, TString* outvar_name, Double_t* outvar_value){
 
@@ -21,7 +23,7 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, Int_t isMC, TTree *tout, TStr
     std::vector<TString> var_train_def;
     std::vector<TString> var_spec_name;
     std::vector<TString> var_spec_def;
-    //TString BDTinVar_control; //taken from Control_common.h
+    //TString BDTinVar; //taken from Control_common.h
 
     readVarName_control(var_spec_name, var_spec_def, BDTspecVar_control);
     readVarName_control(var_train_name, var_train_def, BDTinVar_control);
@@ -70,17 +72,34 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, Int_t isMC, TTree *tout, TStr
     }
 
     TTreeReaderValue<double> reader_triplMass(treeReader, "tripletMass");
-    TTreeReaderValue<double> reader_fv_nC(treeReader, "fv_nC");
 
     //Branches for output tree
-    int nvar = 15;
+    int nvar = 30;
     std::vector<TTreeReaderValue<double>> reader_out;
-    for(auto v = 0; v<nvar-5; v++){
+    for(auto v = 0; v<nvar-11; v++){
         reader_out.emplace_back(treeReader, outvar_name[v]);
         cout<<"   reading from TChain branch "<<outvar_name[v]<<endl;
     }
 
-    //Branches for MVA
+    cout<<"booleans must be treated separately"<<endl;
+    std::vector<TTreeReaderValue<bool>> reader_out_bool;
+    for(auto v = nvar-11; v<nvar-7; v++){
+        reader_out_bool.emplace_back(treeReader, outvar_name[v]);
+        cout<<"   reading from TChain branch "<<outvar_name[v]<<endl;
+    }
+    cout<<"\n------------------------"<<endl;
+
+    TTreeReaderValue<double> reader_dxy1(treeReader, "dxy1");
+    TTreeReaderValue<double> reader_dxyErr1(treeReader, "dxyErr1");
+    TTreeReaderValue<double> reader_dxy2(treeReader, "dxy2");
+    TTreeReaderValue<double> reader_dxyErr2(treeReader, "dxyErr2");
+    TTreeReaderValue<bool> reader_doubleMu4(treeReader, "l1double_DoubleMu4_fired");
+    TTreeReaderValue<bool> reader_doubleMu0(treeReader, "l1double_DoubleMu0_fired");
+
+    TTreeReaderValue<float> reader_muid1(treeReader, "MuonIDeval_Mu1.MuonID");
+    TTreeReaderValue<float> reader_muid2(treeReader, "MuonIDeval_Mu2.MuonID");
+
+    //nBranches for MVA
     std::vector<TTreeReaderValue<double>> reader_spec;
     for(int k = 0; k<n_spec; k++){
         cout<<"   reading from TChain branch "<<var_spec_name.at(k)<<endl;
@@ -88,6 +107,11 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, Int_t isMC, TTree *tout, TStr
     }
     std::vector<TTreeReaderValue<double>> reader_train;
     for(int k = 0; k<n_train; k++){
+        if(var_train_name.at(k)=="d0sig_min") continue;
+        if(var_train_name.at(k)=="d0sig_max") continue;
+        if(var_train_name.at(k)=="d0_min") continue;
+        if(var_train_name.at(k)=="MuonIDeval_Mu1.MuonID") continue;
+        if(var_train_name.at(k)=="MuonIDeval_Mu2.MuonID") continue;
         cout<<"   reading from TChain branch "<<var_train_name.at(k)<<endl;
         reader_train.emplace_back(treeReader, var_train_name.at(k));
     }
@@ -99,18 +123,27 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, Int_t isMC, TTree *tout, TStr
             var_spec.at(k)= *reader_spec.at(k);
         }
         for(int k = 0; k<n_train; k++){
-            var_train.at(k) = *reader_train.at(k);
+            if(var_train_name.at(k)=="d0sig_min"){ 
+                if((*reader_dxyErr1)!=0 && (*reader_dxyErr2)!=0) var_train.at(k) = std::fmin ( abs(*reader_dxy1)/(*reader_dxyErr1) , abs(*reader_dxy2)/(*reader_dxyErr2) );
+                else var_train.at(k) = 0;
+            }
+            else if(var_train_name.at(k)=="d0sig_max"){ 
+                if((*reader_dxyErr1)!=0 && (*reader_dxyErr2)!=0) var_train.at(k) = std::fmax ( abs(*reader_dxy1)/(*reader_dxyErr1), abs(*reader_dxy2)/(*reader_dxyErr2) );
+                else var_train.at(k) = 0;
+            }
+            else if(var_train_name.at(k)=="d0_min"){ 
+                if((*reader_dxyErr1)!=0 && (*reader_dxyErr2)!=0) var_train.at(k) = std::fmin ( abs(*reader_dxy1), abs(*reader_dxy2) );
+                else var_train.at(k) = 0;
+            }
+            else if(var_train_name.at(k)=="MuonIDeval_Mu1.MuonID") var_train.at(k) = *reader_muid1;
+            else if(var_train_name.at(k)=="MuonIDeval_Mu2.MuonID") var_train.at(k) = *reader_muid2;
+            else var_train.at(k) = *reader_train.at(k);
         }
         //Evaluate method(s) and fill histogram or MiniTree
         auto BDTscore = MVAreader->EvaluateMVA(method_control);
         auto mass = *reader_triplMass;
-        auto normchi2 = *reader_fv_nC;
         Int_t isSB = 0;
         if( ( mass > 1.70 && mass < 1.80 ) ) isSB = 1; 
-        if( isMC && (mass > 2.02 || mass < 1.92 ) ) continue; 
-        if( !isMC && (mass > 2.02 || mass < 1.62 ) ) continue; 
-
-        if (normchi2<0 || normchi2>10) continue;
 
         if((!isMC && isSB) || isMC) hBDTdecision->Fill(BDTscore);
         // for(int k = 0; k<n_spec; k++){
@@ -119,13 +152,19 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, Int_t isMC, TTree *tout, TStr
         // for(int k = 0; k<n_train; k++){
         //     cout<<"   train "<<var_train.at(k)<<endl;
         // }
-        // cout<<"reso "<<reso<<" bdt "<<MVAreader->EvaluateMVA(method_control)<<endl;        
+        // cout<<"reso "<<reso<<" bdt "<<MVAreader->EvaluateMVA(method)<<endl;        
 
-        for(auto v = 0; v<nvar-5; v++){
+        for(auto v = 0; v<nvar-11; v++){
             outvar_value[v] = *reader_out.at(v);
             //cout<<"     to output tree -> "<<outvar_name[v]<<"="<<outvar_value[v]<<endl;
         }
-        for(auto v = nvar-5; v<nvar; v++){
+        for(auto v = nvar-11; v<nvar-7; v++){
+            outvar_value[v] = *reader_out_bool.at(v-(nvar-11));
+            //cout<<"     to output tree -> "<<outvar_name[v]<<"="<<outvar_value[v]<<endl;
+        }
+        for(auto v = nvar-7; v<nvar; v++){
+            if(outvar_name[v] == "MVA_glbmu1")  outvar_value[v] = *reader_muid1;
+            if(outvar_name[v] == "MVA_glbmu2")  outvar_value[v] = *reader_muid2;
             if(outvar_name[v] == "bdt")  outvar_value[v] = BDTscore;
             if(outvar_name[v] == "isMC") outvar_value[v] = isMC;
             if(outvar_name[v] == "isSB") outvar_value[v] = isSB;
@@ -133,6 +172,12 @@ void fill_BDT_score(TChain *t, TH1F* hBDTdecision, Int_t isMC, TTree *tout, TStr
             if(outvar_name[v] == "weight" && isMC == 1) outvar_value[v] = 1.; //Ds
             if(outvar_name[v] == "category") outvar_value[v] = 0; //no categorisation in DsPhiPi
             //cout<<"   to output tree -> "<<outvar_name[v]<<"="<<outvar_value[v]<<endl;
+        }
+        //reject 31.5% of MC events exclusively triggered by DM4
+        bool dM4_excl = !(*reader_doubleMu0) && (*reader_doubleMu4);
+        if(isMC && dM4_excl){
+            TRandom3 rand(0); Double_t x_rand = rand.Rndm( ); //uniformly distributed random number in 0..1
+            if(x_rand < 0.315) { continue; }
         }
 
         tout->Fill();
@@ -157,64 +202,60 @@ void evaluate_fillbdt_v2()
     TChain *tmc1 = new TChain("FinalTree_Control");
     tmc1->Add(inputpath_DsPhiPi); 
     std::cout<<"Opened input file: "<<inputpath_DsPhiPi<<std::endl;
-/*
+
     //data
     TChain *tdata_mu1 = new TChain("TreeMu1");
     TChain *tdata_mu2 = new TChain("TreeMu2");
-    TChain *tdata_mu3 = new TChain("TreeMu3");
+    //TChain *tdata_mu3 = new TChain("TreeMu3");
     for(auto i=0; i<nrun; i++){
         tdata_mu1->Add(inputpath_datarun_control[i]); 
         tdata_mu2->Add(inputpath_datarun_control[i]); 
-        tdata_mu3->Add(inputpath_datarun_control[i]); 
+        //tdata_mu3->Add(inputpath_datarun_control[i]); 
         std::cout<<"Opened input file: "<<inputpath_datarun_control[i]<<std::endl;
     }
     //MC Ds
     TChain *tmc1_mu1 = new TChain("TreeMu1");
     TChain *tmc1_mu2 = new TChain("TreeMu2");
-    TChain *tmc1_mu3 = new TChain("TreeMu3");
-    tmc1_mu1->Add(inputpath_Ds); 
-    tmc1_mu2->Add(inputpath_Ds); 
-    tmc1_mu3->Add(inputpath_Ds); 
-    std::cout<<"Opened input file: "<<inputpath_Ds<<std::endl;
+    //TChain *tmc1_mu3 = new TChain("TreeMu3");
+    tmc1_mu1->Add(inputpath_DsPhiPi); 
+    tmc1_mu2->Add(inputpath_DsPhiPi); 
+    //tmc1_mu3->Add(inputpath_DsPhiPi); 
+    std::cout<<"Opened input file: "<<inputpath_DsPhiPi<<std::endl;
 
     //data
     TChain *tdata_muid1 = new TChain("MuonIDeval_Mu1");
     TChain *tdata_muid2 = new TChain("MuonIDeval_Mu2");
-    TChain *tdata_muid3 = new TChain("MuonIDeval_Mu3");
     for(auto i=0; i<nrun; i++){
         TString inputpath_data_muId = inputpath_datarun_control[i].ReplaceAll(".root", "_MuonID.root");
         tdata_muid1->Add(inputpath_datarun_control[i]);
         tdata_muid2->Add(inputpath_datarun_control[i]);
-        tdata_muid3->Add(inputpath_datarun_control[i]);
         std::cout<<"Opened input file: "<<inputpath_data_muId<<std::endl;
     }
     //MC Ds
     TChain *tmc1_muid1 = new TChain("MuonIDeval_Mu1");
     TChain *tmc1_muid2 = new TChain("MuonIDeval_Mu2");
-    TChain *tmc1_muid3 = new TChain("MuonIDeval_Mu3");
-    TString inputpath_Ds_muId = inputpath_Ds.ReplaceAll(".root", "_MuonID.root");
+    TString inputpath_Ds_muId = inputpath_DsPhiPi.ReplaceAll(".root", "_MuonID.root");
     tmc1_muid1->Add(inputpath_Ds_muId);
     tmc1_muid2->Add(inputpath_Ds_muId);
-    tmc1_muid3->Add(inputpath_Ds_muId);
     std::cout<<"Opened input file: "<<inputpath_Ds_muId<<std::endl;
 
 
     tdata->AddFriend(tdata_mu1);
     tdata->AddFriend(tdata_mu2);
-    tdata->AddFriend(tdata_mu3);
+    //tdata->AddFriend(tdata_mu3);
 
     tmc1->AddFriend(tmc1_mu1);
     tmc1->AddFriend(tmc1_mu2);
-    tmc1->AddFriend(tmc1_mu3);
+    //tmc1->AddFriend(tmc1_mu3);
 
     tdata->AddFriend(tdata_muid1);
     tdata->AddFriend(tdata_muid2);
-    tdata->AddFriend(tdata_muid3);
+    //tdata->AddFriend(tdata_muid3);
 
     tmc1->AddFriend(tmc1_muid1);
     tmc1->AddFriend(tmc1_muid2);
-    tmc1->AddFriend(tmc1_muid3);
-*/
+    //tmc1->AddFriend(tmc1_muid3);
+
     //Book output MiniTree
     TString fout_tree_path = TMVA_inputpath_control+"outputTree.root";
     cout<<"Output file for final tree: "<<fout_tree_path<<endl;
@@ -224,12 +265,13 @@ void evaluate_fillbdt_v2()
 
     //variables for output tree taken from input tree
     TString outvar_name [] = { 
-                                //"evt",
-                                //"run",
-                                //"lumi",
+                                "evt",
+                                "run",
+                                "lumi",
                                 "puFactor",
                                 "tripletMass",
                                 "tripletMassReso",
+                                "phiMass",
                                 //"dimu12",
                                 //"dimu13",
                                 //"dimu23",
@@ -239,7 +281,20 @@ void evaluate_fillbdt_v2()
                                 "Etamu2",
                                 "Ptmu3",
                                 "Etamu3",
-                                "fv_nC",
+                                "pv_sv_dxy",
+                                "pv_sv_dxy_sig",
+                                "fv_d3D",
+                                "fv_d3Dsig",
+                                "bs_sv_d2D",
+                                "bs_sv_d2Dsig",
+
+                                "l1triple_fired",
+                                "l1double_fired",
+                                "l1double_DoubleMu0_fired",
+                                "l1double_DoubleMu4_fired",
+
+                                "MVA_glbmu1",
+                                "MVA_glbmu2",
 
                                 "isMC",
                                 "isSB",
@@ -248,8 +303,8 @@ void evaluate_fillbdt_v2()
                                 "bdt"
                                 };
 
-    int nvar = 15;
-    Double_t outvar_value[15] = {0.};
+    int nvar = 30;
+    Double_t outvar_value[30] = {0.};
 
     //Set branches output tree
     for(auto v = 0; v<nvar; v++){
